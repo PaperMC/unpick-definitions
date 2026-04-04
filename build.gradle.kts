@@ -92,6 +92,13 @@ publishing {
         artifactId = "unpick-definitions"
     }
 
+    repositories {
+        maven("https://artifactory.papermc.io/artifactory/releases/") {
+            name = "paper"
+            credentials(PasswordCredentials::class)
+        }
+    }
+
     publications.register<MavenPublication>("export") {
         artifact(generateUnpickData.flatMap { it.output })
         version = artifactVersionProvider.get()

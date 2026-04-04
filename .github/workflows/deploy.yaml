@@ -1,0 +1,54 @@
+name: Deploy Release
+on:
+  push:
+    branches:
+      - 'main'
+      - 'mc/**'
+    paths-ignore:
+      - 'README.md'
+      - '.editorconfig'
+      - '.gitattributes'
+      - '.gitignore'
+
+jobs:
+  deploy:
+    name: Deploy Release
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: gradle/actions/setup-gradle@v6
+      - name: Check definitions
+        run: ./gradlew checkUnpickDefinitions --stacktrace --console=colored
+      - name: "Get version"
+        run: |
+          UNPICK_DEF_VERSION=$(./gradlew printVersion --console=plain --quiet)
+          echo "UNPICK_DEF_VERSION=$UNPICK_DEF_VERSION" >> $GITHUB_ENV
+      - uses: neoforged/action-github-status@v1
+        name: Set build pending status
+        if: always()
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: 'Publishing'
+          state: 'pending'
+          description: "Version: ${{ env.UNPICK_DEF_VERSION }}"
+          target_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - name: Deploy release version
+        run: |
+          ./gradlew publishExportPublicationToPaperRepository --stacktrace --console=colored
+          if [ $? -eq 0 ]; then
+            echo "GRADLE_SUCCESS=success" >> $GITHUB_ENV
+          else
+            echo "GRADLE_SUCCESS=failure" >> $GITHUB_ENV
+          fi
+        env:
+          ORG_GRADLE_PROJECT_paperUsername: ${{ secrets.ARTIFACTORY_USERNAME }}
+          ORG_GRADLE_PROJECT_paperPassword: ${{ secrets.ARTIFACTORY_PASSWORD }}
+      - uses: neoforged/action-github-status@v1
+        name: Set build completion status
+        if: always()
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: 'Publishing'
+          state: ${{ env.GRADLE_SUCCESS || 'failure' }}
+          description: "Version: ${{ env.UNPICK_DEF_VERSION }}"
+          target_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
