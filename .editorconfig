@@ -1,0 +1,9 @@
+root = true
+
+[buildSrc/src/main/kotlin/**/*.kt]
+insert_final_newline = true
+
+[definitions/**/*.unpick]
+indent_size = 4
+indent_style = tab
+trim_trailing_whitespace = true

@@ -1,0 +1,15 @@
+unpick v4
+
+group float
+	@strict
+	net.minecraft.util.Mth.PI
+	-net.minecraft.util.Mth.PI
+
+	net.minecraft.util.Mth.PI * 2
+	-net.minecraft.util.Mth.PI * 2
+
+	net.minecraft.util.Mth.PI / 2
+	-net.minecraft.util.Mth.PI / 2
+
+	net.minecraft.util.Mth.DEG_TO_RAD
+	net.minecraft.util.Mth.RAD_TO_DEG
