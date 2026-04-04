@@ -38,7 +38,7 @@ jobs:
           target_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
       - name: Deploy release version
         run: |
-          ./gradlew publishExportPublicationToPaperRepository --stacktrace --console=colored
+          ./gradlew publishExportZipPublicationToPaperRepository --stacktrace --console=colored
           if [ $? -eq 0 ]; then
             echo "GRADLE_SUCCESS=success" >> $GITHUB_ENV
           else

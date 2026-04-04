@@ -79,6 +79,12 @@ val artifactVersionProvider = providers.of(ArtifactVersionProvider::class) {
     }
 }
 
+val unpickExportZip by tasks.registering(Zip::class) {
+    group = LifecycleBasePlugin.BUILD_GROUP
+    from(generateUnpickData.flatMap { it.output })
+    rename { "extras/definitions.unpick" } // for legacy compatibility with yarn
+}
+
 publishing {
     publications.withType(MavenPublication::class).configureEach {
         pom {
@@ -101,6 +107,11 @@ publishing {
 
     publications.register<MavenPublication>("export") {
         artifact(generateUnpickData.flatMap { it.output })
+        version = artifactVersionProvider.get()
+    }
+
+    publications.register<MavenPublication>("exportZip") {
+        artifact(unpickExportZip)
         version = artifactVersionProvider.get()
     }
 }
