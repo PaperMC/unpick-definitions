@@ -20,7 +20,7 @@ mcBase {
 
 dependencies {
     enigma("cuchaz:enigma-swing:4.0.2")
-    enigma("org.vineflower:vineflower:1.11.1") // sync with mache
+    enigma("org.vineflower:vineflower:1.11.2") // sync with mache
     enigma(project(":enigma-plugin", "runtimeElements"))
 }
 
