@@ -20,7 +20,7 @@ mcBase {
 
 dependencies {
     enigma("cuchaz:enigma-swing:4.0.2")
-    enigma("org.vineflower:vineflower:1.11.2") // sync with mache
+    enigma("org.vineflower:vineflower:1.11.1") // sync with mache !! Don't update until https://github.com/Vineflower/vineflower/commit/68402cda4d286be8e6c841ac30419f067e10703e is released
     enigma(project(":enigma-plugin", "runtimeElements"))
 }
 
