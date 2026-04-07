@@ -83,7 +83,7 @@ abstract class UnpickJar : DefaultTask() {
                         classResolver = classResolver.chain(ClassResolvers.jar(zip))
                     }
 
-                    classResolver = classResolver.chain(ClassResolvers.classpath())
+                    classResolver = classResolver.chain(ClassResolvers.classpath(null))
 
                     val uninliner = ConstantUninliner.builder()
                         .classResolver(classResolver)

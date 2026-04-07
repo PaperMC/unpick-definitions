@@ -11,7 +11,7 @@ import java.io.File
 abstract class GenerateUnpickData : DefaultTask() {
 
     @get:InputDirectory
-    @get:PathSensitive(PathSensitivity.RELATIVE)
+    @get:PathSensitive(PathSensitivity.NONE)
     abstract val definitions: DirectoryProperty
 
     @get:OutputFile
