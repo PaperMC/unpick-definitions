@@ -85,16 +85,117 @@ group int gl_tex_parameter_value
 
 group int gl_tex_format
 	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT32
-	com.mojang.blaze3d.opengl.GlConst.GL_RGBA8
+	org.lwjgl.opengl.GL11.GL_STENCIL_INDEX
+	org.lwjgl.opengl.GL30.GL_DEPTH_STENCIL
 	com.mojang.blaze3d.opengl.GlConst.GL_RGBA
 	com.mojang.blaze3d.opengl.GlConst.GL_BGR
 	com.mojang.blaze3d.opengl.GlConst.GL_RG
-	com.mojang.blaze3d.opengl.GlConst.GL_R8
 	com.mojang.blaze3d.opengl.GlConst.GL_RGB
 	com.mojang.blaze3d.opengl.GlConst.GL_RED
 	org.lwjgl.opengl.GL12.GL_BGRA
+
+	org.lwjgl.opengl.GL30.GL_RED_INTEGER
+	org.lwjgl.opengl.GL30.GL_GREEN_INTEGER
+	org.lwjgl.opengl.GL30.GL_BLUE_INTEGER
+	org.lwjgl.opengl.GL30.GL_ALPHA_INTEGER
+	org.lwjgl.opengl.GL30.GL_RG_INTEGER
+	org.lwjgl.opengl.GL30.GL_RGB_INTEGER
+	org.lwjgl.opengl.GL30.GL_RGBA_INTEGER
+	org.lwjgl.opengl.GL30.GL_BGR_INTEGER
+	org.lwjgl.opengl.GL30.GL_BGRA_INTEGER
+
+group int gl_internal_tex_format
+	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT
+	org.lwjgl.opengl.GL11.GL_STENCIL_INDEX
+	org.lwjgl.opengl.GL30.GL_DEPTH_STENCIL
+	com.mojang.blaze3d.opengl.GlConst.GL_RGBA
+	com.mojang.blaze3d.opengl.GlConst.GL_BGR
+	com.mojang.blaze3d.opengl.GlConst.GL_RG
+	com.mojang.blaze3d.opengl.GlConst.GL_RGB
+	com.mojang.blaze3d.opengl.GlConst.GL_RED
+	org.lwjgl.opengl.GL12.GL_BGRA
+
+	org.lwjgl.opengl.GL30.GL_RED_INTEGER
+	org.lwjgl.opengl.GL30.GL_GREEN_INTEGER
+	org.lwjgl.opengl.GL30.GL_BLUE_INTEGER
+	org.lwjgl.opengl.GL30.GL_ALPHA_INTEGER
+	org.lwjgl.opengl.GL30.GL_RG_INTEGER
+	org.lwjgl.opengl.GL30.GL_RGB_INTEGER
+	org.lwjgl.opengl.GL30.GL_RGBA_INTEGER
+	org.lwjgl.opengl.GL30.GL_BGR_INTEGER
+	org.lwjgl.opengl.GL30.GL_BGRA_INTEGER
+
+	org.lwjgl.opengl.GL14.GL_DEPTH_COMPONENT16
+	org.lwjgl.opengl.GL14.GL_DEPTH_COMPONENT24
+	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT32
+	org.lwjgl.opengl.GL30.GL_DEPTH_COMPONENT32F
+	org.lwjgl.opengl.GL30.GL_DEPTH32F_STENCIL8
+	org.lwjgl.opengl.GL30.GL_DEPTH24_STENCIL8
+
+	org.lwjgl.opengl.GL30.GL_STENCIL_INDEX1
+	org.lwjgl.opengl.GL30.GL_STENCIL_INDEX4
+	org.lwjgl.opengl.GL30.GL_STENCIL_INDEX8
+	org.lwjgl.opengl.GL30.GL_STENCIL_INDEX16
+
+	org.lwjgl.opengl.GL11.GL_RGB4
+	org.lwjgl.opengl.GL11.GL_RGB5
+	org.lwjgl.opengl.GL11.GL_RGB8
+	org.lwjgl.opengl.GL11.GL_RGB10
+	org.lwjgl.opengl.GL11.GL_RGB12
+	org.lwjgl.opengl.GL11.GL_RGB16
+	org.lwjgl.opengl.GL11.GL_RGBA2
+	org.lwjgl.opengl.GL11.GL_RGBA4
+	org.lwjgl.opengl.GL11.GL_RGB5_A1
+	com.mojang.blaze3d.opengl.GlConst.GL_RGBA8
+	org.lwjgl.opengl.GL11.GL_RGB10_A2
+	org.lwjgl.opengl.GL33.GL_RGB10_A2UI
+	org.lwjgl.opengl.GL11.GL_RGBA12
+	org.lwjgl.opengl.GL11.GL_RGBA16
+	org.lwjgl.opengl.GL30.GL_R11F_G11F_B10F
+	com.mojang.blaze3d.opengl.GlConst.GL_R8
+	org.lwjgl.opengl.GL30.GL_R16
+	org.lwjgl.opengl.GL30.GL_RG8
+	org.lwjgl.opengl.GL30.GL_RG16
+	org.lwjgl.opengl.GL30.GL_R16F
+	org.lwjgl.opengl.GL30.GL_R32F
+	org.lwjgl.opengl.GL30.GL_RG16F
+	org.lwjgl.opengl.GL30.GL_RG32F
+	org.lwjgl.opengl.GL30.GL_RGBA32F
+	org.lwjgl.opengl.GL30.GL_RGB32F
+	org.lwjgl.opengl.GL30.GL_RGBA16F
+	org.lwjgl.opengl.GL30.GL_RGB16F
 	org.lwjgl.opengl.GL30.GL_R8I
+	org.lwjgl.opengl.GL30.GL_R8UI
+	org.lwjgl.opengl.GL30.GL_R16I
+	org.lwjgl.opengl.GL30.GL_R16UI
+	org.lwjgl.opengl.GL30.GL_R32I
+	org.lwjgl.opengl.GL30.GL_R32UI
+	org.lwjgl.opengl.GL30.GL_RG8I
+	org.lwjgl.opengl.GL30.GL_RG8UI
+	org.lwjgl.opengl.GL30.GL_RG16I
+	org.lwjgl.opengl.GL30.GL_RG16UI
+	org.lwjgl.opengl.GL30.GL_RG32I
+	org.lwjgl.opengl.GL30.GL_RG32UI
+	org.lwjgl.opengl.GL30.GL_RGBA32UI
+	org.lwjgl.opengl.GL30.GL_RGB32UI
+	org.lwjgl.opengl.GL30.GL_RGBA16UI
+	org.lwjgl.opengl.GL30.GL_RGB16UI
+	org.lwjgl.opengl.GL30.GL_RGBA8UI
+	org.lwjgl.opengl.GL30.GL_RGB8UI
+	org.lwjgl.opengl.GL30.GL_RGBA32I
+	org.lwjgl.opengl.GL30.GL_RGB32I
+	org.lwjgl.opengl.GL30.GL_RGBA16I
+	org.lwjgl.opengl.GL30.GL_RGB16I
+	org.lwjgl.opengl.GL30.GL_RGBA8I
+	org.lwjgl.opengl.GL30.GL_RGB8I
+	org.lwjgl.opengl.GL31.GL_R8_SNORM
+	org.lwjgl.opengl.GL31.GL_RG8_SNORM
+	org.lwjgl.opengl.GL31.GL_RGB8_SNORM
+	org.lwjgl.opengl.GL31.GL_RGBA8_SNORM
+	org.lwjgl.opengl.GL31.GL_R16_SNORM
+	org.lwjgl.opengl.GL31.GL_RG16_SNORM
+	org.lwjgl.opengl.GL31.GL_RGB16_SNORM
+	org.lwjgl.opengl.GL31.GL_RGBA16_SNORM
 
 group int gl_type
 	com.mojang.blaze3d.opengl.GlConst.GL_BYTE
@@ -108,6 +209,11 @@ group int gl_type
 	org.lwjgl.opengl.GL20.GL_FLOAT_VEC3
 	org.lwjgl.opengl.GL20.GL_FLOAT_VEC4
 	org.lwjgl.opengl.GL20.GL_FLOAT_MAT4
+	org.lwjgl.opengl.GL30.GL_HALF_FLOAT
+	org.lwjgl.opengl.GL12.GL_UNSIGNED_INT_2_10_10_10_REV
+	org.lwjgl.opengl.GL30.GL_UNSIGNED_INT_10F_11F_11F_REV
+	org.lwjgl.opengl.GL30.GL_FLOAT_32_UNSIGNED_INT_24_8_REV
+	org.lwjgl.opengl.GL30.GL_UNSIGNED_INT_24_8
 
 group int gl_framebuffer_attachment
 	com.mojang.blaze3d.opengl.GlConst.GL_COLOR_ATTACHMENT0
@@ -152,14 +258,14 @@ group int gpu_texture_usage
 	com.mojang.blaze3d.textures.GpuTexture.USAGE_RENDER_ATTACHMENT
 	com.mojang.blaze3d.textures.GpuTexture.USAGE_CUBEMAP_COMPATIBLE
 
-# BlendMode
+# BlendOp
 
-group int gl_blend_equation_mode
+group int gl_blend_op
 	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_ADD
-	com.mojang.blaze3d.opengl.GlConst.GL_MIN
-	com.mojang.blaze3d.opengl.GlConst.GL_MAX
 	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_SUBTRACT
 	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_REVERSE_SUBTRACT
+	com.mojang.blaze3d.opengl.GlConst.GL_MIN
+	com.mojang.blaze3d.opengl.GlConst.GL_MAX
 
 # GlDebugLabel
 group int gl_khr_label_identifier
@@ -240,10 +346,13 @@ group int gl_program_pname
 
 # note: glGetProgramInfoLog 32768 is not a const or flag
 
-# TimerQuery
+# TimerQuery, GlQueryPool
 
 group int gl_query_target
 	org.lwjgl.opengl.GL33.GL_TIME_ELAPSED
+
+group int gl_query_counter_target
+	org.lwjgl.opengl.GL33.GL_TIMESTAMP
 
 group int gl_query_object_pname
 	org.lwjgl.opengl.GL15.GL_QUERY_RESULT
@@ -259,6 +368,14 @@ group int gl_texture
 group int gl_shader_type
 	com.mojang.blaze3d.opengl.GlConst.GL_VERTEX_SHADER
 	com.mojang.blaze3d.opengl.GlConst.GL_FRAGMENT_SHADER
+
+group int gl_clip_origin
+	org.lwjgl.opengl.ARBClipControl.GL_LOWER_LEFT
+	org.lwjgl.opengl.ARBClipControl.GL_UPPER_LEFT
+
+group int gl_clip_depth
+	org.lwjgl.opengl.ARBClipControl.GL_NEGATIVE_ONE_TO_ONE
+	org.lwjgl.opengl.ARBClipControl.GL_ZERO_TO_ONE
 
 # VertexBuffer
 group int gl_buffer_target
@@ -294,9 +411,10 @@ group int gl_get_string_name
 # GlStateManager
 
 group int gl_get_value_pname
-	org.lwjgl.opengl.GL11.GL_MAX_TEXTURE_SIZE
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
+	org.lwjgl.opengl.GL11.GL_MAX_TEXTURE_SIZE
 	org.lwjgl.opengl.GL31.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
+	org.lwjgl.opengl.GL33.GL_TIMESTAMP
 	org.lwjgl.opengl.GL46.GL_MAX_TEXTURE_MAX_ANISOTROPY
 
 group int gl_logic_op
@@ -317,7 +435,7 @@ group int gl_logic_op
 	org.lwjgl.opengl.GL11.GL_NAND
 	org.lwjgl.opengl.GL11.GL_SET
 
-group int gl_blend_func_factor
+group int gl_blend_factor
 	org.lwjgl.opengl.GL11.GL_SRC_ALPHA_SATURATE
 	org.lwjgl.opengl.GL14.GL_CONSTANT_ALPHA
 	org.lwjgl.opengl.GL14.GL_CONSTANT_COLOR
@@ -370,19 +488,19 @@ target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platfo
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/PolygonMode;)I
 	return gl_polygon_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/DestFactor;)I
-	return gl_blend_func_factor
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/SourceFactor;)I
-	return gl_blend_func_factor
+target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/BlendFactor;)I
+	return gl_blend_factor
+
+target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/BlendOp;)I
+	return gl_blend_op
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;)I
 	return gl_draw_mode
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/vertex/VertexFormat$IndexType;)I
 	return gl_type
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/vertex/VertexFormatElement$Type;)I
-	return gl_type
-target_method com.mojang.blaze3d.opengl.GlConst toGlType (Lcom/mojang/blaze3d/textures/TextureFormat;)I
+
+target_method com.mojang.blaze3d.opengl.GlConst toGlType (Lcom/mojang/blaze3d/GpuFormat;)I
 	return gl_type
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/NativeImage$Format;)I
@@ -391,9 +509,14 @@ target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platfo
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/textures/AddressMode;)I
 	return gl_address_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst toGlInternalId (Lcom/mojang/blaze3d/textures/TextureFormat;)I
-	return gl_tex_format
-target_method com.mojang.blaze3d.opengl.GlConst toGlExternalId (Lcom/mojang/blaze3d/textures/TextureFormat;)I
+target_method com.mojang.blaze3d.opengl.GlConst glFormatChannelCount (I)I
+	param 0 gl_tex_format
+target_method com.mojang.blaze3d.opengl.GlConst isGlFormatInteger (I)Z
+	param 0 gl_tex_format
+
+target_method com.mojang.blaze3d.opengl.GlConst toGlInternalId (Lcom/mojang/blaze3d/GpuFormat;)I
+	return gl_internal_tex_format
+target_method com.mojang.blaze3d.opengl.GlConst toGlExternalId (Lcom/mojang/blaze3d/GpuFormat;)I
 	return gl_tex_format
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/shaders/ShaderType;)I
@@ -462,7 +585,7 @@ target_method org.lwjgl.opengl.GL33C glSamplerParameterf (IIF)V
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _texImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
 	param 0 gl_tex_target
-	param 2 gl_tex_format
+	param 2 gl_internal_tex_format
 	param 6 gl_tex_format
 	param 7 gl_type
 
@@ -481,10 +604,6 @@ target_method org.lwjgl.opengl.GL11 glBindTexture (II)V
 	param 0 gl_tex_target
 target_method org.lwjgl.opengl.GL11C glBindTexture (II)V
 	param 0 gl_tex_target
-target_method org.lwjgl.opengl.GL11 glTexImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
-	param 0 gl_tex_target
-	param 2 gl_tex_format
-	param 6 gl_tex_format
 target_method org.lwjgl.opengl.GL11 glTexParameteri (III)V
 	param 0 gl_tex_target
 target_method org.lwjgl.opengl.GL31 glTexBuffer (III)V
@@ -545,9 +664,14 @@ target_method org.lwjgl.opengl.GL15C glBeginQuery (II)V
 target_method org.lwjgl.opengl.GL15C glEndQuery (I)V
 	param 0 gl_query_target
 
+target_method org.lwjgl.opengl.GL33C glQueryCounter (II)V
+	param 1 gl_query_counter_target
+
 target_method org.lwjgl.opengl.GL15C glGetQueryObjecti (II)I
 	param 1 gl_query_object_pname
 target_method org.lwjgl.opengl.ARBTimerQuery glGetQueryObjecti64 (II)J
+	param 1 gl_query_object_pname
+target_method org.lwjgl.opengl.GL33C glGetQueryObjectui64 (II)J
 	param 1 gl_query_object_pname
 
 target_method com.mojang.blaze3d.opengl.DirectStateAccess$Emulated selectBufferBindTarget (I)I
@@ -606,6 +730,8 @@ target_method org.lwjgl.opengl.GL11 glGetInteger (I)I
 	param 0 gl_get_value_pname
 target_method org.lwjgl.opengl.GL11 glGetFloat (I)F
 	param 0 gl_get_value_pname
+target_method org.lwjgl.opengl.GL32C glGetInteger64 (I)J # todo recheck in the source this is called from GL33C
+	param 0 gl_get_value_pname
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _logicOp (I)V
 	param 0 gl_logic_op
@@ -620,3 +746,7 @@ target_method org.lwjgl.opengl.KHRDebug glObjectLabel (IILjava/lang/CharSequence
 
 target_method org.lwjgl.opengl.EXTDebugLabel glLabelObjectEXT (IILjava/lang/CharSequence;)V
 	param 0 gl_ext_label_identifier
+
+target_method org.lwjgl.opengl.ARBClipControl glClipControl (II)V
+	param 0 gl_clip_origin
+	param 1 gl_clip_depth

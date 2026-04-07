@@ -189,8 +189,8 @@ target_method net.minecraft.client.gui.screens.advancements.AdvancementWidget ex
 target_method net.minecraft.client.particle.SquidInkParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDILnet/minecraft/client/particle/SpriteSet;)V
 	param 7 argb_color
 
-target_method net.minecraft.client.renderer.LevelRenderer renderHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDLnet/minecraft/client/renderer/state/level/BlockOutlineRenderState;IF)V
-	param 6 argb_color
+target_method net.minecraft.client.renderer.LevelRenderer submitHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/state/level/BlockOutlineRenderState;IFZ)V
+	param 4 argb_color
 
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 	param 8 argb_color
