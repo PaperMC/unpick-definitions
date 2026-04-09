@@ -1,0 +1,200 @@
+unpick v4
+
+# Unpick definition for VK
+
+# Editing Note:
+# This file sorts constant declarations by the class name it is
+# most frequently used in. Lines declaring or using the same constants
+# are grouped.
+
+# Where possible, this will unpick the constant using values from
+# the game jar (usually VulkanConst in Blaze3D.) If there is no applicable
+# field there, this will use the value from VKxx class in LWJGL,
+# where XX is the lowest version the constant is available in.
+
+# This does not unpick all constants in LWJGL; that'd become
+# too big and target methods become harder to maintain.
+# Only constants that need unpicking in vanilla are listed.
+
+# VulkanConst
+group int vk_image_usage_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_TRANSFER_SRC_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_TRANSFER_DST_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_SAMPLED_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT
+
+group int vk_buffer_usage_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_TRANSFER_SRC_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_TRANSFER_DST_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_UNIFORM_TEXEL_BUFFER_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_INDEX_BUFFER_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_VERTEX_BUFFER_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT
+
+group int vk_image_aspect_mask
+	@flags
+	org.lwjgl.vulkan.VK10.VK_IMAGE_ASPECT_COLOR_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_ASPECT_DEPTH_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_ASPECT_STENCIL_BIT
+
+group int vk_sampler_address_mode
+	org.lwjgl.vulkan.VK10.VK_SAMPLER_ADDRESS_MODE_REPEAT
+	org.lwjgl.vulkan.VK10.VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE
+
+group int vk_filter
+	org.lwjgl.vulkan.VK10.VK_FILTER_NEAREST
+	org.lwjgl.vulkan.VK10.VK_FILTER_LINEAR
+
+group int vk_image_format
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8A8_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8A8_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8A8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R8G8B8A8_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_A2R10G10B10_SINT_PACK32
+	org.lwjgl.vulkan.VK10.VK_FORMAT_A2B10G10R10_UNORM_PACK32
+	org.lwjgl.vulkan.VK10.VK_FORMAT_A2B10G10R10_UINT_PACK32
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_USCALED
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16A16_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16A16_SNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16A16_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16A16_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R16G16B16A16_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32A32_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32A32_SINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_R32G32B32A32_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_B10G11R11_UFLOAT_PACK32
+	org.lwjgl.vulkan.VK10.VK_FORMAT_D16_UNORM
+	org.lwjgl.vulkan.VK10.VK_FORMAT_D32_SFLOAT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_S8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_D24_UNORM_S8_UINT
+	org.lwjgl.vulkan.VK10.VK_FORMAT_D32_SFLOAT_S8_UINT
+
+group int vk_blend_factor
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ZERO
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_SRC_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_SRC_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_DST_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_DST_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_SRC_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_DST_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_DST_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_CONSTANT_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_CONSTANT_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA
+	org.lwjgl.vulkan.VK10.VK_BLEND_FACTOR_SRC_ALPHA_SATURATE
+
+group int vk_blend_op
+	org.lwjgl.vulkan.VK10.VK_BLEND_OP_ADD
+	org.lwjgl.vulkan.VK10.VK_BLEND_OP_SUBTRACT
+	org.lwjgl.vulkan.VK10.VK_BLEND_OP_REVERSE_SUBTRACT
+	org.lwjgl.vulkan.VK10.VK_BLEND_OP_MIN
+	org.lwjgl.vulkan.VK10.VK_BLEND_OP_MAX
+
+group int vk_compare_op
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_NEVER
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_LESS
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_EQUAL
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_LESS_OR_EQUAL
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_GREATER
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_NOT_EQUAL
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_GREATER_OR_EQUAL
+	org.lwjgl.vulkan.VK10.VK_COMPARE_OP_ALWAYS
+
+group int vk_polygon_mode
+	org.lwjgl.vulkan.VK10.VK_POLYGON_MODE_FILL
+	org.lwjgl.vulkan.VK10.VK_POLYGON_MODE_LINE
+
+group int vk_primitive_topology
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_POINT_LIST
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_LINE_LIST
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_LINE_STRIP
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP
+	org.lwjgl.vulkan.VK10.VK_PRIMITIVE_TOPOLOGY_TRIANGLE_FAN
+
+group int vk_color_component_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_R_BIT
+	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_G_BIT
+	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_B_BIT
+	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_A_BIT
+
+# Target definition
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst textureUsageToVk (ILcom/mojang/blaze3d/GpuFormat;)I
+	return vk_image_usage_flags
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst bufferUsageToVk (I)I
+	return vk_buffer_usage_flags
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst formatAspectMask (Lcom/mojang/blaze3d/GpuFormat;)I
+	return vk_image_aspect_mask
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/textures/AddressMode;)I
+	return vk_sampler_address_mode
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/textures/FilterMode;)I
+	return vk_filter
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/GpuFormat;)I
+	return vk_image_format
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/platform/BlendFactor;)I
+	return vk_blend_factor
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/platform/BlendOp;)I
+	return vk_blend_op
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/platform/CompareOp;)I
+	return vk_compare_op
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/platform/PolygonMode;)I
+	return vk_polygon_mode
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;)I
+	return vk_primitive_topology
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/pipeline/ColorTargetState;)I
+	return vk_color_component_flags

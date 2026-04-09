@@ -623,7 +623,7 @@ target_method org.lwjgl.opengl.GL11 glGetInteger (I)I
 	param 0 gl_get_number_pname
 target_method org.lwjgl.opengl.GL11 glGetFloat (I)F
 	param 0 gl_get_number_pname
-target_method org.lwjgl.opengl.GL32C glGetInteger64 (I)J # in the source this is called from GL33C which extends GL32C
+target_method org.lwjgl.opengl.GL32C glGetInteger64 (I)J
 	param 0 gl_get_number_pname
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _logicOp (I)V
