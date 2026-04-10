@@ -161,6 +161,15 @@ group int vk_color_component_flags
 	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_B_BIT
 	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_A_BIT
 
+# VulkanRenderPipeline
+group int vk_object_type
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_BUFFER
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_IMAGE
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_IMAGE_VIEW
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_SHADER_MODULE
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE_LAYOUT
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE
+
 # Target definition
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst textureUsageToVk (ILcom/mojang/blaze3d/GpuFormat;)I
@@ -198,3 +207,8 @@ target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/ve
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/pipeline/ColorTargetState;)I
 	return vk_color_component_flags
+
+target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/lang/String;)V
+	param 1 vk_object_type
+target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/util/function/Supplier;)V
+	param 1 vk_object_type
