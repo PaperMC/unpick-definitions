@@ -272,27 +272,6 @@ group int gl_buffer_target
 	com.mojang.blaze3d.opengl.GlConst.GL_PIXEL_UNPACK_BUFFER
 	com.mojang.blaze3d.opengl.GlConst.GL_UNIFORM_BUFFER
 
-# These appear to be Mojang-defined, not in GL.
-group int gpu_buffer_usage
-	@flags
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_MAP_READ
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_MAP_WRITE
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_HINT_CLIENT_STORAGE
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_COPY_DST
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_COPY_SRC
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_VERTEX
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_INDEX
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM
-	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM_TEXEL_BUFFER
-
-group int gpu_texture_usage
-	@flags
-	com.mojang.blaze3d.textures.GpuTexture.USAGE_COPY_DST
-	com.mojang.blaze3d.textures.GpuTexture.USAGE_COPY_SRC
-	com.mojang.blaze3d.textures.GpuTexture.USAGE_TEXTURE_BINDING
-	com.mojang.blaze3d.textures.GpuTexture.USAGE_RENDER_ATTACHMENT
-	com.mojang.blaze3d.textures.GpuTexture.USAGE_CUBEMAP_COMPATIBLE
-
 # GlDebugLabel
 group int gl_khr_label_identifier
 	org.lwjgl.opengl.KHRDebug.GL_BUFFER
@@ -480,9 +459,6 @@ target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/shader
 	return gl_shader_type
 target_method com.mojang.blaze3d.opengl.GlStateManager glCreateShader (I)I
 	param 0 gl_shader_type
-
-target_annotation com.mojang.blaze3d.textures.GpuTexture$Usage gpu_texture_usage
-target_annotation com.mojang.blaze3d.buffers.GpuBuffer$Usage gpu_buffer_usage
 
 target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlEnum (I)I
 	return gl_buffer_data_usage

@@ -1,0 +1,36 @@
+unpick v4
+
+group int gpu_buffer_usage
+	@flags
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_MAP_READ
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_MAP_WRITE
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_HINT_CLIENT_STORAGE
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_COPY_DST
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_COPY_SRC
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_VERTEX
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_INDEX
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM_TEXEL_BUFFER
+
+group int gpu_texture_usage
+	@flags
+	com.mojang.blaze3d.textures.GpuTexture.USAGE_COPY_DST
+	com.mojang.blaze3d.textures.GpuTexture.USAGE_COPY_SRC
+	com.mojang.blaze3d.textures.GpuTexture.USAGE_TEXTURE_BINDING
+	com.mojang.blaze3d.textures.GpuTexture.USAGE_RENDER_ATTACHMENT
+	com.mojang.blaze3d.textures.GpuTexture.USAGE_CUBEMAP_COMPATIBLE
+
+group int color_target_write_flags
+	@flags
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_RED
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_GREEN
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_BLUE
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALPHA
+
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_COLOR
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALL
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_NONE
+
+target_annotation com.mojang.blaze3d.buffers.GpuBuffer$Usage gpu_buffer_usage
+target_annotation com.mojang.blaze3d.textures.GpuTexture$Usage gpu_texture_usage
+target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags
