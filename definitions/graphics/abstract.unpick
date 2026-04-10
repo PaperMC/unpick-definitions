@@ -34,3 +34,9 @@ group int color_target_write_flags
 target_annotation com.mojang.blaze3d.buffers.GpuBuffer$Usage gpu_buffer_usage
 target_annotation com.mojang.blaze3d.textures.GpuTexture$Usage gpu_texture_usage
 target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags
+
+# Mojang forgetting the annotations again...
+target_method com.mojang.blaze3d.vulkan.VulkanDevice createBuffer (Ljava/util/function/Supplier;IJ)Lcom/mojang/blaze3d/buffers/GpuBuffer;
+	param 1 gpu_buffer_usage
+target_method com.mojang.blaze3d.vulkan.VulkanDevice createBuffer (Ljava/util/function/Supplier;ILjava/nio/ByteBuffer;)Lcom/mojang/blaze3d/buffers/GpuBuffer;
+	param 1 gpu_buffer_usage

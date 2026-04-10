@@ -49,6 +49,7 @@ group int vk_filter
 	org.lwjgl.vulkan.VK10.VK_FILTER_LINEAR
 
 group int vk_image_format
+	org.lwjgl.vulkan.VK10.VK_FORMAT_UNDEFINED
 	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_UNORM
 	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_SNORM
 	org.lwjgl.vulkan.VK10.VK_FORMAT_R8_UINT
@@ -170,6 +171,128 @@ group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE_LAYOUT
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE
 
+# VulkanBackend
+group int vk_structure_type
+	org.lwjgl.vulkan.VK12.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES
+	org.lwjgl.vulkan.VK11.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2
+	org.lwjgl.vulkan.KHRSynchronization2.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR
+	org.lwjgl.vulkan.KHRDynamicRendering.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR
+
+group int vk_physical_device_type
+	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_OTHER
+	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU
+	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU
+
+# VulkanBindGroupLayout
+group int vk_shader_stage_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_VERTEX_BIT
+	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_FRAGMENT_BIT
+
+group int vk_descriptor_set_layout_create_flags
+	@flags
+	org.lwjgl.vulkan.KHRPushDescriptor.VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR
+
+# VulkanCommandEncoder
+group int vk_semaphore_type
+	org.lwjgl.vulkan.VK12.VK_SEMAPHORE_TYPE_BINARY
+	org.lwjgl.vulkan.VK12.VK_SEMAPHORE_TYPE_TIMELINE
+
+group int vk_command_pool_create_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_COMMAND_POOL_CREATE_TRANSIENT_BIT
+
+group int vk_command_buffer_level
+	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_LEVEL_PRIMARY
+	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_LEVEL_SECONDARY
+
+group int vk_command_buffer_usage_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
+	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE_BIT
+	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT
+
+group int vk_sample_count_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_SAMPLE_COUNT_1_BIT
+
+group long vk_pipeline_stage_flags
+	@flags
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_NONE_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TRANSFER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT_KHR
+
+group long vk_access_flags
+	@flags
+	org.lwjgl.vulkan.KHRSynchronization2.VK_ACCESS_2_TRANSFER_READ_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_ACCESS_2_MEMORY_READ_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_ACCESS_2_MEMORY_WRITE_BIT_KHR
+
+group int vk_image_layout
+	org.lwjgl.vulkan.VK10.VK_IMAGE_LAYOUT_UNDEFINED
+	org.lwjgl.vulkan.VK10.VK_IMAGE_LAYOUT_GENERAL
+
+group int vk_attachment_store_op
+	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_STORE_OP_STORE
+	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_STORE_OP_DONT_CARE
+
+group int vk_attachment_load_op
+	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_LOAD_OP_LOAD
+	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_LOAD_OP_CLEAR
+
+group int vk_rendering_flags
+	@flags
+	org.lwjgl.vulkan.KHRDynamicRendering.VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR
+
+group int vk_query_result_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_64_BIT
+	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WAIT_BIT
+	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WITH_AVAILABILITY_BIT
+
+# VulkanDebug
+group int vk_debug_message_type_flags
+	@flags
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT
+
+	com.mojang.blaze3d.vulkan.VulkanDebug$Enabled.MESSAGE_TYPE_BITMASK
+
+group int vk_debug_message_severity_flags
+	@flags
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT
+	org.lwjgl.vulkan.EXTDebugUtils.VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT
+
+group int vk_bool
+	org.lwjgl.vulkan.VK10.VK_TRUE
+	org.lwjgl.vulkan.VK10.VK_FALSE
+
+# VulkanDevice
+# group int vk_vendor_id
+#	org.lwjgl.bgfx.BGFX.BGFX_PCI_ID_INTEL
+
+group int vk_driver_id # probably wrong
+	org.lwjgl.vulkan.VK12.VK_DRIVER_ID_MOLTENVK
+
+group long vk_handle
+	org.lwjgl.vulkan.VK10.VK_NULL_HANDLE
+
+group long vk_handle
+	@scope class com.mojang.blaze3d.vulkan.VulkanDevice
+	@scope class com.mojang.blaze3d.vulkan.VulkanRenderPipeline
+	com.mojang.blaze3d.vulkan.VulkanRenderPipeline.INVALID_PIPELINE
+
+
+
+# VulkanRenderPass
+group int vk_descriptor_type
+	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER
+	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER
+	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER
+
 # Target definition
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst textureUsageToVk (ILcom/mojang/blaze3d/GpuFormat;)I
@@ -180,6 +303,12 @@ target_method com.mojang.blaze3d.vulkan.VulkanConst bufferUsageToVk (I)I
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst formatAspectMask (Lcom/mojang/blaze3d/GpuFormat;)I
 	return vk_image_aspect_mask
+target_method org.lwjgl.vulkan.VkImageSubresourceRange aspectMask (I)Lorg/lwjgl/vulkan/VkImageSubresourceRange;
+	param 0 vk_image_aspect_mask
+target_method org.lwjgl.vulkan.VkClearAttachment$Buffer aspectMask (I)Lorg/lwjgl/vulkan/VkClearAttachment$Buffer;
+	param 0 vk_image_aspect_mask
+target_method org.lwjgl.vulkan.VkImageSubresourceLayers aspectMask (I)Lorg/lwjgl/vulkan/VkImageSubresourceLayers;
+	param 0 vk_image_aspect_mask
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/textures/AddressMode;)I
 	return vk_sampler_address_mode
@@ -212,3 +341,113 @@ target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vu
 	param 1 vk_object_type
 target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/util/function/Supplier;)V
 	param 1 vk_object_type
+
+target_method com.mojang.blaze3d.vulkan.init.VulkanPNextStruct <init> (II)V
+	param 0 vk_structure_type
+target_method com.mojang.blaze3d.vulkan.init.VulkanPNextStruct sType ()I
+	return vk_structure_type
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceProperties deviceType ()I
+	return vk_physical_device_type
+
+target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding stageFlags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutBinding;
+	param 0 vk_shader_stage_flags
+
+target_method org.lwjgl.vulkan.VkDescriptorSetLayoutCreateInfo flags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutCreateInfo;
+	param 0 vk_descriptor_set_layout_create_flags
+
+target_method org.lwjgl.vulkan.VkSemaphoreTypeCreateInfo semaphoreType (I)Lorg/lwjgl/vulkan/VkSemaphoreTypeCreateInfo;
+	param 0 vk_semaphore_type
+
+target_method org.lwjgl.vulkan.VkCommandPoolCreateInfo flags (I)Lorg/lwjgl/vulkan/VkCommandPoolCreateInfo;
+	param 0 vk_command_pool_create_flags
+
+target_method org.lwjgl.vulkan.VkCommandBufferAllocateInfo level (I)Lorg/lwjgl/vulkan/VkCommandBufferAllocateInfo;
+	param 0 vk_command_buffer_level
+
+target_method org.lwjgl.vulkan.VkCommandBufferBeginInfo flags (I)Lorg/lwjgl/vulkan/VkCommandBufferBeginInfo;
+	param 0 vk_command_buffer_usage_flags
+
+target_method org.lwjgl.vulkan.VkCommandBufferInheritanceRenderingInfo rasterizationSamples (I)Lorg/lwjgl/vulkan/VkCommandBufferInheritanceRenderingInfo;
+	param 0 vk_sample_count_flags
+
+target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer srcStageMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
+	param 0 vk_pipeline_stage_flags
+target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer dstStageMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
+	param 0 vk_pipeline_stage_flags
+target_method com.mojang.blaze3d.vulkan.VulkanCommandEncoder waitSemaphore (JJJ)V
+	param 2 vk_pipeline_stage_flags
+target_method com.mojang.blaze3d.vulkan.VulkanCommandEncoder signalSemaphore (JJJ)V
+	param 2 vk_pipeline_stage_flags
+target_method org.lwjgl.vulkan.KHRSynchronization2 vkCmdWriteTimestamp2KHR (Lorg/lwjgl/vulkan/VkCommandBuffer;JJI)V
+	param 1 vk_pipeline_stage_flags
+
+target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer srcAccessMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
+	param 0 vk_access_flags
+target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer dstAccessMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
+	param 0 vk_access_flags
+
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo imageLayout (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo;
+	param 0 vk_image_layout
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer imageLayout (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
+	param 0 vk_image_layout
+target_method org.lwjgl.vulkan.VK10 vkCmdClearColorImage (Lorg/lwjgl/vulkan/VkCommandBuffer;JILorg/lwjgl/vulkan/VkClearColorValue;Lorg/lwjgl/vulkan/VkImageSubresourceRange;)V
+	param 2 vk_image_layout
+target_method org.lwjgl.vulkan.VK10 vkCmdClearDepthStencilImage (Lorg/lwjgl/vulkan/VkCommandBuffer;JILorg/lwjgl/vulkan/VkClearDepthStencilValue;Lorg/lwjgl/vulkan/VkImageSubresourceRange;)V
+	param 2 vk_image_layout
+target_method org.lwjgl.vulkan.VK10 vkCmdCopyBufferToImage (Lorg/lwjgl/vulkan/VkCommandBuffer;JJILorg/lwjgl/vulkan/VkBufferImageCopy$Buffer;)V
+	param 3 vk_image_layout
+target_method org.lwjgl.vulkan.VK10 vkCmdCopyImageToBuffer (Lorg/lwjgl/vulkan/VkCommandBuffer;JIJLorg/lwjgl/vulkan/VkBufferImageCopy$Buffer;)V
+	param 2 vk_image_layout
+target_method org.lwjgl.vulkan.VK10 vkCmdCopyImage (Lorg/lwjgl/vulkan/VkCommandBuffer;JIJILorg/lwjgl/vulkan/VkImageCopy$Buffer;)V
+	param 2 vk_image_layout
+	param 4 vk_image_layout
+
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo storeOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo;
+	param 0 vk_attachment_store_op
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer storeOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
+	param 0 vk_attachment_store_op
+
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo loadOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo;
+	param 0 vk_attachment_load_op
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer loadOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
+	param 0 vk_attachment_load_op
+
+target_method com.mojang.blaze3d.vulkan.VulkanCommandEncoder renderpassCommandBuffer (Ljava/nio/IntBuffer;I)Lorg/lwjgl/vulkan/VkCommandBuffer;
+	param 1 vk_image_format
+
+target_method org.lwjgl.vulkan.VkRenderingInfo flags (I)Lorg/lwjgl/vulkan/VkRenderingInfo;
+	param 0 vk_rendering_flags
+
+target_method org.lwjgl.vulkan.VK10 vkGetQueryPoolResults (Lorg/lwjgl/vulkan/VkDevice;JIILjava/nio/LongBuffer;JI)I
+	param 6 vk_query_result_flags
+
+target_field com.mojang.blaze3d.vulkan.VulkanDebug$Enabled MESSAGE_TYPE_BITMASK I vk_debug_message_type_flags
+target_method org.lwjgl.vulkan.VkDebugUtilsMessengerCreateInfoEXT messageType (I)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCreateInfoEXT;
+	param 0 vk_debug_message_type_flags
+
+target_method com.mojang.blaze3d.vulkan.VulkanDebug$Enabled onDebugMessage (IIJJ)I
+	param 0 vk_debug_message_severity_flags
+	return vk_bool
+
+#target_method org.lwjgl.vulkan.VkPhysicalDeviceProperties vendorID ()I
+#	return vk_vendor_id
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceDriverProperties driverID ()I
+	return vk_driver_id
+
+target_field com.mojang.blaze3d.vulkan.VulkanRenderPipeline withDepthPipeline J vk_handle
+target_method com.mojang.blaze3d.vulkan.VulkanRenderPipeline <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/vulkan/VulkanDevice;JJJLcom/mojang/blaze3d/vulkan/VulkanBindGroupLayout;JJ)V
+	param 2 vk_handle
+	param 3 vk_handle
+	param 4 vk_handle
+
+
+
+
+
+target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding descriptorType (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutBinding;
+	param 0 vk_descriptor_type
+target_method org.lwjgl.vulkan.VkWriteDescriptorSet descriptorType (I)Lorg/lwjgl/vulkan/VkWriteDescriptorSet;
+	param 0 vk_descriptor_type
+
