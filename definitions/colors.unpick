@@ -154,6 +154,8 @@ target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Ln
 	param 5 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIIIZ)V
 	param 5 argb_color
+target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithBackdrop (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIII)V
+	param 5 argb_color
 
 target_method net.minecraft.client.gui.components.CommandSuggestions <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/gui/components/EditBox;Lnet/minecraft/client/gui/Font;ZZIIZI)V
 	param 9 argb_color
@@ -183,6 +185,9 @@ target_method net.minecraft.client.gui.components.debugchart.AbstractDebugChart 
 	param 4 argb_color
 	param 6 argb_color
 
+target_method net.minecraft.client.gui.components.toasts.SystemToast extractTextLines (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;Ljava/util/List;II)V
+	param 4 argb_color
+
 target_method net.minecraft.client.gui.screens.advancements.AdvancementWidget extractMultilineText (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Ljava/util/List;III)V
 	param 4 argb_color
 
@@ -201,6 +206,13 @@ target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitMod
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;IIILnet/minecraft/client/resources/model/sprite/SpriteId;Lnet/minecraft/client/resources/model/sprite/SpriteGetter;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 	param 5 argb_color
 	param 8 argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 6	argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+	param 6 argb_color
+	param 8 argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitShapeOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/client/renderer/rendertype/RenderType;IFZ)V
+	param 3 argb_color
 
 target_method net.minecraft.client.renderer.debug.BeeDebugRenderer renderTextOverHive (Ljava/lang/String;Lnet/minecraft/core/BlockPos;II)V
 	param 3 argb_color

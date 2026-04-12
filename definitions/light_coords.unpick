@@ -17,9 +17,6 @@ target_method com.mojang.blaze3d.vertex.VertexConsumer setLight (I)Lcom/mojang/b
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
 	param 7 light_coords
 
-target_method net.minecraft.client.model.Model renderToBuffer (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
-	param 2 light_coords
-
 target_method net.minecraft.client.particle.Particle getLightCoords (F)I
 	return light_coords
 
