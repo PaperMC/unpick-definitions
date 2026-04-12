@@ -8,7 +8,7 @@ unpick v4
 # are grouped.
 
 # Where possible, this will unpick the constant using values from
-# the game jar (usually VulkanConst in Blaze3D.) If there is no applicable
+# the client jar (usually VulkanConst in Blaze3D). If there is no applicable
 # field there, this will use the value from VKxx class in LWJGL,
 # where XX is the lowest version the constant is available in.
 
