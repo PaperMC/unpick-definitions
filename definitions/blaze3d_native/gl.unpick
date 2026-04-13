@@ -330,6 +330,9 @@ group int gl_program_pname
 
 # note: glGetProgramInfoLog 32768 is the maxLength
 
+group int gl_index
+	org.lwjgl.opengl.GL31.GL_INVALID_INDEX
+
 # GlQueryPool
 group int gl_query_counter_target
 	org.lwjgl.opengl.GL33.GL_TIMESTAMP
@@ -352,6 +355,7 @@ group int gl_clip_depth
 	org.lwjgl.opengl.ARBClipControl.GL_ZERO_TO_ONE
 
 group int gl_error
+	org.lwjgl.opengl.GL11.GL_NO_ERROR
 	com.mojang.blaze3d.opengl.GlConst.GL_OUT_OF_MEMORY
 
 group int gl_get_string_name
@@ -567,6 +571,9 @@ target_method com.mojang.blaze3d.opengl.GlStateManager glGetProgrami (II)I
 	param 1 gl_program_pname
 target_method com.mojang.blaze3d.opengl.GlStateManager glGetShaderi (II)I
 	param 1 gl_program_pname
+
+target_method org.lwjgl.opengl.GL31 glGetUniformBlockIndex (ILjava/lang/CharSequence;)I
+	return gl_index
 
 target_method org.lwjgl.opengl.GL33C glQueryCounter (II)V
 	param 1 gl_query_counter_target
