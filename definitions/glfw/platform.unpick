@@ -8,10 +8,12 @@ group int glfw_platform_value
 	org.lwjgl.glfw.GLFW.GLFW_PLATFORM_X11
 	org.lwjgl.glfw.GLFW.GLFW_PLATFORM_NULL
 
-target_method org.lwjgl.glfw.GLFW glfwGetPlatform ()I
-	return glfw_platform_value
 target_method org.lwjgl.glfw.GLFW glfwPlatformSupported (I)Z
 	param 0 glfw_platform_value
+
+target_field com.mojang.blaze3d.platform.GLX glfwPlatformType I glfw_platform_value # not replaced
+target_method com.mojang.blaze3d.platform.GLX getGlfwPlatform ()I
+	return glfw_platform_value
 
 group int macos_style_mask
 	@flags

@@ -163,6 +163,12 @@ group int vk_color_component_flags
 	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_B_BIT
 	org.lwjgl.vulkan.VK10.VK_COLOR_COMPONENT_A_BIT
 
+group int vk_present_mode
+	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_IMMEDIATE_KHR
+	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_MAILBOX_KHR
+	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_FIFO_KHR
+	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_FIFO_RELAXED_KHR
+
 # VulkanRenderPipeline
 group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_BUFFER
@@ -461,6 +467,9 @@ target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/ve
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/pipeline/ColorTargetState;)I
 	return vk_color_component_flags
+
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/systems/GpuSurface$PresentMode;)I
+	return vk_present_mode
 
 target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/lang/String;)V
 	param 1 vk_object_type
