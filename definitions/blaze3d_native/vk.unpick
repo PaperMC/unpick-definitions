@@ -276,7 +276,7 @@ group int vk_bool
 	org.lwjgl.vulkan.VK10.VK_FALSE
 
 # VulkanDevice
-# group int vk_vendor_id
+# group int vk_vendor_id can't find those constants in LWJGL? only standard ones
 #	org.lwjgl.bgfx.BGFX.BGFX_PCI_ID_INTEL
 
 group int vk_driver_id # probably wrong

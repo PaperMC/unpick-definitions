@@ -232,7 +232,9 @@ target_method net.minecraft.client.renderer.blockentity.AbstractSignRenderer get
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
 	return argb_color
 
-#target_field net.minecraft.client.renderer.state.gui.BlitRenderState color I argb_color
+target_method net.minecraft.client.renderer.state.gui.BlitRenderState <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIFFFFILnet/minecraft/client/gui/navigation/ScreenRectangle;Lnet/minecraft/client/gui/navigation/ScreenRectangle;)V
+	param 11 argb_color
+
 target_method net.minecraft.client.renderer.state.gui.ColoredRectangleRenderState <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIIILnet/minecraft/client/gui/navigation/ScreenRectangle;)V
 	param 7 argb_color
 	param 8 argb_color

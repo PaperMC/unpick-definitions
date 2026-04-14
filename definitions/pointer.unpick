@@ -3,10 +3,11 @@ unpick v4
 group long pointer
 	org.lwjgl.system.MemoryUtil.NULL
 
-target_field com.mojang.blaze3d.opengl.GlFence handle J pointer
-target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
-target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
-target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer
+target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
+	return pointer
+
+target_method org.lwjgl.PointerBuffer get ()J
+	return pointer
 
 target_method org.lwjgl.glfw.GLFW glfwGetPrimaryMonitor ()J
 	return pointer
@@ -24,13 +25,21 @@ target_method org.lwjgl.glfw.GLFW glfwSetWindowMonitor(JJIIIII)V
 	param 1 pointer
 target_method org.lwjgl.glfw.GLFW glfwCreateStandardCursor(I)J
 	return pointer
-
-target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
+target_method org.lwjgl.glfw.GLFW glfwCreateWindow (IILjava/lang/CharSequence;JJ)J
+	param 4 pointer
 	return pointer
 
-target_method org.lwjgl.PointerBuffer get ()J
-	return pointer
-
-target_field com.mojang.blaze3d.audio.Library currentDevice J pointer
 target_method org.lwjgl.openal.ALC10 alcOpenDevice (Ljava/lang/CharSequence;)J
 	return pointer
+
+target_method org.lwjgl.stb.STBImageWrite nstbi_write_png_to_func (JJIIIJI)I
+	param 1 pointer
+
+target_method com.mojang.blaze3d.platform.cursor.CursorType <init> (Ljava/lang/String;J)V
+	param 1 pointer
+
+target_field com.mojang.blaze3d.audio.Library currentDevice J pointer
+target_field com.mojang.blaze3d.opengl.GlFence handle J pointer
+target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
+target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
+target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer

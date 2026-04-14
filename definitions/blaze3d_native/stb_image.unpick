@@ -1,0 +1,11 @@
+unpick v4
+
+group int stb_image_format
+	org.lwjgl.stb.STBImage.STBI_default
+	org.lwjgl.stb.STBImage.STBI_grey
+	org.lwjgl.stb.STBImage.STBI_grey_alpha
+	org.lwjgl.stb.STBImage.STBI_rgb
+	org.lwjgl.stb.STBImage.STBI_rgb_alpha
+
+target_method com.mojang.blaze3d.platform.NativeImage$Format getStbFormat (I)Lcom/mojang/blaze3d/platform/NativeImage$Format;
+	param 0 stb_image_format
