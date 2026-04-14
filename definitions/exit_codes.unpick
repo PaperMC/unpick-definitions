@@ -1,0 +1,16 @@
+unpick v4
+
+group int exit_code
+	net.minecraft.ExitCodes.*
+
+target_method java.lang.System exit (I)V
+	param 0 exit_code
+
+target_method net.minecraft.client.Minecraft crash (Lnet/minecraft/client/Minecraft;Ljava/io/File;Lnet/minecraft/CrashReport;I)V
+	param 3 exit_code
+target_method net.minecraft.client.Minecraft saveReportAndShutdownSoundManager (Lnet/minecraft/client/Minecraft;Ljava/io/File;Lnet/minecraft/CrashReport;I)I
+	param 3 exit_code
+	return exit_code
+target_method net.minecraft.client.Minecraft saveReport (Ljava/io/File;Lnet/minecraft/CrashReport;I)I
+	param 2 exit_code
+	return exit_code # -2 not replaced?

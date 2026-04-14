@@ -1,0 +1,66 @@
+unpick v4
+
+group int shader_env_target_version
+	org.lwjgl.util.shaderc.Shaderc.shaderc_env_version_vulkan_1_2
+
+group int shader_type
+	org.lwjgl.util.shaderc.Shaderc.shaderc_vertex_shader
+	org.lwjgl.util.shaderc.Shaderc.shaderc_fragment_shader
+
+group int spv_image_dimension
+	org.lwjgl.util.spvc.Spv.SpvDim1D
+	org.lwjgl.util.spvc.Spv.SpvDim2D
+	org.lwjgl.util.spvc.Spv.SpvDim3D
+	org.lwjgl.util.spvc.Spv.SpvDimCube
+	org.lwjgl.util.spvc.Spv.SpvDimRect
+	org.lwjgl.util.spvc.Spv.SpvDimBuffer
+	org.lwjgl.util.spvc.Spv.SpvDimSubpassData
+
+group int spv_decoration
+	org.lwjgl.util.spvc.Spv.SpvDecorationLocation
+	org.lwjgl.util.spvc.Spv.SpvDecorationBinding
+
+group int spvc_resource_type
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_UNIFORM_BUFFER
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STAGE_INPUT
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STAGE_OUTPUT
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_SAMPLED_IMAGE
+
+group int spvc_backend
+	org.lwjgl.util.spvc.Spvc.SPVC_BACKEND_NONE
+	org.lwjgl.util.spvc.Spvc.SPVC_BACKEND_GLSL
+
+group int spvc_capture_mode
+	org.lwjgl.util.spvc.Spvc.SPVC_CAPTURE_MODE_COPY
+	org.lwjgl.util.spvc.Spvc.SPVC_CAPTURE_MODE_TAKE_OWNERSHIP
+
+group int spvc_error_code
+	org.lwjgl.util.spvc.Spvc.SPVC_SUCCESS
+	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_INVALID_SPIRV
+	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_UNSUPPORTED_SPIRV
+	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_OUT_OF_MEMORY
+	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_INVALID_ARGUMENT
+
+target_method org.lwjgl.util.shaderc.Shaderc shaderc_compile_options_set_target_env (JII)V
+	param 2 shader_env_target_version
+
+target_method org.lwjgl.util.shaderc.Shaderc shaderc_compile_into_spv (JLjava/lang/CharSequence;ILjava/lang/CharSequence;Ljava/lang/CharSequence;J)J
+	param 2 shader_type
+
+target_method com.mojang.blaze3d.vulkan.glsl.SpvSampler dimensions ()I
+	return spv_image_dimension
+target_method com.mojang.blaze3d.vulkan.glsl.SpvcUtil imageDimensionToString (I)Ljava/lang/String;
+	param 0 spv_image_dimension
+
+target_method com.mojang.blaze3d.vulkan.glsl.IntermediaryShaderModule getDecorationOffset (JLorg/lwjgl/util/spvc/SpvcReflectedResource;ILjava/nio/IntBuffer;)I
+	param 2 spv_decoration
+
+target_method org.lwjgl.util.spvc.Spvc spvc_context_create_compiler (JIJILorg/lwjgl/PointerBuffer;)I
+	param 1 spvc_backend
+	param 3 spvc_capture_mode
+
+target_method org.lwjgl.util.spvc.Spvc spvc_resources_get_resource_list_for_type (JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I
+	param 1 spvc_resource_type
+
+target_method com.mojang.blaze3d.vulkan.glsl.IntermediaryShaderModule throwIfError (ILjava/lang/String;)V
+	param 0 spvc_error_code

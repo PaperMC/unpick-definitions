@@ -1,0 +1,24 @@
+unpick v4
+
+# todo enable when validation is fixed
+group String fd_dialog_type
+	com.mojang.blaze3d.platform.MessageBox.TYPE_OK
+	com.mojang.blaze3d.platform.MessageBox.TYPE_OK_CANCEL
+	com.mojang.blaze3d.platform.MessageBox.TYPE_YES_NO
+	com.mojang.blaze3d.platform.MessageBox.TYPE_YES_NO_CANCEL
+
+group String fd_icon_type
+	com.mojang.blaze3d.platform.MessageBox.ICON_INFO
+	com.mojang.blaze3d.platform.MessageBox.ICON_WARNING
+	com.mojang.blaze3d.platform.MessageBox.ICON_ERROR
+	com.mojang.blaze3d.platform.MessageBox.ICON_QUESTION
+
+group int fd_default_button
+	com.mojang.blaze3d.platform.MessageBox.BUTTON_CANCEL_OR_NO
+	com.mojang.blaze3d.platform.MessageBox.BUTTON_OK_OR_YES
+	com.mojang.blaze3d.platform.MessageBox.BUTTON_NO
+
+target_method org.lwjgl.util.tinyfd.TinyFileDialogs tinyfd_messageBox (Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I
+	param 2 fd_dialog_type
+	param 3 fd_icon_type
+	param 4 fd_default_button

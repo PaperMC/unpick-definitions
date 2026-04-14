@@ -1,0 +1,11 @@
+unpick v4
+
+group int glfw_any_value
+	org.lwjgl.glfw.GLFW.GLFW_DONT_CARE
+
+target_method org.lwjgl.glfw.GLFW glfwSetWindowSizeLimits (JIIII)V
+	param 1 glfw_any_value
+	param 2 glfw_any_value
+
+target_method org.lwjgl.glfw.GLFW glfwSetWindowMonitor(JJIIIII)V
+	param 6 glfw_any_value

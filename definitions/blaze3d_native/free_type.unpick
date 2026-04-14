@@ -25,5 +25,19 @@ group int free_type_load_flags
 	org.lwjgl.util.freetype.FreeType.FT_LOAD_ADVANCE_ONLY
 	org.lwjgl.util.freetype.FreeType.FT_LOAD_SVG_ONLY
 
+group int free_type_pixel_mode
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_NONE
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_MONO
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_GRAY
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_GRAY2
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_GRAY4
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_LCD
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_LCD_V
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_BGRA
+	org.lwjgl.util.freetype.FreeType.FT_PIXEL_MODE_MAX
+
 target_method org.lwjgl.util.freetype.FreeType FT_Load_Glyph (Lorg/lwjgl/util/freetype/FT_Face;II)I
 	param 2 free_type_load_flags
+
+target_method org.lwjgl.util.freetype.FT_Bitmap pixel_mode ()B
+	return free_type_pixel_mode
