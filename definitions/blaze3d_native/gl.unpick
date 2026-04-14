@@ -365,7 +365,7 @@ group int gl_get_string_name
 
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
-	org.lwjgl.opengl.GL11.GL_MAX_TEXTURE_SIZE
+	com.mojang.blaze3d.opengl.GlConst.GL_MAX_TEXTURE_SIZE
 	org.lwjgl.opengl.GL31.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
 	org.lwjgl.opengl.GL33.GL_TIMESTAMP
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
