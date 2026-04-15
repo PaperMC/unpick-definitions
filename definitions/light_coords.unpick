@@ -4,6 +4,11 @@ group int light_coords
 	net.minecraft.util.LightCoordsUtil.FULL_BRIGHT
 	net.minecraft.util.LightCoordsUtil.FULL_SKY
 
+target_method net.minecraft.util.LightCoordsUtil getLightCoords (Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/core/BlockPos;)I
+	return light_coords
+target_method net.minecraft.util.LightCoordsUtil getLightCoords (Lnet/minecraft/util/LightCoordsUtil$BrightnessGetter;Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I
+	return light_coords
+
 target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords0 I light_coords
 target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords1 I light_coords
 target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords2 I light_coords
@@ -17,9 +22,6 @@ target_method com.mojang.blaze3d.vertex.VertexConsumer setLight (I)Lcom/mojang/b
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
 	param 7 light_coords
 
-target_method net.minecraft.client.particle.Particle getLightCoords (F)I
-	return light_coords
-
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 	param 4 light_coords
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
@@ -31,13 +33,10 @@ target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitMod
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
 	param 6 light_coords
 
-target_method net.minecraft.client.renderer.LevelRenderer getLightCoords (Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/core/BlockPos;)I
-	return light_coords
-target_method net.minecraft.client.renderer.LevelRenderer getLightCoords (Lnet/minecraft/client/renderer/LevelRenderer$BrightnessGetter;Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I
-	return light_coords
-
 target_method net.minecraft.client.renderer.item.ItemStackRenderState submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;III)V
 	param 2 light_coords
+
+target_field net.minecraft.client.renderer.block.BlockModelRenderState blockLightCoords I light_coords
 
 target_field net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState lightCoords I light_coords
 
@@ -64,3 +63,6 @@ target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/util/For
 
 target_method net.minecraft.client.gui.font.TextRenderable render (Lorg/joml/Matrix4fc;Lcom/mojang/blaze3d/vertex/VertexConsumer;IZ)V
 	param 2 light_coords
+
+target_method net.minecraft.client.particle.Particle getLightCoords (F)I
+	return light_coords
