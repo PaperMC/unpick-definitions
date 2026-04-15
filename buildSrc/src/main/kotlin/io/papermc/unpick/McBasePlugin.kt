@@ -14,7 +14,7 @@ import kotlin.io.path.readText
 
 class McBasePlugin : Plugin<Project> {
 
-    companion object {
+    private companion object {
         const val MAIN_MANIFEST = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
     }
 

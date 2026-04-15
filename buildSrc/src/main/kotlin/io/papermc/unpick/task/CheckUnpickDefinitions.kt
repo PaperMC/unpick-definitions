@@ -129,8 +129,8 @@ abstract class CheckUnpickDefinitions : DefaultTask() {
             }
         }
 
-        companion object {
-            private fun combineClassResolver(classResolvers: MutableList<IClassResolver>): IClassResolver {
+        private companion object {
+            fun combineClassResolver(classResolvers: MutableList<IClassResolver>): IClassResolver {
                 if (classResolvers.isEmpty()) {
                     throw IllegalArgumentException("classResolvers cannot be empty")
                 }
@@ -143,7 +143,7 @@ abstract class CheckUnpickDefinitions : DefaultTask() {
                 return result
             }
 
-            private fun packageExists(classpathJars: MutableList<FileSystem>, packageName: String): Boolean {
+            fun packageExists(classpathJars: MutableList<FileSystem>, packageName: String): Boolean {
                 val packageDir = packageName.replace('.', '/') + "/"
 
                 for (classpathJar in classpathJars) {

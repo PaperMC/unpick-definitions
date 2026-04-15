@@ -24,7 +24,7 @@ import kotlin.io.path.*
 @CacheableTask
 abstract class UnpickJar : DefaultTask() {
 
-    companion object {
+    private companion object {
         val FS_CREATE_ARGS = mapOf("create" to "true")
     }
 

@@ -148,23 +148,23 @@ abstract class DownloadService : BuildService<BuildServiceParameters.None> {
         etagFile.writeText(etag)
     }
 
-    companion object {
-        private val LOGGER: Logger = Logging.getLogger(DownloadService::class.java)
+    private companion object {
+        val LOGGER: Logger = Logging.getLogger(DownloadService::class.java)
 
-        private const val PATTERN_RFC1036 = "EEE, dd-MMM-yy HH:mm:ss zzz"
-        private val FORMATTER_RFC1036 = DateTimeFormatterBuilder()
+        const val PATTERN_RFC_1036 = "EEE, dd-MMM-yy HH:mm:ss zzz"
+        val FORMATTER_RFC_1036: DateTimeFormatter = DateTimeFormatterBuilder()
             .parseLenient()
             .parseCaseInsensitive()
-            .appendPattern(PATTERN_RFC1036)
+            .appendPattern(PATTERN_RFC_1036)
             .toFormatter(Locale.ENGLISH)
 
-        private const val PATTERN_ASCTIME = "EEE MMM d HH:mm:ss yyyy"
-        private val FORMATTER_ASCTIME = DateTimeFormatterBuilder()
+        const val PATTERN_ASC_TIME = "EEE MMM d HH:mm:ss yyyy"
+        val FORMATTER_ASC_TIME: DateTimeFormatter = DateTimeFormatterBuilder()
             .parseLenient()
             .parseCaseInsensitive()
-            .appendPattern(PATTERN_ASCTIME)
+            .appendPattern(PATTERN_ASC_TIME)
             .toFormatter(Locale.ENGLISH)
 
-        private val FORMATTERS = listOf(DateTimeFormatter.RFC_1123_DATE_TIME, FORMATTER_RFC1036, FORMATTER_ASCTIME)
+        val FORMATTERS = listOf(DateTimeFormatter.RFC_1123_DATE_TIME, FORMATTER_RFC_1036, FORMATTER_ASC_TIME)
     }
 }

@@ -24,7 +24,7 @@ abstract class DownloadFile : DefaultTask() {
     @get:OutputFile
     abstract val output: RegularFileProperty
 
-    @get:Internal
+    @get:Console
     abstract val verbose: Property<Boolean>
 
     @get:ServiceReference("download")
