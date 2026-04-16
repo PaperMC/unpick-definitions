@@ -98,11 +98,10 @@ group int team_method
 	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_JOIN
 	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_LEAVE
 
-# constants are messed
-#group int team_packed_options
-#	@flags
-#	net.minecraft.world.scores.PlayerTeam.BIT_FRIENDLY_FIRE
-#	net.minecraft.world.scores.PlayerTeam.BIT_SEE_INVISIBLES
+group int team_packed_options # not a bitmask value directly, it's an offset
+	@flags
+	(1 << net.minecraft.world.scores.PlayerTeam.BIT_FRIENDLY_FIRE)
+	(1 << net.minecraft.world.scores.PlayerTeam.BIT_SEE_INVISIBLES)
 
 group int boss_event_flags
 	@flags
@@ -177,10 +176,10 @@ target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket
 target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket shouldHaveParameters (I)Z
 	param 0 team_method
 
-#target_method net.minecraft.world.scores.PlayerTeam packOptions ()I
-#	return team_packed_options
-#target_method net.minecraft.world.scores.PlayerTeam unpackOptions (I)V
-#	param 0 team_packed_options
+target_method net.minecraft.world.scores.PlayerTeam packOptions ()I
+	return team_packed_options
+target_method net.minecraft.world.scores.PlayerTeam unpackOptions (I)V
+	param 0 team_packed_options
 
 target_method net.minecraft.network.protocol.game.ClientboundBossEventPacket encodeProperties (ZZZ)I
 	return boss_event_flags
