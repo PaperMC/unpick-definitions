@@ -1,0 +1,41 @@
+unpick v4
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.piston.PistonBaseBlock
+	net.minecraft.world.level.block.piston.PistonBaseBlock.TRIGGER_EXTEND
+	net.minecraft.world.level.block.piston.PistonBaseBlock.TRIGGER_CONTRACT
+	net.minecraft.world.level.block.piston.PistonBaseBlock.TRIGGER_DROP
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.BellBlockEntity
+	net.minecraft.world.level.block.BellBlock.EVENT_BELL_RING
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.ChestBlockEntity
+	net.minecraft.world.level.block.entity.ChestBlockEntity.EVENT_SET_OPEN_COUNT
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.EnderChestBlockEntity
+	@scope class net.minecraft.world.level.block.entity.EnderChestBlockEntity$1
+	net.minecraft.world.level.block.ChestBlock.EVENT_SET_OPEN_COUNT
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity
+	net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity.EVENT_SET_OPEN_COUNT
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.DecoratedPotBlockEntity
+	net.minecraft.world.level.block.entity.DecoratedPotBlockEntity.EVENT_POT_WOBBLES
+
+group int block_event_param_a
+	@scope class net.minecraft.world.level.block.entity.TheEndGatewayBlockEntity
+	net.minecraft.world.level.block.entity.TheEndGatewayBlockEntity.EVENT_COOLDOWN
+
+target_method net.minecraft.world.level.Level blockEvent (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;II)V
+	param 2 block_event_param_a
+
+target_method net.minecraft.world.level.block.state.BlockBehaviour triggerEvent (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;II)Z
+	param 3 block_event_param_a
+
+target_method net.minecraft.world.level.block.entity.BlockEntity triggerEvent (II)Z
+	param 0 block_event_param_a
