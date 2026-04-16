@@ -39,3 +39,14 @@ target_method net.minecraft.server.level.ChunkLevel isBlockTicking (I)Z
     param 0 chunk_level
 target_method net.minecraft.server.level.ChunkLevel isLoaded (I)Z
     param 0 chunk_level
+
+group int region_flags
+	@flags
+	net.minecraft.world.level.chunk.storage.RegionFile.EXTERNAL_STREAM_FLAG
+
+target_method net.minecraft.world.level.chunk.storage.RegionFile isExternalStreamChunk (B)Z
+	param 0 region_flags
+target_method net.minecraft.world.level.chunk.storage.RegionFile getExternalChunkVersion (B)B
+	param 0 region_flags
+target_method net.minecraft.world.level.chunk.storage.RegionFileVersion getId ()I
+	return region_flags

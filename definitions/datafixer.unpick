@@ -27,3 +27,21 @@ group int leaves_side_mask
 
 target_method net.minecraft.util.datafix.fixes.LeavesFix getSideMask (ZZZZ)I
 	return leaves_side_mask
+
+group int item_hide_flags
+	@flags
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_ENCHANTMENTS
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_MODIFIERS
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_UNBREAKABLE
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_CAN_DESTROY
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_CAN_PLACE
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_ADDITIONAL
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_DYE
+	net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.HIDE_UPGRADES
+
+target_method net.minecraft.util.datafix.fixes.ItemStackComponentizationFix fixDisplay (Lnet/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData;Lcom/mojang/serialization/Dynamic;I)Lcom/mojang/serialization/Dynamic;
+	param 2 item_hide_flags
+target_method net.minecraft.util.datafix.fixes.ItemStackComponentizationFix fixAdventureModeChecks (Lnet/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData;Lcom/mojang/serialization/Dynamic;I)V
+	param 2 item_hide_flags
+target_method net.minecraft.util.datafix.fixes.ItemStackComponentizationFix fixAttributeModifiers (Lnet/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData;Lcom/mojang/serialization/Dynamic;I)V
+	param 2 item_hide_flags

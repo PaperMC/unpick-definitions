@@ -98,6 +98,12 @@ group int team_method
 	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_JOIN
 	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_LEAVE
 
+# constants are messed
+#group int team_packed_options
+#	@flags
+#	net.minecraft.world.scores.PlayerTeam.BIT_FRIENDLY_FIRE
+#	net.minecraft.world.scores.PlayerTeam.BIT_SEE_INVISIBLES
+
 group int boss_event_flags
 	@flags
 	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_DARKEN
@@ -106,7 +112,6 @@ group int boss_event_flags
 
 group int command_flags
 	@flags
-	@scope class net.minecraft.network.protocol.game.ClientboundCommandsPacket
 	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_ROOT
 	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_LITERAL
 	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_ARGUMENT
@@ -125,7 +130,6 @@ group int book_addition_flags
 
 group int mob_effect_flags
 	@flags
-	@scope class net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket
 	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_AMBIENT
 	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_VISIBLE
 	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_SHOW_ICON
@@ -135,7 +139,6 @@ group String handler_name
 	net.minecraft.network.HandlerNames.*
 
 group int client_intent
-	@scope class net.minecraft.network.protocol.handshake.ClientIntent
 	net.minecraft.network.protocol.handshake.ClientIntent.STATUS_ID
 	net.minecraft.network.protocol.handshake.ClientIntent.LOGIN_ID
 	net.minecraft.network.protocol.handshake.ClientIntent.TRANSFER_ID
@@ -174,6 +177,11 @@ target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket
 target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket shouldHaveParameters (I)Z
 	param 0 team_method
 
+#target_method net.minecraft.world.scores.PlayerTeam packOptions ()I
+#	return team_packed_options
+#target_method net.minecraft.world.scores.PlayerTeam unpackOptions (I)V
+#	param 0 team_packed_options
+
 target_method net.minecraft.network.protocol.game.ClientboundBossEventPacket encodeProperties (ZZZ)I
 	return boss_event_flags
 
@@ -181,8 +189,7 @@ target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket read
 	param 1 command_flags
 target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry <init> (Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;II[I)V
 	param 1 command_flags
-target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry flags ()I
-	return command_flags
+target_field net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry flags I command_flags
 
 target_field net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry flags B book_addition_flags
 target_method net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry <init> (Lnet/minecraft/world/item/crafting/display/RecipeDisplayEntry;B)V

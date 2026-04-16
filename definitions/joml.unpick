@@ -15,3 +15,10 @@ target_method com.mojang.math.MatrixUtil checkPropertyRaw (Lorg/joml/Matrix4fc;I
 	param 1 matrix4f_properties
 target_method com.mojang.math.MatrixUtil checkProperty (Lorg/joml/Matrix4fc;I)Z
 	param 1 matrix4f_properties
+
+group int matrix_dirty_flags
+	@flags
+	net.minecraft.client.Camera.DIRTY_VIEW_ROT
+	net.minecraft.client.Camera.DIRTY_VIEW_ROT_PROJ
+
+target_field net.minecraft.client.Camera matrixPropertiesDirty I matrix_dirty_flags
