@@ -16,7 +16,7 @@ target_method java.util.Spliterator characteristics ()I
 target_method java.util.Spliterator hasCharacteristics (I)Z
 	param 0 spliterator_characteristics
 
-target_method java.util.Spliterators$AbstractSpliterator <init> (JI)V
+target_method java.util.Spliterators$AbstractSpliterator <init> (JI)V # not working in anonymous classes capturing a local variable
 	param 1 spliterator_characteristics
 target_method java.util.Spliterators spliterator (Ljava/util/Iterator;JI)Ljava/util/Spliterator;
 	param 2 spliterator_characteristics
@@ -24,3 +24,51 @@ target_method java.util.Spliterators spliteratorUnknownSize (Ljava/util/Iterator
 	param 1 spliterator_characteristics
 target_method java.util.Spliterators spliteratorUnknownSize (Ljava/util/PrimitiveIterator$OfLong;I)Ljava/util/Spliterator$OfLong;
 	param 1 spliterator_characteristics
+
+group int pattern_flags
+	@flags
+	java.util.regex.Pattern.UNIX_LINES
+	java.util.regex.Pattern.CASE_INSENSITIVE
+	java.util.regex.Pattern.COMMENTS
+	java.util.regex.Pattern.MULTILINE
+	java.util.regex.Pattern.LITERAL
+	java.util.regex.Pattern.DOTALL
+	java.util.regex.Pattern.UNICODE_CASE
+	java.util.regex.Pattern.CANON_EQ
+	java.util.regex.Pattern.UNICODE_CHARACTER_CLASS
+
+target_method java.util.regex.Pattern compile (Ljava/lang/String;I)Ljava/util/regex/Pattern;
+	param 1 pattern_flags
+
+group int calendar_field
+	java.util.Calendar.MONTH
+
+target_method java.util.Calendar add (II)V
+	param 0 calendar_field
+
+group int font_style
+	@flags
+	java.awt.Font.PLAIN
+	java.awt.Font.BOLD
+	java.awt.Font.ITALIC
+
+target_method java.awt.Font <init> (Ljava/lang/String;II)V
+	param 1 font_style
+
+group int window_operation
+	javax.swing.WindowConstants.*
+
+target_method javax.swing.JFrame setDefaultCloseOperation (I)V
+	param 0 window_operation
+
+group int scrollbar_policy
+	javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
+	javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
+	javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
+	javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
+	javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+	javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS
+
+target_method javax.swing.JScrollPane <init> (Ljava/awt/Component;II)V
+	param 1 scrollbar_policy
+	param 2 scrollbar_policy

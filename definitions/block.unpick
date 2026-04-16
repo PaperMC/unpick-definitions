@@ -18,6 +18,8 @@ group int update_flags
 	net.minecraft.world.level.block.Block.UPDATE_ALL_IMMEDIATE
 	net.minecraft.world.level.block.Block.UPDATE_SKIP_ALL_SIDEEFFECTS
 
+#	net.minecraft.world.level.levelgen.feature.TreeFeature.BLOCK_UPDATE_FLAGS
+
 group int update_limit
 	net.minecraft.world.level.block.Block.UPDATE_LIMIT
 
