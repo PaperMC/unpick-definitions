@@ -239,6 +239,9 @@ target_method net.minecraft.client.renderer.state.gui.ColoredRectangleRenderStat
 	param 7 argb_color
 	param 8 argb_color
 
+target_method net.minecraft.client.renderer.feature.NameTagFeatureRenderer$Submit <init> (Lorg/joml/Matrix4fc;FFLnet/minecraft/network/chat/Component;III)V
+	param 5 argb_color
+
 target_method net.minecraft.client.color.item.Dye <init> (I)V
 	param 0 argb_color
 

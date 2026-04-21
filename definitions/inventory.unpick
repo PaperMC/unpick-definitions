@@ -25,13 +25,13 @@ group int pop_time
 group int count_limit
 	net.minecraft.world.entity.EquipmentSlot.NO_COUNT_LIMIT
 
-group int slot_id
+group int menu_slot_index
 	net.minecraft.world.inventory.AbstractContainerMenu.SLOT_CLICKED_OUTSIDE
 
-group int stack_index
+group int bundle_stack_index
 	net.minecraft.world.item.component.BundleContents.NO_STACK_INDEX
 
-group int selected_item_index
+group int bundle_selected_item_index
 	net.minecraft.world.item.component.BundleContents.NO_SELECTED_ITEM_INDEX
 
 group int item_contents_slot
@@ -110,25 +110,27 @@ target_method net.minecraft.world.entity.EquipmentSlot <init> (Ljava/lang/String
 	param 4 count_limit
 
 target_method net.minecraft.world.inventory.AbstractContainerMenu isValidSlotIndex (I)Z
-	param 0 slot_id
+	param 0 menu_slot_index
+target_method net.minecraft.world.inventory.AbstractContainerMenu doClick (IILnet/minecraft/world/inventory/ContainerInput;Lnet/minecraft/world/entity/player/Player;)V
+	param 0 menu_slot_index
 
 target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ContainerInput;)V
-	param 1 slot_id
+	param 1 menu_slot_index
 
-target_field net.minecraft.world.item.component.BundleContents selectedItem I selected_item_index
-target_field net.minecraft.world.item.component.BundleContents$Mutable selectedItem I selected_item_index
+target_field net.minecraft.world.item.component.BundleContents selectedItem I bundle_selected_item_index
+target_field net.minecraft.world.item.component.BundleContents$Mutable selectedItem I bundle_selected_item_index
 target_method net.minecraft.world.item.component.BundleContents <init> (Ljava/util/List;I)V
-	param 1 selected_item_index
+	param 1 bundle_selected_item_index
 target_method net.minecraft.world.item.component.BundleContents$Mutable toggleSelectedItem (I)V
-	param 0 selected_item_index
+	param 0 bundle_selected_item_index
 
 target_method net.minecraft.world.item.BundleItem toggleSelectedItem (Lnet/minecraft/world/item/ItemStack;I)V
-	param 1 selected_item_index
+	param 1 bundle_selected_item_index
 target_method net.minecraft.world.item.BundleItem getSelectedItemIndex (Lnet/minecraft/world/item/ItemStack;)I
-	return selected_item_index
+	return bundle_selected_item_index
 
 target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndex (Lnet/minecraft/world/item/ItemStack;)I
-	return stack_index
+	return bundle_stack_index
 
 target_field net.minecraft.world.item.component.Consumable$Builder consumeSeconds F consume_seconds
 target_method net.minecraft.world.item.component.Consumable$Builder consumeSeconds (F)Lnet/minecraft/world/item/component/Consumable$Builder;
