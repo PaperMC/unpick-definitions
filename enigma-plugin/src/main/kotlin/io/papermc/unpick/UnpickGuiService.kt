@@ -10,9 +10,11 @@ import cuchaz.enigma.api.view.entry.LocalVariableEntryView
 import cuchaz.enigma.api.view.entry.MethodEntryView
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.Type
+import org.objectweb.asm.tree.RecordComponentNode
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 import java.awt.event.KeyEvent
+import java.lang.constant.ConstantDescs
 import javax.swing.KeyStroke
 
 class UnpickGuiService : GuiService {
@@ -20,47 +22,49 @@ class UnpickGuiService : GuiService {
     override fun addToEditorContextMenu(gui: GuiView, registrar: MenuRegistrar) {
         registrar.addSeparator()
 
-        registrar.add("unpick.copyTargetReference")
-            .setEnabledWhen { getUnpickReferenceOnCursor(gui) != null }
+        registrar.add(UnpickI18nService.COPY_TARGET_REFERENCE)
+            .setEnabledWhen { referenceOnCursor(gui) != null }
             .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, KeyEvent.CTRL_DOWN_MASK)) // hopefully keybinds will be controllable at some point
             .setAction {
-                val textToCopy = getUnpickReferenceOnCursor(gui) ?: return@setAction
+                val textToCopy = referenceOnCursor(gui) ?: return@setAction
                 Toolkit.getDefaultToolkit().systemClipboard.setContents(StringSelection(textToCopy), null)
             }
-        registrar.add("unpick.copyConstantReference")
-            .setEnabledWhen { getEligibleConstantOnCursor(gui) != null }
+        registrar.add(UnpickI18nService.COPY_CONSTANT_REFERENCE)
+            .setEnabledWhen { eligibleConstantOnCursor(gui) != null }
             .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, KeyEvent.CTRL_DOWN_MASK or KeyEvent.SHIFT_DOWN_MASK))
             .setAction {
-                val field = getEligibleConstantOnCursor(gui) ?: return@setAction
-                val textToCopy = field.parent.fullName.replace('/', '.') + "." + field.name
+                val field = eligibleConstantOnCursor(gui) ?: return@setAction
+                val textToCopy = field.parent.jvmClassName() + "." + field.name
                 Toolkit.getDefaultToolkit().systemClipboard.setContents(StringSelection(textToCopy), null)
             }
     }
 
-    private fun getUnpickReferenceOnCursor(gui: GuiView): String? {
-        val hoveredReference = gui.cursorReference ?: return null
+    private fun referenceOnCursor(gui: GuiView): String? {
         val project = gui.project ?: return null
+        val hoveredReference = gui.cursorReference ?: return null
 
-        val entry = hoveredReference.entry
-        return when (entry) {
-            is ClassEntryView if (project.jarIndex.entryIndex.getAccess(entry) and Opcodes.ACC_ANNOTATION) != 0 -> "target_annotation %s".format(
-                entry.fullName.replace('/', '.')
-            )
+        return when (val entry = hoveredReference.entry) {
+            is ClassEntryView if (project.jarIndex.entryIndex.getAccess(entry) and Opcodes.ACC_ANNOTATION) != 0 -> {
+                "target_annotation ${entry.jvmClassName()}"
+            }
 
-            is FieldEntryView -> "target_field %s %s %s".format(
-                entry.parent.fullName.replace('/', '.'),
-                entry.name,
-                entry.descriptor
-            )
+            is ClassEntryView if (project.jarIndex.entryIndex.getAccess(entry) and Opcodes.ACC_RECORD) != 0 -> {
+                val components = project.getBytecode(entry.fullName)?.recordComponents ?: return null
+                "target_method ${entry.jvmClassName()} ${ConstantDescs.INIT_NAME} ${buildCanonicalConstructorDescriptor(components)}"
+            }
 
-            is MethodEntryView -> "target_method %s %s %s".format(
-                entry.parent.fullName.replace('/', '.'),
-                entry.name,
-                entry.descriptor
-            )
+            // if the cursor is not on the field declaration then fallback to target_field
+            is FieldEntryView if gui.cursorDeclaration != null && (project.jarIndex.entryIndex.getAccess(entry.parent) and Opcodes.ACC_RECORD) != 0 -> {
+                val components = project.getBytecode(entry.parent.fullName)?.recordComponents ?: return null
+                val paramIndex = paramIndex(components, entry.name) // -1 for other fields
+                if (paramIndex == -1) entry.toTargetReference() else "param $paramIndex"
+            }
 
-            is LocalVariableEntryView if (entry.isArgument) -> {
-                val paramIndex = getParamIndex(project, entry) // should never be -1 except for https://github.com/FabricMC/Enigma/issues/572
+            is FieldEntryView -> entry.toTargetReference()
+            is MethodEntryView -> entry.toTargetReference()
+
+            is LocalVariableEntryView if entry.isArgument -> {
+                val paramIndex = paramIndex(project, entry) // should never be -1 except for https://github.com/FabricMC/Enigma/issues/572
                 if (paramIndex == -1) null else "param $paramIndex"
             }
 
@@ -68,30 +72,42 @@ class UnpickGuiService : GuiService {
         }
     }
 
-    private fun getParamIndex(project: ProjectView, local: LocalVariableEntryView): Int {
-        val argTypes = Type.getArgumentTypes(local.parent.descriptor)
+    private fun paramIndex(project: ProjectView, local: LocalVariableEntryView): Int {
+        val paramTypes = Type.getArgumentTypes(local.parent.descriptor)
         var lvtIndex = if ((project.jarIndex.entryIndex.getAccess(local.parent) and Opcodes.ACC_STATIC) != 0) 0 else 1
 
-        for (paramIndex in argTypes.indices) {
+        paramTypes.forEachIndexed { index, type ->
             if (lvtIndex == local.index) {
-                return paramIndex
+                return index
             }
 
-            lvtIndex += argTypes[paramIndex].size
+            lvtIndex += type.size
         }
 
         return -1
     }
 
-    private fun getEligibleConstantOnCursor(gui: GuiView): FieldEntryView? {
-        val hoveredReference = gui.cursorReference ?: return null
-        val project = gui.project ?: return null
-
-        val field = hoveredReference.entry
-        if (field !is FieldEntryView) {
-            return null
+    private fun paramIndex(components: List<RecordComponentNode>, fieldName: String): Int {
+        components.forEachIndexed { index, component ->
+            if (component.name == fieldName) {
+                return index
+            }
         }
 
+        return -1
+    }
+
+    private fun buildCanonicalConstructorDescriptor(components: List<RecordComponentNode>) = buildString {
+        append('(')
+        components.forEach { component -> append(component.descriptor) }
+        append(")V")
+    }
+
+    private fun eligibleConstantOnCursor(gui: GuiView): FieldEntryView? {
+        val project = gui.project ?: return null
+        val hoveredReference = gui.cursorReference ?: return null
+
+        val field = hoveredReference.entry as? FieldEntryView ?: return null
         if ((project.jarIndex.entryIndex.getAccess(field) and Opcodes.ACC_FINAL) == 0) {
             return null
         }
@@ -101,4 +117,9 @@ class UnpickGuiService : GuiService {
             else -> null
         }
     }
+
+    private fun FieldEntryView.toTargetReference() = "target_field ${this.parent.jvmClassName()} ${this.name} ${this.descriptor}"
+    private fun MethodEntryView.toTargetReference() = "target_method ${this.parent.jvmClassName()} ${this.name} ${this.descriptor}"
+
+    private fun ClassEntryView.jvmClassName() = this.fullName.replace('/', '.')
 }
