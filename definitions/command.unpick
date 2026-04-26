@@ -1,0 +1,177 @@
+unpick v4
+
+group int chain_modifier_flags
+	@flags
+	net.minecraft.commands.execution.ChainModifiers.FLAG_FORKED
+	net.minecraft.commands.execution.ChainModifiers.FLAG_IS_RETURN
+
+target_field net.minecraft.commands.execution.ChainModifiers flags B chain_modifier_flags
+target_method net.minecraft.commands.execution.ChainModifiers setFlag (B)Lnet/minecraft/commands/execution/ChainModifiers;
+	param 0 chain_modifier_flags
+
+group int number_argument_flags
+	@flags
+	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MIN
+	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MAX
+
+target_method net.minecraft.commands.synchronization.ArgumentUtils createNumberFlags (ZZ)I
+	return number_argument_flags
+target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMin (B)Z
+	param 0 number_argument_flags
+target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMax (B)Z
+	param 0 number_argument_flags
+
+group int command_result
+	com.mojang.brigadier.Command.SINGLE_SUCCESS
+
+target_method com.mojang.brigadier.Command run (Lcom/mojang/brigadier/context/CommandContext;)I
+	return command_result
+
+target_method net.minecraft.server.commands.AttributeCommand setAttributeBase (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;D)I
+	return command_result
+target_method net.minecraft.server.commands.AttributeCommand resetAttributeBase (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;)I
+	return command_result
+target_method net.minecraft.server.commands.AttributeCommand addModifier (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;DLnet/minecraft/world/entity/ai/attributes/AttributeModifier$Operation;)I
+	return command_result
+target_method net.minecraft.server.commands.AttributeCommand removeModifier (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+
+target_method net.minecraft.server.commands.ExecuteCommand checkUnlessRegions (Lcom/mojang/brigadier/context/CommandContext;Z)I
+	return command_result
+
+target_method net.minecraft.server.commands.DamageCommand damage (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;FLnet/minecraft/world/damagesource/DamageSource;)I
+	return command_result
+
+target_method net.minecraft.server.commands.data.DataCommands getData (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/commands/data/DataAccessor;)I
+	return command_result
+target_method net.minecraft.server.commands.data.DataCommands mergeData (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/commands/data/DataAccessor;Lnet/minecraft/nbt/CompoundTag;)I
+	return command_result
+
+target_method net.minecraft.server.commands.DataPackCommand createPack (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;Lnet/minecraft/network/chat/Component;)I
+	return command_result
+
+target_method net.minecraft.server.commands.DebugConfigCommand config (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/level/ServerPlayer;)I
+	return command_result
+target_method net.minecraft.server.commands.DebugConfigCommand unconfig (Lnet/minecraft/commands/CommandSourceStack;Ljava/util/UUID;)I
+	return command_result
+target_method net.minecraft.server.commands.DebugConfigCommand showDialog (Lnet/minecraft/commands/CommandSourceStack;Ljava/util/UUID;Lnet/minecraft/core/Holder;)I
+	return command_result
+
+target_method net.minecraft.server.commands.DebugMobSpawningCommand spawnMobs (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/MobCategory;Lnet/minecraft/core/BlockPos;)I
+	return command_result
+
+target_method net.minecraft.server.commands.DebugPathCommand fillBlocks (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;)I
+	return command_result
+
+target_method net.minecraft.server.commands.FetchProfileCommand resolveName (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I
+	return command_result
+target_method net.minecraft.server.commands.FetchProfileCommand resolveId (Lnet/minecraft/commands/CommandSourceStack;Ljava/util/UUID;)I
+	return command_result
+target_method net.minecraft.server.commands.FetchProfileCommand printForEntity (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;)I
+	return command_result
+
+target_method net.minecraft.server.commands.ForceLoadCommand queryForceLoad (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/level/ColumnPos;)I
+	return command_result
+
+target_method net.minecraft.server.commands.ItemCommands modifyBlockItem (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;ILnet/minecraft/core/Holder;)I
+	return command_result
+target_method net.minecraft.server.commands.ItemCommands setBlockItem (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/item/ItemStack;)I
+	return command_result
+
+target_method net.minecraft.server.commands.JfrCommand startJfr (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.JfrCommand stopJfr (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+
+target_method net.minecraft.server.commands.PardonIpCommand unban (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I
+	return command_result
+
+target_method net.minecraft.server.commands.PlaceCommand placeFeature (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder$Reference;Lnet/minecraft/core/BlockPos;)I
+	return command_result
+target_method net.minecraft.server.commands.PlaceCommand placeJigsaw (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;ILnet/minecraft/core/BlockPos;)I
+	return command_result
+target_method net.minecraft.server.commands.PlaceCommand placeStructure (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder$Reference;Lnet/minecraft/core/BlockPos;)I
+	return command_result
+target_method net.minecraft.server.commands.PlaceCommand placeTemplate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Rotation;Lnet/minecraft/world/level/block/Mirror;FIZ)I
+	return command_result
+
+target_method net.minecraft.server.commands.RaidCommand glow (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand setRaidOmenLevel (Lnet/minecraft/commands/CommandSourceStack;I)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand spawnLeader (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand playSound (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/network/chat/Component;)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand start (Lnet/minecraft/commands/CommandSourceStack;I)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand stop (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.RaidCommand check (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+
+target_method net.minecraft.server.commands.RandomCommand resetSequence (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+target_method net.minecraft.server.commands.RandomCommand resetSequence (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;IZZ)I
+	return command_result
+
+target_method net.minecraft.server.commands.RideCommand mount (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)I
+	return command_result
+target_method net.minecraft.server.commands.RideCommand dismount (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;)I
+	return command_result
+
+target_method net.minecraft.server.commands.RotateCommand rotate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/commands/arguments/coordinates/Coordinates;)I
+	return command_result
+target_method net.minecraft.server.commands.RotateCommand rotate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/server/commands/LookAt;)I
+	return command_result
+
+target_method net.minecraft.server.commands.SaveAllCommand saveAll (Lnet/minecraft/commands/CommandSourceStack;Z)I
+	return command_result
+
+target_method net.minecraft.server.commands.SetBlockCommand setBlock (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;Lnet/minecraft/commands/arguments/blocks/BlockInput;Lnet/minecraft/server/commands/SetBlockCommand$Mode;Ljava/util/function/Predicate;Z)I
+	return command_result
+
+target_method net.minecraft.server.commands.SetWorldSpawnCommand setSpawn (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;Lnet/minecraft/commands/arguments/coordinates/Coordinates;)I
+	return command_result
+
+target_method net.minecraft.server.commands.SpawnArmorTrimsCommand spawnArmorTrims (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/stream/Stream;)I
+	return command_result
+
+target_method net.minecraft.server.commands.SpectateCommand spectate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/server/level/ServerPlayer;)I
+	return command_result
+
+target_method net.minecraft.server.commands.StopwatchCommand createStopwatch (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+target_method net.minecraft.server.commands.StopwatchCommand restartStopwatch (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+target_method net.minecraft.server.commands.StopwatchCommand removeStopwatch (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+
+target_method net.minecraft.server.commands.SummonCommand spawnEntity (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder$Reference;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/nbt/CompoundTag;Z)I
+	return command_result
+
+target_method net.minecraft.server.commands.TeamCommand setPrefix (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/scores/PlayerTeam;Lnet/minecraft/network/chat/Component;)I
+	return command_result
+target_method net.minecraft.server.commands.TeamCommand setSuffix (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/scores/PlayerTeam;Lnet/minecraft/network/chat/Component;)I
+	return command_result
+
+target_method net.minecraft.server.commands.TickCommand sprint (Lnet/minecraft/commands/CommandSourceStack;I)I
+	return command_result
+target_method net.minecraft.server.commands.TickCommand step (Lnet/minecraft/commands/CommandSourceStack;I)I
+	return command_result
+target_method net.minecraft.server.commands.TickCommand stopStepping (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.TickCommand stopSprinting (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+
+target_method net.minecraft.server.commands.TimeCommand setPaused (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;Z)I
+	return command_result
+target_method net.minecraft.server.commands.TimeCommand setRate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;F)I
+	return command_result
+
+target_method net.minecraft.server.commands.WhitelistCommand reload (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.WhitelistCommand enableWhitelist (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+target_method net.minecraft.server.commands.WhitelistCommand disableWhitelist (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
