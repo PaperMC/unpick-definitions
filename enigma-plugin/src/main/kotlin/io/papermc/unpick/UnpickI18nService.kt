@@ -9,7 +9,7 @@ class UnpickI18nService : I18nService {
         const val COPY_CONSTANT_REFERENCE = "unpick.copyConstantReference"
     }
 
-    override fun getTranslationResource(language: String?): InputStream? {
+    override fun getTranslationResource(language: String): InputStream? {
         return javaClass.classLoader.getResourceAsStream("unpick_lang/$language.json")
     }
 }

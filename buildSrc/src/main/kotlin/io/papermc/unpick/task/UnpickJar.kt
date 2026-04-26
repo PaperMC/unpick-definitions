@@ -17,7 +17,6 @@ import java.io.UncheckedIOException
 import java.nio.file.FileSystems
 import java.nio.file.Files
 import java.nio.file.Path
-import java.util.zip.ZipException
 import java.util.zip.ZipFile
 import kotlin.io.path.*
 
@@ -46,28 +45,7 @@ abstract class UnpickJar : DefaultTask() {
     fun run() {
         output.path.deleteIfExists()
 
-        maybeUnwrap(definitions.path) { input ->
-            require(input.name.endsWith(".unpick")) {
-                "Expected one combined definitions file for unpick data"
-            }
-
-            unpick(input)
-        }
-    }
-
-    private fun maybeUnwrap(definitions: Path, unpick: (input: Path) -> Unit) {
-        try {
-            ZipFile(definitions.toFile()).use { defZip ->
-                FileSystems.newFileSystem(definitions).use { fs ->
-                    val entry = defZip.stream().findFirst().orElseThrow { IllegalStateException("Expected one combined definitions file for unpick data") }
-                    unpick(fs.getPath(entry.name))
-                }
-            }
-        } catch (_: ZipException) { // not a zip
-            unpick(definitions)
-        } catch (e: IOException) {
-            throw UncheckedIOException(e)
-        }
+        unpick(definitions.path)
     }
 
     private fun unpick(definitions: Path) {
