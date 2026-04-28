@@ -1,6 +1,6 @@
 plugins {
     `kotlin-dsl`
-    kotlin("plugin.serialization") version "2.3.0" // stay in sync with gradle built-in version of the DSL
+    kotlin("plugin.serialization") version "2.3.20" // stay in sync with gradle built-in version of the DSL
 }
 
 kotlin {
@@ -15,8 +15,8 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.10.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0")
 
     implementation("io.github.pdvrieze.xmlutil:core:0.91.3")
     implementation("io.github.pdvrieze.xmlutil:serialization:0.91.3")
