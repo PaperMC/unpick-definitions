@@ -39,3 +39,5 @@ target_method net.minecraft.world.level.block.state.BlockBehaviour triggerEvent 
 
 target_method net.minecraft.world.level.block.entity.BlockEntity triggerEvent (II)Z
 	param 0 block_event_param_a
+
+# Nameless event for NoteBlock, PotentSulfurBlock

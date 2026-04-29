@@ -50,3 +50,19 @@ target_method net.minecraft.world.level.chunk.storage.RegionFile getExternalChun
 	param 0 region_flags
 target_method net.minecraft.world.level.chunk.storage.RegionFileVersion getId ()I
 	return region_flags
+
+group int file_storage_version
+	net.minecraft.world.level.storage.WorldData.ANVIL_VERSION_ID
+	net.minecraft.world.level.storage.WorldData.MCREGION_VERSION_ID
+
+target_method net.minecraft.world.level.storage.WorldData getStorageVersionName (I)Ljava/lang/String;
+	param 0 file_storage_version
+
+target_method net.minecraft.world.level.storage.PrimaryLevelData <init> (Ljava/util/UUID;ZLnet/minecraft/world/level/storage/LevelData$RespawnData;JIZLjava/util/Set;Ljava/util/Set;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/storage/PrimaryLevelData$SpecialWorldProperty;Lcom/mojang/serialization/Lifecycle;)V
+	param 4 file_storage_version
+
+target_method net.minecraft.world.level.storage.LevelStorageSource getStorageVersion ()I
+	return file_storage_version
+
+target_method net.minecraft.world.level.storage.LevelVersion levelDataVersion ()I
+	return file_storage_version

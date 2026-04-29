@@ -87,6 +87,7 @@ target_method net.minecraft.world.entity.projectile.arrow.AbstractArrow setFlag 
 
 
 group int vex_flags
+#	@flags
 	net.minecraft.world.entity.monster.Vex.FLAG_IS_CHARGING
 
 target_method net.minecraft.world.entity.monster.Vex getVexFlag (I)Z
