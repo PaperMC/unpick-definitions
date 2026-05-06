@@ -184,6 +184,7 @@ group int vk_structure_type
 	org.lwjgl.vulkan.VK11.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2
 	org.lwjgl.vulkan.KHRSynchronization2.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR
 	org.lwjgl.vulkan.KHRDynamicRendering.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR
+	org.lwjgl.vulkan.EXTVertexAttributeDivisor.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT
 
 group int vk_physical_device_type
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_OTHER
@@ -252,6 +253,7 @@ group int vk_attachment_store_op
 group int vk_attachment_load_op
 	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_LOAD_OP_LOAD
 	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_LOAD_OP_CLEAR
+	org.lwjgl.vulkan.VK10.VK_ATTACHMENT_LOAD_OP_DONT_CARE
 
 group int vk_rendering_flags
 	@flags
@@ -464,7 +466,7 @@ target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/pl
 target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/platform/PolygonMode;)I
 	return vk_polygon_mode
 
-target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;)I
+target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/PrimitiveTopology;)I
 	return vk_primitive_topology
 
 target_method com.mojang.blaze3d.vulkan.VulkanConst toVk (Lcom/mojang/blaze3d/pipeline/ColorTargetState;)I
@@ -720,7 +722,6 @@ target_method org.lwjgl.vulkan.VkPipelineRasterizationStateCreateInfo frontFace 
 target_method org.lwjgl.vulkan.VkPipelineMultisampleStateCreateInfo rasterizationSamples (I)Lorg/lwjgl/vulkan/VkPipelineMultisampleStateCreateInfo;
 	param 0 vk_sample_count_flags
 
-# pColorAttachmentFormats is also a potential target but wrapped in a buffer
 target_method org.lwjgl.vulkan.VkPipelineRenderingCreateInfoKHR depthAttachmentFormat (I)Lorg/lwjgl/vulkan/VkPipelineRenderingCreateInfoKHR;
 	param 0 vk_image_format
 
@@ -737,3 +738,9 @@ target_method com.mojang.blaze3d.vulkan.VulkanBindGroupLayout <init> (JLjava/uti
 	param 0 vk_handle
 
 target_field com.mojang.blaze3d.vulkan.VulkanDebug$Enabled messenger J vk_handle
+
+target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer imageView (J)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
+	param 0 vk_handle
+
+target_method com.mojang.blaze3d.vulkan.VulkanGpuBuffer vkBuffer ()J
+	return vk_handle

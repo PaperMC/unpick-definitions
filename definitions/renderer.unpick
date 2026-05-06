@@ -14,9 +14,23 @@ group int face_flags
 	net.minecraft.client.renderer.CloudRenderer.FLAG_INSIDE_FACE
 	net.minecraft.client.renderer.CloudRenderer.FLAG_USE_TOP_COLOR
 
+group int buffer_builder_element_id
+	com.mojang.blaze3d.vertex.BufferBuilder.POSITION_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.COLOR_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.UV0_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.UV1_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.UV2_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.NORMAL_SEMANTIC_ID
+	com.mojang.blaze3d.vertex.BufferBuilder.LINE_WIDTH_SEMANTIC_ID
+
 target_field com.mojang.blaze3d.vertex.TlsfAllocator$Block size J tlsf_block_flags
 
 target_annotation net.minecraft.client.resources.model.geometry.BakedQuad$MaterialFlags material_flags
 
 target_method net.minecraft.client.renderer.CloudRenderer encodeFace (Ljava/nio/ByteBuffer;IILnet/minecraft/core/Direction;I)V
 	param 4 face_flags
+
+target_method com.mojang.blaze3d.vertex.BufferBuilder beginElement (I)J
+	param 0 buffer_builder_element_id
+target_method com.mojang.blaze3d.vertex.BufferBuilder uvShort (SSI)Lcom/mojang/blaze3d/vertex/VertexConsumer;
+	param 2 buffer_builder_element_id

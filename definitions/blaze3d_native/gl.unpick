@@ -366,6 +366,7 @@ group int gl_get_string_name
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
 	com.mojang.blaze3d.opengl.GlConst.GL_MAX_TEXTURE_SIZE
+	org.lwjgl.opengl.GL20.GL_MAX_DRAW_BUFFERS
 	org.lwjgl.opengl.GL31.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
 	org.lwjgl.opengl.GL33.GL_TIMESTAMP
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
@@ -401,6 +402,11 @@ group int gl_logic_op
 	org.lwjgl.opengl.GL11.GL_OR_REVERSE
 	org.lwjgl.opengl.GL11.GL_OR_INVERTED
 
+group int gl_buffer
+	org.lwjgl.opengl.GL11.GL_COLOR
+	org.lwjgl.opengl.GL11.GL_DEPTH
+	org.lwjgl.opengl.GL11.GL_STENCIL
+
 # BufferStorage
 group int gl_map_buffer_access
 	@flags
@@ -434,10 +440,10 @@ target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platfo
 target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState modeRgb I gl_blend_op
 target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState modeAlpha I gl_blend_op
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;)I
+target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/PrimitiveTopology;)I
 	return gl_draw_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/vertex/VertexFormat$IndexType;)I
+target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/IndexType;)I
 	return gl_indices_type
 
 target_method com.mojang.blaze3d.opengl.GlConst toGlType (Lcom/mojang/blaze3d/GpuFormat;)I
@@ -471,8 +477,8 @@ target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlFlag (I)I
 
 target_method com.mojang.blaze3d.opengl.DirectStateAccess mapBufferRange (IJJII)Ljava/nio/ByteBuffer;
 	param 3 gl_map_buffer_access
-target_method com.mojang.blaze3d.opengl.BufferStorage mapBuffer (Lcom/mojang/blaze3d/opengl/DirectStateAccess;Lcom/mojang/blaze3d/opengl/GlBuffer;JJI)Lcom/mojang/blaze3d/opengl/GlBuffer$GlMappedView;
-	param 4 gl_map_buffer_access
+
+target_field com.mojang.blaze3d.opengl.GlBuffer mappingFlags I gl_map_buffer_access
 
 target_method org.lwjgl.opengl.GL30 glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
@@ -495,6 +501,8 @@ target_method com.mojang.blaze3d.opengl.DirectStateAccess blitFrameBuffers (IIII
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _clear(I)V
 	param 0 gl_buffer_mask
+
+# GlCommandEncoder#createRenderPass no target available for clearMask, same for GL_COLOR_ATTACHMENT0 below
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _activeTexture (I)V
 	param 0 gl_texture
@@ -627,3 +635,6 @@ target_method org.lwjgl.opengl.EXTDebugLabel glLabelObjectEXT (IILjava/lang/Char
 target_method org.lwjgl.opengl.ARBClipControl glClipControl (II)V
 	param 0 gl_clip_origin
 	param 1 gl_clip_depth
+
+target_method org.lwjgl.opengl.GL30 glClearBufferfv (II[F)V
+	param 0 gl_buffer

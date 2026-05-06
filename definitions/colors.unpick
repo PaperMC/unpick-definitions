@@ -329,6 +329,8 @@ target_method net.minecraft.util.ARGB color (II)I
 target_method net.minecraft.util.ARGB color (FI)I
 	param 1 argb_color
 	return argb_color
+target_method net.minecraft.util.ARGB vector4fFromARGB32 (I)Lorg/joml/Vector4f;
+	param 0 argb_color
 
 target_method net.minecraft.core.particles.DustParticleOptions <init> (IF)V
 	param 0 rgb_color
