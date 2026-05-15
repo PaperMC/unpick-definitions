@@ -40,6 +40,17 @@ group int pattern_flags
 target_method java.util.regex.Pattern compile (Ljava/lang/String;I)Ljava/util/regex/Pattern;
 	param 1 pattern_flags
 
+group int cipher_op_mode
+	javax.crypto.Cipher.ENCRYPT_MODE
+	javax.crypto.Cipher.DECRYPT_MODE
+	javax.crypto.Cipher.WRAP_MODE
+	javax.crypto.Cipher.UNWRAP_MODE
+
+target_method net.minecraft.util.Crypt cipherData (ILjava/security/Key;[B)[B
+	param 0 cipher_op_mode
+target_method net.minecraft.util.Crypt getCipher (ILjava/security/Key;)Ljavax/crypto/Cipher;
+	param 0 cipher_op_mode
+
 group int calendar_field
 	java.util.Calendar.MONTH
 
