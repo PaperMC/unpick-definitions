@@ -30,9 +30,10 @@ group int vk_buffer_usage_flags
 	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_TRANSFER_SRC_BIT
 	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_TRANSFER_DST_BIT
 	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_UNIFORM_TEXEL_BUFFER_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT
 	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_INDEX_BUFFER_BIT
 	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_VERTEX_BUFFER_BIT
-	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT
+	org.lwjgl.vulkan.VK10.VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT
 
 group int vk_image_aspect_mask
 	@flags
@@ -180,6 +181,7 @@ group int vk_object_type
 
 # VulkanBackend
 group int vk_structure_type
+	org.lwjgl.vulkan.VK12.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES
 	org.lwjgl.vulkan.VK12.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES
 	org.lwjgl.vulkan.VK11.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2
 	org.lwjgl.vulkan.KHRSynchronization2.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR
@@ -214,13 +216,10 @@ group int vk_command_pool_create_flags
 
 group int vk_command_buffer_level
 	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_LEVEL_PRIMARY
-	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_LEVEL_SECONDARY
 
 group int vk_command_buffer_usage_flags
 	@flags
 	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
-	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE_BIT
-	org.lwjgl.vulkan.VK10.VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT
 
 group int vk_sample_count_flags
 	@flags
@@ -229,8 +228,39 @@ group int vk_sample_count_flags
 group long vk_pipeline_stage_flags
 	@flags
 	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_NONE_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TOP_OF_PIPE_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_DRAW_INDIRECT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_VERTEX_INPUT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TESSELLATION_CONTROL_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TESSELLATION_EVALUATION_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_GEOMETRY_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_EARLY_FRAGMENT_TESTS_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_LATE_FRAGMENT_TESTS_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_COLOR_ATTACHMENT_OUTPUT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_COMPUTE_SHADER_BIT_KHR
 	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TRANSFER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_BOTTOM_OF_PIPE_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_HOST_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT_KHR
 	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_COPY_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_RESOLVE_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_BLIT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_CLEAR_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_INDEX_INPUT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_VERTEX_ATTRIBUTE_INPUT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_PRE_RASTERIZATION_SHADERS_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TRANSFORM_FEEDBACK_BIT_EXT
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_CONDITIONAL_RENDERING_BIT_EXT
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_EXT
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_BUILD_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_RAY_TRACING_SHADER_BIT_KHR
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_FRAGMENT_DENSITY_PROCESS_BIT_EXT
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_TASK_SHADER_BIT_EXT
+	org.lwjgl.vulkan.KHRSynchronization2.VK_PIPELINE_STAGE_2_MESH_SHADER_BIT_EXT
 
 group long vk_access_mask
 	@flags
@@ -264,6 +294,11 @@ group int vk_query_result_flags
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_64_BIT
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WAIT_BIT
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WITH_AVAILABILITY_BIT
+
+# VulkanCommandPool
+group int vk_command_pool_reset_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT
 
 # VulkanDebug
 group int vk_debug_message_type_flags
@@ -551,14 +586,14 @@ target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo loadOp (I)Lorg/lwjgl/vu
 target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer loadOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
 	param 0 vk_attachment_load_op
 
-target_method com.mojang.blaze3d.vulkan.VulkanCommandEncoder renderpassCommandBuffer (Ljava/nio/IntBuffer;I)Lorg/lwjgl/vulkan/VkCommandBuffer;
-	param 1 vk_image_format
-
 target_method org.lwjgl.vulkan.VkRenderingInfo flags (I)Lorg/lwjgl/vulkan/VkRenderingInfo;
 	param 0 vk_rendering_flags
 
 target_method org.lwjgl.vulkan.VK10 vkGetQueryPoolResults (Lorg/lwjgl/vulkan/VkDevice;JIILjava/nio/LongBuffer;JI)I
 	param 6 vk_query_result_flags
+
+target_method org.lwjgl.vulkan.VK10 vkResetCommandPool (Lorg/lwjgl/vulkan/VkDevice;JI)I
+	param 2 vk_command_pool_reset_flags
 
 target_method org.lwjgl.vulkan.VkDebugUtilsMessengerCreateInfoEXT messageType (I)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCreateInfoEXT;
 	param 0 vk_debug_message_type_flags
@@ -727,6 +762,9 @@ target_method org.lwjgl.vulkan.VkPipelineRenderingCreateInfoKHR depthAttachmentF
 
 target_method org.lwjgl.vulkan.VK10 vkCreateGraphicsPipelines (Lorg/lwjgl/vulkan/VkDevice;JLorg/lwjgl/vulkan/VkGraphicsPipelineCreateInfo$Buffer;Lorg/lwjgl/vulkan/VkAllocationCallbacks;Ljava/nio/LongBuffer;)I
 	param 1 vk_handle
+
+target_method com.mojang.blaze3d.vulkan.VulkanUtils pipelineStageToString (J)Ljava/lang/String;
+	param 0 vk_pipeline_stage_flags
 
 target_method com.mojang.blaze3d.vulkan.VulkanUtils resultToString (I)Ljava/lang/String;
 	param 0 vk_result

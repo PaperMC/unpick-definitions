@@ -119,8 +119,8 @@ group int gl_framebuffer_target
 group int gl_tex_target
 	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_2D
 	com.mojang.blaze3d.opengl.GlConst.GL_PROXY_TEXTURE_2D
-	org.lwjgl.opengl.GL13.GL_TEXTURE_CUBE_MAP
-	org.lwjgl.opengl.GL31.GL_TEXTURE_BUFFER
+	org.lwjgl.opengl.GL13C.GL_TEXTURE_CUBE_MAP
+	org.lwjgl.opengl.GL31C.GL_TEXTURE_BUFFER
 
 group int gl_tex_parameter_pname
 	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_MAG_FILTER
@@ -331,7 +331,7 @@ group int gl_program_pname
 # note: glGetProgramInfoLog 32768 is the maxLength
 
 group int gl_index
-	org.lwjgl.opengl.GL31.GL_INVALID_INDEX
+	org.lwjgl.opengl.GL31C.GL_INVALID_INDEX
 
 # GlQueryPool
 group int gl_query_counter_target
@@ -366,21 +366,21 @@ group int gl_get_string_name
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
 	com.mojang.blaze3d.opengl.GlConst.GL_MAX_TEXTURE_SIZE
-	org.lwjgl.opengl.GL20.GL_MAX_DRAW_BUFFERS
-	org.lwjgl.opengl.GL31.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
-	org.lwjgl.opengl.GL33.GL_TIMESTAMP
+	org.lwjgl.opengl.GL20C.GL_MAX_DRAW_BUFFERS
+	org.lwjgl.opengl.GL31C.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
+	org.lwjgl.opengl.GL33C.GL_TIMESTAMP
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
 
 # GlStateManager
 group int gl_enable_state
-	org.lwjgl.opengl.GL11.GL_BLEND
-	org.lwjgl.opengl.GL11.GL_DEPTH_TEST
-	org.lwjgl.opengl.GL11.GL_CULL_FACE
-	org.lwjgl.opengl.GL11.GL_POLYGON_OFFSET_FILL
-	org.lwjgl.opengl.GL11.GL_COLOR_LOGIC_OP
-	org.lwjgl.opengl.GL11.GL_SCISSOR_TEST
-	org.lwjgl.opengl.GL32.GL_PROGRAM_POINT_SIZE
-	org.lwjgl.opengl.GL32.GL_TEXTURE_CUBE_MAP_SEAMLESS
+	org.lwjgl.opengl.GL11C.GL_BLEND
+	org.lwjgl.opengl.GL11C.GL_DEPTH_TEST
+	org.lwjgl.opengl.GL11C.GL_CULL_FACE
+	org.lwjgl.opengl.GL11C.GL_POLYGON_OFFSET_FILL
+	org.lwjgl.opengl.GL11C.GL_COLOR_LOGIC_OP
+	org.lwjgl.opengl.GL11C.GL_SCISSOR_TEST
+	org.lwjgl.opengl.GL32C.GL_PROGRAM_POINT_SIZE
+	org.lwjgl.opengl.GL32C.GL_TEXTURE_CUBE_MAP_SEAMLESS
 	org.lwjgl.opengl.KHRDebug.GL_DEBUG_OUTPUT
 	org.lwjgl.opengl.KHRDebug.GL_DEBUG_OUTPUT_SYNCHRONOUS
 
@@ -403,9 +403,9 @@ group int gl_logic_op
 	org.lwjgl.opengl.GL11.GL_OR_INVERTED
 
 group int gl_buffer
-	org.lwjgl.opengl.GL11.GL_COLOR
-	org.lwjgl.opengl.GL11.GL_DEPTH
-	org.lwjgl.opengl.GL11.GL_STENCIL
+	org.lwjgl.opengl.GL11C.GL_COLOR
+	org.lwjgl.opengl.GL11C.GL_DEPTH
+	org.lwjgl.opengl.GL11C.GL_STENCIL
 
 # BufferStorage
 group int gl_map_buffer_access
@@ -480,7 +480,7 @@ target_method com.mojang.blaze3d.opengl.DirectStateAccess mapBufferRange (IJJII)
 
 target_field com.mojang.blaze3d.opengl.GlBuffer mappingFlags I gl_map_buffer_access
 
-target_method org.lwjgl.opengl.GL30 glBindFramebuffer (II)V
+target_method org.lwjgl.opengl.GL30C glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
 target_method com.mojang.blaze3d.opengl.GlStateManager _glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
@@ -535,11 +535,9 @@ target_method com.mojang.blaze3d.opengl.GlStateManager _texSubImage2D (IIIIIIIIL
 target_method com.mojang.blaze3d.opengl.GlStateManager _getTexLevelParameter (III)I
 	param 0 gl_tex_target
 	param 2 gl_tex_level_parameter_pname
-target_method org.lwjgl.opengl.GL11 glBindTexture (II)V
-	param 0 gl_tex_target
 target_method org.lwjgl.opengl.GL11C glBindTexture (II)V
 	param 0 gl_tex_target
-target_method org.lwjgl.opengl.GL31 glTexBuffer (III)V
+target_method org.lwjgl.opengl.GL31C glTexBuffer (III)V
 	param 0 gl_tex_target
 
 target_method com.mojang.blaze3d.opengl.GlDebug sourceToString (I)Ljava/lang/String;
@@ -553,7 +551,7 @@ target_method org.lwjgl.opengl.KHRDebug glPushDebugGroup (IILjava/lang/CharSeque
 
 target_method com.mojang.blaze3d.opengl.GlStateManager$BooleanState <init> (I)V
 	param 0 gl_enable_state
-target_method org.lwjgl.opengl.GL11 glEnable (I)V
+target_method org.lwjgl.opengl.GL11C glEnable (I)V
 	param 0 gl_enable_state
 
 target_method org.lwjgl.opengl.KHRDebug glDebugMessageControl (III[IZ)V
@@ -569,7 +567,7 @@ target_method com.mojang.blaze3d.opengl.GlStateManager _glFenceSync (II)J
 target_method com.mojang.blaze3d.opengl.GlStateManager _glClientWaitSync (JIJ)I
 	return gl_client_wait_sync_result
 
-target_method org.lwjgl.opengl.GL11 glDrawBuffer (I)V
+target_method org.lwjgl.opengl.GL11C glDrawBuffer (I)V
 	param 0 gl_draw_buffer_buf
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _polygonMode (II)V
@@ -580,7 +578,7 @@ target_method com.mojang.blaze3d.opengl.GlStateManager glGetProgrami (II)I
 target_method com.mojang.blaze3d.opengl.GlStateManager glGetShaderi (II)I
 	param 1 gl_program_pname
 
-target_method org.lwjgl.opengl.GL31 glGetUniformBlockIndex (ILjava/lang/CharSequence;)I
+target_method org.lwjgl.opengl.GL31C glGetUniformBlockIndex (ILjava/lang/CharSequence;)I
 	return gl_index
 
 target_method org.lwjgl.opengl.GL33C glQueryCounter (II)V
@@ -596,9 +594,9 @@ target_method com.mojang.blaze3d.opengl.DirectStateAccess$Emulated selectBufferB
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _glBindBuffer (II)V
 	param 0 gl_buffer_target
-target_method org.lwjgl.opengl.GL30 glBindBufferRange (IIIJJ)V
+target_method org.lwjgl.opengl.GL30C glBindBufferRange (IIIJJ)V
 	param 0 gl_buffer_target
-target_method org.lwjgl.opengl.GL31 glCopyBufferSubData (IIJJJ)V
+target_method org.lwjgl.opengl.GL31C glCopyBufferSubData (IIJJJ)V
 	param 0 gl_buffer_target
 	param 1 gl_buffer_target
 
@@ -610,9 +608,9 @@ target_method com.mojang.blaze3d.opengl.GlStateManager _getString (I)Ljava/lang/
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _getInteger (I)I
 	param 0 gl_get_number_pname
-target_method org.lwjgl.opengl.GL11 glGetInteger (I)I
+target_method org.lwjgl.opengl.GL11C glGetInteger (I)I
 	param 0 gl_get_number_pname
-target_method org.lwjgl.opengl.GL11 glGetFloat (I)F
+target_method org.lwjgl.opengl.GL11C glGetFloat (I)F
 	param 0 gl_get_number_pname
 target_method org.lwjgl.opengl.GL32C glGetInteger64 (I)J
 	param 0 gl_get_number_pname
@@ -636,5 +634,5 @@ target_method org.lwjgl.opengl.ARBClipControl glClipControl (II)V
 	param 0 gl_clip_origin
 	param 1 gl_clip_depth
 
-target_method org.lwjgl.opengl.GL30 glClearBufferfv (II[F)V
+target_method org.lwjgl.opengl.GL30C glClearBufferfv (II[F)V
 	param 0 gl_buffer
