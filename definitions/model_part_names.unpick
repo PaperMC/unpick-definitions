@@ -226,17 +226,6 @@ group String model_part_names
 	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.TOP
 	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.BOTTOM
 
-group String model_part_names
-	@scope class net.minecraft.client.renderer.blockentity.HangingSignRenderer
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.PLANK
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.V_CHAINS
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.NORMAL_CHAINS
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_L_1
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_L_2
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_R_1
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_R_2
-	net.minecraft.client.renderer.blockentity.HangingSignRenderer.BOARD
-
 target_method net.minecraft.client.model.geom.ModelPart hasChild (Ljava/lang/String;)Z
 	param 0 model_part_names
 target_method net.minecraft.client.model.geom.ModelPart getChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/ModelPart;

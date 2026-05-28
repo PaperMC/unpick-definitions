@@ -11,6 +11,7 @@ group int gpu_buffer_usage
 	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_INDEX
 	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM
 	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_UNIFORM_TEXEL_BUFFER
+	com.mojang.blaze3d.buffers.GpuBuffer.USAGE_INDIRECT_PARAMETERS
 
 group int gpu_texture_usage
 	@flags
@@ -34,11 +35,5 @@ group int color_target_write_flags
 target_annotation com.mojang.blaze3d.buffers.GpuBuffer$Usage gpu_buffer_usage
 target_annotation com.mojang.blaze3d.textures.GpuTexture$Usage gpu_texture_usage
 target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags
-
-# Mojang forgetting the annotations again...
-target_method com.mojang.blaze3d.vulkan.VulkanDevice createBuffer (Ljava/util/function/Supplier;IJ)Lcom/mojang/blaze3d/buffers/GpuBuffer;
-	param 1 gpu_buffer_usage
-target_method com.mojang.blaze3d.vulkan.VulkanDevice createBuffer (Ljava/util/function/Supplier;ILjava/nio/ByteBuffer;)Lcom/mojang/blaze3d/buffers/GpuBuffer;
-	param 1 gpu_buffer_usage
 
 # VulkanUtils#hasAnyBit/hasAllBits can't be mapped nicely even with scoped method

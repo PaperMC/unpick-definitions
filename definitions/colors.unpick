@@ -174,9 +174,6 @@ target_method net.minecraft.client.gui.components.MultiLineEditBox$Builder setTe
 target_method net.minecraft.client.gui.components.MultiLineEditBox$Builder setCursorColor (I)Lnet/minecraft/client/gui/components/MultiLineEditBox$Builder;
 	param 0 argb_color
 
-target_method net.minecraft.client.gui.components.TabButton extractFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
-	param 2 argb_color
-
 target_method net.minecraft.client.gui.components.TextCursorUtils extractInsertCursor (Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIII)V
 	param 3 argb_color
 
@@ -185,11 +182,17 @@ target_method net.minecraft.client.gui.components.debugchart.AbstractDebugChart 
 	param 4 argb_color
 	param 6 argb_color
 
+target_method net.minecraft.client.gui.components.tabs.MenuTabBar$MenuTabButton renderFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
+	param 2 argb_color
+
 target_method net.minecraft.client.gui.components.toasts.SystemToast extractTextLines (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;Ljava/util/List;II)V
 	param 4 argb_color
 
 target_method net.minecraft.client.gui.screens.advancements.AdvancementWidget extractMultilineText (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Ljava/util/List;III)V
 	param 4 argb_color
+
+target_method net.minecraft.client.gui.screens.friends.FriendsOverlayTabButton renderFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
+	param 2 argb_color
 
 target_method net.minecraft.client.particle.SquidInkParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDILnet/minecraft/client/particle/SpriteSet;)V
 	param 7 argb_color
