@@ -218,26 +218,3 @@ target_method net.minecraft.network.protocol.handshake.ClientIntent byId (I)Lnet
 	param 0 client_intent
 target_method net.minecraft.network.protocol.handshake.ClientIntent id ()I
 	return client_intent
-
-group String p2p_rpc_method
-	net.minecraft.client.multiplayer.p2p.client.SignalingServiceClient$RpcMethods.*
-
-group int p2p_error_code
-	net.minecraft.client.multiplayer.p2p.SignalingErrorMapper.CODE_PLAYER_UNREACHABLE
-	net.minecraft.client.multiplayer.p2p.SignalingErrorMapper.CODE_MESSAGE_DELIVERY_FAILED
-	net.minecraft.client.multiplayer.p2p.SignalingErrorMapper.CODE_TURN_AUTH_FAILED
-
-group int buffer_writability_flag
-	@scope class net.minecraft.client.network.webrtc.RtcChannel
-	net.minecraft.client.network.webrtc.RtcChannel.BACKPRESSURE_FLAG
-
-target_method net.minecraft.client.multiplayer.p2p.client.SignalingServiceClient sendRequest (Ljava/lang/String;Ljava/util/List;)Ljava/util/concurrent/CompletableFuture;
-	param 0 p2p_rpc_method
-target_method net.minecraft.client.multiplayer.p2p.client.SignalingServiceClient onRpcMethod (Lnet/minecraft/client/multiplayer/p2p/client/JsonRpcClient;Lcom/google/gson/JsonElement;Ljava/lang/String;Lcom/google/gson/JsonElement;)V
-	param 2 p2p_rpc_method
-
-target_method net.minecraft.client.multiplayer.p2p.client.JsonRpcClient sendNotification (Ljava/lang/String;)V
-	param 0 p2p_rpc_method
-
-target_method io.netty.channel.ChannelOutboundBuffer setUserDefinedWritability (IZ)V
-	param 0 buffer_writability_flag

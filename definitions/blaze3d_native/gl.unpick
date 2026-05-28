@@ -320,6 +320,10 @@ group int gl_hint_mode
 group int gl_fence_sync_condition
 	com.mojang.blaze3d.opengl.GlConst.GL_SYNC_GPU_COMMANDS_COMPLETE
 
+group int gl_client_wait_sync_flags
+	@flags
+	org.lwjgl.opengl.GL32C.GL_SYNC_FLUSH_COMMANDS_BIT
+
 group int gl_client_wait_sync_result
 	com.mojang.blaze3d.opengl.GlConst.GL_TIMEOUT_EXPIRED
 	com.mojang.blaze3d.opengl.GlConst.GL_WAIT_FAILED
@@ -565,8 +569,11 @@ target_method org.lwjgl.opengl.ARBDebugOutput glDebugMessageControlARB (III[IZ)V
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _glFenceSync (II)J
 	param 0 gl_fence_sync_condition
+target_method org.lwjgl.opengl.GL32C glFenceSync (II)J
+	param 0 gl_fence_sync_condition
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _glClientWaitSync (JIJ)I
+	param 1 gl_client_wait_sync_flags
 	return gl_client_wait_sync_result
 
 target_method org.lwjgl.opengl.GL11C glDrawBuffer (I)V
