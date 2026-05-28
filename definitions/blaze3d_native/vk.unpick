@@ -187,6 +187,7 @@ group int vk_structure_type
 	org.lwjgl.vulkan.KHRSynchronization2.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR
 	org.lwjgl.vulkan.KHRDynamicRendering.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR
 	org.lwjgl.vulkan.EXTVertexAttributeDivisor.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT
+	org.lwjgl.vulkan.EXTMultiDraw.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT
 
 group int vk_physical_device_type
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_OTHER
@@ -615,6 +616,9 @@ target_method com.mojang.blaze3d.vulkan.VulkanRenderPipeline <init> (Lcom/mojang
 	param 4 vk_handle
 	param 6 vk_handle
 	param 7 vk_handle
+
+target_method org.lwjgl.vulkan.VkBufferCreateInfo usage (I)Lorg/lwjgl/vulkan/VkBufferCreateInfo;
+	param 0 vk_buffer_usage_flags
 
 target_method org.lwjgl.vulkan.VkBufferCreateInfo sharingMode (I)Lorg/lwjgl/vulkan/VkBufferCreateInfo;
 	param 0 vk_sharing_mode

@@ -255,11 +255,12 @@ group int gl_framebuffer_attachment
 #	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER
 #	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_UNSUPPORTED
 
-group int gl_arb_buffer_flags
+group int gl_buffer_storage_flags
 	@flags
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_READ_BIT
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_WRITE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
+	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_DYNAMIC_STORAGE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_CLIENT_STORAGE_BIT
 
@@ -271,6 +272,7 @@ group int gl_buffer_target
 	com.mojang.blaze3d.opengl.GlConst.GL_COPY_WRITE_BUFFER
 	com.mojang.blaze3d.opengl.GlConst.GL_PIXEL_UNPACK_BUFFER
 	com.mojang.blaze3d.opengl.GlConst.GL_UNIFORM_BUFFER
+	org.lwjgl.opengl.ARBDrawIndirect.GL_DRAW_INDIRECT_BUFFER
 
 # GlDebugLabel
 group int gl_khr_label_identifier
@@ -407,7 +409,7 @@ group int gl_buffer
 	org.lwjgl.opengl.GL11C.GL_DEPTH
 	org.lwjgl.opengl.GL11C.GL_STENCIL
 
-# BufferStorage
+# BufferStorage, GlTransientMemory
 group int gl_map_buffer_access
 	@flags
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_READ_BIT
@@ -473,12 +475,12 @@ target_method com.mojang.blaze3d.opengl.GlStateManager glCreateShader (I)I
 target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlEnum (I)I
 	return gl_buffer_data_usage
 target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlFlag (I)I
-	return gl_arb_buffer_flags
+	return gl_buffer_storage_flags
 
 target_method com.mojang.blaze3d.opengl.DirectStateAccess mapBufferRange (IJJII)Ljava/nio/ByteBuffer;
 	param 3 gl_map_buffer_access
 
-target_field com.mojang.blaze3d.opengl.GlBuffer mappingFlags I gl_map_buffer_access
+target_field com.mojang.blaze3d.opengl.GlBuffer$Direct mappingFlags I gl_map_buffer_access
 
 target_method org.lwjgl.opengl.GL30C glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
@@ -589,16 +591,22 @@ target_method org.lwjgl.opengl.GL15C glGetQueryObjecti (II)I
 target_method org.lwjgl.opengl.GL33C glGetQueryObjectui64 (II)J
 	param 1 gl_query_object_pname
 
-target_method com.mojang.blaze3d.opengl.DirectStateAccess$Emulated selectBufferBindTarget (I)I
+target_method com.mojang.blaze3d.opengl.GlUtil selectBufferBindTarget (I)I
 	return gl_buffer_target
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _glBindBuffer (II)V
 	param 0 gl_buffer_target
 target_method org.lwjgl.opengl.GL30C glBindBufferRange (IIIJJ)V
 	param 0 gl_buffer_target
+target_method org.lwjgl.opengl.GL30C nglMapBufferRange (IJJI)J
+	param 0 gl_buffer_target
+	param 3 gl_map_buffer_access
 target_method org.lwjgl.opengl.GL31C glCopyBufferSubData (IIJJJ)V
 	param 0 gl_buffer_target
 	param 1 gl_buffer_target
+target_method org.lwjgl.opengl.ARBBufferStorage glBufferStorage (IJI)V
+	param 0 gl_buffer_target
+	param 2 gl_buffer_storage_flags
 
 target_method com.mojang.blaze3d.opengl.GlStateManager _getError ()I
 	return gl_error
