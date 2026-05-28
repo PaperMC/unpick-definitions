@@ -35,6 +35,9 @@ target_method org.lwjgl.openal.ALC10 alcOpenDevice (Ljava/lang/CharSequence;)J
 target_method org.lwjgl.stb.STBImageWrite nstbi_write_png_to_func (JJIIIJI)I
 	param 1 pointer
 
+target_method com.mojang.blaze3d.opengl.GlTransientMemory$PersistentMapping$GlAllocation <init> (IJJ)V
+	param 1 pointer
+
 target_method com.mojang.blaze3d.platform.cursor.CursorType <init> (Ljava/lang/String;J)V
 	param 1 pointer
 

@@ -169,6 +169,9 @@ target_method net.minecraft.server.commands.TimeCommand setPaused (Lnet/minecraf
 target_method net.minecraft.server.commands.TimeCommand setRate (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;F)I
 	return command_result
 
+target_method net.minecraft.server.commands.UnpublishCommand unpublish (Lnet/minecraft/commands/CommandSourceStack;)I
+	return command_result
+
 target_method net.minecraft.server.commands.WhitelistCommand reload (Lnet/minecraft/commands/CommandSourceStack;)I
 	return command_result
 target_method net.minecraft.server.commands.WhitelistCommand enableWhitelist (Lnet/minecraft/commands/CommandSourceStack;)I
