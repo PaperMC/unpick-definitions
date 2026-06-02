@@ -105,6 +105,7 @@ group int gl_pixel_store_pname
 	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_ALIGNMENT
 	com.mojang.blaze3d.opengl.GlConst.GL_PACK_ALIGNMENT
 	com.mojang.blaze3d.opengl.GlConst.GL_PACK_ROW_LENGTH
+	org.lwjgl.opengl.GL12C.GL_UNPACK_IMAGE_HEIGHT
 
 group int gl_buffer_mask
 	@flags
@@ -128,10 +129,10 @@ group int gl_tex_parameter_pname
 	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_COMPARE_MODE
 	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_WRAP_S
 	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_WRAP_T
-	org.lwjgl.opengl.GL12.GL_TEXTURE_BASE_LEVEL
-	org.lwjgl.opengl.GL12.GL_TEXTURE_MAX_LEVEL
-	org.lwjgl.opengl.GL12.GL_TEXTURE_MAX_LOD
-	org.lwjgl.opengl.GL12.GL_TEXTURE_MIN_LOD
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_BASE_LEVEL
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LEVEL
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LOD
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MIN_LOD
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY
 
 group int gl_tex_parameter_value
@@ -420,10 +421,10 @@ group int gl_map_buffer_access
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_WRITE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
-	org.lwjgl.opengl.GL30.GL_MAP_INVALIDATE_RANGE_BIT
-	org.lwjgl.opengl.GL30.GL_MAP_INVALIDATE_BUFFER_BIT
-	org.lwjgl.opengl.GL30.GL_MAP_FLUSH_EXPLICIT_BIT
-	org.lwjgl.opengl.GL30.GL_MAP_UNSYNCHRONIZED_BIT
+	org.lwjgl.opengl.GL30C.GL_MAP_INVALIDATE_RANGE_BIT
+	org.lwjgl.opengl.GL30C.GL_MAP_INVALIDATE_BUFFER_BIT
+	org.lwjgl.opengl.GL30C.GL_MAP_FLUSH_EXPLICIT_BIT
+	org.lwjgl.opengl.GL30C.GL_MAP_UNSYNCHRONIZED_BIT
 
 # Target definition
 
@@ -454,9 +455,6 @@ target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/IndexT
 
 target_method com.mojang.blaze3d.opengl.GlConst toGlType (Lcom/mojang/blaze3d/GpuFormat;)I
 	return gl_pixel_type
-
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/NativeImage$Format;)I
-	return gl_tex_format
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/textures/AddressMode;)I
 	return gl_address_mode
