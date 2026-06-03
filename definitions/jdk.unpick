@@ -72,6 +72,17 @@ group int window_operation
 target_method javax.swing.JFrame setDefaultCloseOperation (I)V
 	param 0 window_operation
 
+# linter is broken
+#group String layout_constraint
+#	java.awt.BorderLayout.NORTH
+#	java.awt.BorderLayout.SOUTH
+#	java.awt.BorderLayout.EAST
+#	java.awt.BorderLayout.WEST
+#	java.awt.BorderLayout.CENTER
+
+#target_method java.awt.Container add (Ljava/awt/Component;Ljava/lang/Object;)V
+#	param 1 layout_constraint
+
 group int scrollbar_policy
 	javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
 	javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER

@@ -1,6 +1,6 @@
 unpick v4
 
-# todo enable when validation is fixed
+# todo enable when linter is fixed
 group String fd_dialog_type
 	com.mojang.blaze3d.platform.MessageBox.TYPE_OK
 	com.mojang.blaze3d.platform.MessageBox.TYPE_OK_CANCEL
