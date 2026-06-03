@@ -129,6 +129,11 @@ target_method net.minecraft.world.item.BundleItem toggleSelectedItem (Lnet/minec
 target_method net.minecraft.world.item.BundleItem getSelectedItemIndex (Lnet/minecraft/world/item/ItemStack;)I
 	return bundle_selected_item_index
 
+target_field net.minecraft.network.protocol.game.ServerboundSelectBundleItemPacket selectedItemIndex I bundle_selected_item_index
+
+target_method net.minecraft.client.gui.BundleMouseActions toggleSelectedBundleItem (Lnet/minecraft/world/item/ItemStack;II)V
+	param 2 bundle_selected_item_index
+
 target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndex (Lnet/minecraft/world/item/ItemStack;)I
 	return bundle_stack_index
 
