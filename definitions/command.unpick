@@ -73,11 +73,6 @@ target_method net.minecraft.server.commands.FetchProfileCommand printForEntity (
 target_method net.minecraft.server.commands.ForceLoadCommand queryForceLoad (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/level/ColumnPos;)I
 	return command_result
 
-target_method net.minecraft.server.commands.ItemCommands modifyBlockItem (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;ILnet/minecraft/core/Holder;)I
-	return command_result
-target_method net.minecraft.server.commands.ItemCommands setBlockItem (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/item/ItemStack;)I
-	return command_result
-
 target_method net.minecraft.server.commands.JfrCommand startJfr (Lnet/minecraft/commands/CommandSourceStack;)I
 	return command_result
 target_method net.minecraft.server.commands.JfrCommand stopJfr (Lnet/minecraft/commands/CommandSourceStack;)I
