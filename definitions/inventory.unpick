@@ -121,6 +121,8 @@ target_field net.minecraft.world.item.component.BundleContents selectedItem I bu
 target_field net.minecraft.world.item.component.BundleContents$Mutable selectedItem I bundle_selected_item_index
 target_method net.minecraft.world.item.component.BundleContents <init> (Ljava/util/List;I)V
 	param 1 bundle_selected_item_index
+target_method net.minecraft.world.item.component.BundleContents$Mutable <init> (Ljava/util/List;Lorg/apache/commons/lang3/math/Fraction;I)V
+	param 2 bundle_selected_item_index
 target_method net.minecraft.world.item.component.BundleContents$Mutable toggleSelectedItem (I)V
 	param 0 bundle_selected_item_index
 
@@ -134,6 +136,8 @@ target_field net.minecraft.network.protocol.game.ServerboundSelectBundleItemPack
 target_method net.minecraft.client.gui.BundleMouseActions toggleSelectedBundleItem (Lnet/minecraft/world/item/ItemStack;II)V
 	param 2 bundle_selected_item_index
 
+target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndexWithinRange (Lnet/minecraft/world/item/ItemStack;II)I
+	return bundle_stack_index
 target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndex (Lnet/minecraft/world/item/ItemStack;)I
 	return bundle_stack_index
 

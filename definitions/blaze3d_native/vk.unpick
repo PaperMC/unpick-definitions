@@ -180,15 +180,6 @@ group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE
 
 # VulkanBackend
-group int vk_structure_type
-	org.lwjgl.vulkan.VK12.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES
-	org.lwjgl.vulkan.VK12.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES
-	org.lwjgl.vulkan.VK11.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2
-	org.lwjgl.vulkan.KHRSynchronization2.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR
-	org.lwjgl.vulkan.KHRDynamicRendering.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR
-	org.lwjgl.vulkan.EXTVertexAttributeDivisor.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT
-	org.lwjgl.vulkan.EXTMultiDraw.VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT
-
 group int vk_physical_device_type
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_OTHER
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU
@@ -515,11 +506,6 @@ target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vu
 	param 1 vk_object_type
 target_method com.mojang.blaze3d.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/util/function/Supplier;)V
 	param 1 vk_object_type
-
-target_method com.mojang.blaze3d.vulkan.init.VulkanPNextStruct <init> (II)V
-	param 0 vk_structure_type
-target_method com.mojang.blaze3d.vulkan.init.VulkanPNextStruct sType ()I
-	return vk_structure_type
 
 target_method org.lwjgl.vulkan.VkPhysicalDeviceProperties deviceType ()I
 	return vk_physical_device_type
