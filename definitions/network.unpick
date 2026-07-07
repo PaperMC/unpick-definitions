@@ -65,6 +65,10 @@ group int move_player_flags
 	net.minecraft.network.protocol.game.ServerboundMovePlayerPacket.FLAG_ON_GROUND
 	net.minecraft.network.protocol.game.ServerboundMovePlayerPacket.FLAG_HORIZONTAL_COLLISION
 
+group int move_entity_flags
+	@flags
+	net.minecraft.network.protocol.game.ClientboundMoveEntityPacket.ON_GROUND_FLAG
+
 group int animation_action
 	net.minecraft.network.protocol.game.ClientboundAnimatePacket.SWING_MAIN_HAND
 	net.minecraft.network.protocol.game.ClientboundAnimatePacket.WAKE_UP
@@ -140,6 +144,11 @@ target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket un
 	param 0 move_player_flags
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackHorizontalCollision (I)Z
 	param 0 move_player_flags
+
+target_method net.minecraft.network.protocol.game.ClientboundMoveEntityPacket unpackOnGround (I)Z
+	param 0 move_entity_flags
+target_method net.minecraft.network.protocol.game.ClientboundMoveEntityPacket packProperties (ZI)I
+	return move_entity_flags
 
 target_method net.minecraft.network.protocol.game.ClientboundAnimatePacket <init> (Lnet/minecraft/world/entity/Entity;I)V
 	param 1 animation_action

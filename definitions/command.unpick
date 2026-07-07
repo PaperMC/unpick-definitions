@@ -81,7 +81,7 @@ target_method net.minecraft.server.commands.JfrCommand stopJfr (Lnet/minecraft/c
 target_method net.minecraft.server.commands.PardonIpCommand unban (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I
 	return command_result
 
-target_method net.minecraft.server.commands.PlaceCommand placeFeature (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder$Reference;Lnet/minecraft/core/BlockPos;)I
+target_method net.minecraft.server.commands.PlaceCommand placeFeature (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;Lnet/minecraft/core/BlockPos;)I
 	return command_result
 target_method net.minecraft.server.commands.PlaceCommand placeJigsaw (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;ILnet/minecraft/core/BlockPos;)I
 	return command_result
