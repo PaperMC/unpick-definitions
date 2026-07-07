@@ -1,0 +1,39 @@
+unpick v4
+
+group int gpu_buffer_usage
+	@flags
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_MAP_READ
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_MAP_WRITE
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_HINT_CLIENT_STORAGE
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_COPY_DST
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_COPY_SRC
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_VERTEX
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_INDEX
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_UNIFORM
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_UNIFORM_TEXEL_BUFFER
+	com.mojang.renderpearl.api.buffers.GpuBuffer.USAGE_INDIRECT_PARAMETERS
+
+group int gpu_texture_usage
+	@flags
+	com.mojang.renderpearl.api.textures.GpuTexture.USAGE_COPY_DST
+	com.mojang.renderpearl.api.textures.GpuTexture.USAGE_COPY_SRC
+	com.mojang.renderpearl.api.textures.GpuTexture.USAGE_TEXTURE_BINDING
+	com.mojang.renderpearl.api.textures.GpuTexture.USAGE_RENDER_ATTACHMENT
+	com.mojang.renderpearl.api.textures.GpuTexture.USAGE_CUBEMAP_COMPATIBLE
+
+group int color_target_write_flags
+	@flags
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_RED
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_GREEN
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_BLUE
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_ALPHA
+
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_COLOR
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_ALL
+	com.mojang.renderpearl.api.pipeline.ColorTargetState.WRITE_NONE
+
+target_annotation com.mojang.renderpearl.api.buffers.GpuBuffer$Usage gpu_buffer_usage
+target_annotation com.mojang.renderpearl.api.textures.GpuTexture$Usage gpu_texture_usage
+target_annotation com.mojang.renderpearl.api.pipeline.ColorTargetState$WriteMask color_target_write_flags
+
+# VulkanUtils#hasAnyBit/hasAllBits can't be mapped nicely even with scoped method

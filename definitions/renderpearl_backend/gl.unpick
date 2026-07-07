@@ -8,7 +8,7 @@ unpick v4
 # are grouped.
 
 # Where possible, this will unpick the constant using values from
-# the client jar (usually GlConst in Blaze3D). If there is no applicable
+# the client jar (usually GlConst in RenderPearl). If there is no applicable
 # field there, this will use the value from GLxx class in LWJGL,
 # where XX is the lowest version the constant is available in.
 
@@ -18,18 +18,18 @@ unpick v4
 
 # GlConst
 group int gl_compare_op
-	com.mojang.blaze3d.opengl.GlConst.GL_EQUAL
-	com.mojang.blaze3d.opengl.GlConst.GL_LEQUAL
-	com.mojang.blaze3d.opengl.GlConst.GL_LESS
-	com.mojang.blaze3d.opengl.GlConst.GL_GREATER
-	com.mojang.blaze3d.opengl.GlConst.GL_GEQUAL
-	com.mojang.blaze3d.opengl.GlConst.GL_ALWAYS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_EQUAL
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LEQUAL
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LESS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_GREATER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_GEQUAL
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ALWAYS
 	org.lwjgl.opengl.GL11.GL_NEVER
 	org.lwjgl.opengl.GL11.GL_NOTEQUAL
 
 group int gl_polygon_mode
-	com.mojang.blaze3d.opengl.GlConst.GL_LINE
-	com.mojang.blaze3d.opengl.GlConst.GL_FILL
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FILL
 
 group int gl_blend_factor
 	org.lwjgl.opengl.GL11.GL_SRC_ALPHA_SATURATE
@@ -37,98 +37,98 @@ group int gl_blend_factor
 	org.lwjgl.opengl.GL14.GL_CONSTANT_COLOR
 	org.lwjgl.opengl.GL14.GL_ONE_MINUS_CONSTANT_ALPHA
 	org.lwjgl.opengl.GL14.GL_ONE_MINUS_CONSTANT_COLOR
-	com.mojang.blaze3d.opengl.GlConst.GL_ZERO
-	com.mojang.blaze3d.opengl.GlConst.GL_ONE
-	com.mojang.blaze3d.opengl.GlConst.GL_DST_ALPHA
-	com.mojang.blaze3d.opengl.GlConst.GL_DST_COLOR
-	com.mojang.blaze3d.opengl.GlConst.GL_ONE_MINUS_DST_ALPHA
-	com.mojang.blaze3d.opengl.GlConst.GL_ONE_MINUS_DST_COLOR
-	com.mojang.blaze3d.opengl.GlConst.GL_SRC_ALPHA
-	com.mojang.blaze3d.opengl.GlConst.GL_SRC_COLOR
-	com.mojang.blaze3d.opengl.GlConst.GL_ONE_MINUS_SRC_ALPHA
-	com.mojang.blaze3d.opengl.GlConst.GL_ONE_MINUS_SRC_COLOR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ZERO
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ONE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DST_ALPHA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DST_COLOR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ONE_MINUS_DST_ALPHA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ONE_MINUS_DST_COLOR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_SRC_ALPHA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_SRC_COLOR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ONE_MINUS_SRC_ALPHA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ONE_MINUS_SRC_COLOR
 
 group int gl_blend_op
-	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_ADD
-	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_SUBTRACT
-	com.mojang.blaze3d.opengl.GlConst.GL_FUNC_REVERSE_SUBTRACT
-	com.mojang.blaze3d.opengl.GlConst.GL_MIN
-	com.mojang.blaze3d.opengl.GlConst.GL_MAX
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FUNC_ADD
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FUNC_SUBTRACT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FUNC_REVERSE_SUBTRACT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MIN
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAX
 
 group int gl_draw_mode
-	com.mojang.blaze3d.opengl.GlConst.GL_LINES
-	com.mojang.blaze3d.opengl.GlConst.GL_LINE_STRIP
-	com.mojang.blaze3d.opengl.GlConst.GL_TRIANGLE_STRIP
-	com.mojang.blaze3d.opengl.GlConst.GL_TRIANGLE_FAN
-	com.mojang.blaze3d.opengl.GlConst.GL_TRIANGLES
-	com.mojang.blaze3d.opengl.GlConst.GL_POINTS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINES
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINE_STRIP
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TRIANGLE_STRIP
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TRIANGLE_FAN
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TRIANGLES
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_POINTS
 
 group int gl_address_mode
-	com.mojang.blaze3d.opengl.GlConst.GL_CLAMP_TO_EDGE
-	com.mojang.blaze3d.opengl.GlConst.GL_REPEAT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_CLAMP_TO_EDGE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_REPEAT
 
 group int gl_buffer_data_usage
-	com.mojang.blaze3d.opengl.GlConst.GL_STATIC_DRAW
-	com.mojang.blaze3d.opengl.GlConst.GL_DYNAMIC_DRAW
-	com.mojang.blaze3d.opengl.GlConst.GL_STREAM_DRAW
-	com.mojang.blaze3d.opengl.GlConst.GL_STATIC_READ
-	com.mojang.blaze3d.opengl.GlConst.GL_DYNAMIC_READ
-	com.mojang.blaze3d.opengl.GlConst.GL_STREAM_READ
-	com.mojang.blaze3d.opengl.GlConst.GL_STATIC_COPY
-	com.mojang.blaze3d.opengl.GlConst.GL_DYNAMIC_COPY
-	com.mojang.blaze3d.opengl.GlConst.GL_STREAM_COPY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_COPY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_COPY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_COPY
 
 # GlSampler
 group int gl_filter
-	com.mojang.blaze3d.opengl.GlConst.GL_NEAREST
-	com.mojang.blaze3d.opengl.GlConst.GL_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
 
 # GlCommandEncoder, DirectStateAccess
 group int gl_draw_buffer_buf
-	com.mojang.blaze3d.opengl.GlConst.GL_COLOR_ATTACHMENT0
-	com.mojang.blaze3d.opengl.GlConst.GL_NONE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NONE
 
 group int gl_polygon_mode_face
-	com.mojang.blaze3d.opengl.GlConst.GL_FRONT_AND_BACK
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRONT_AND_BACK
 
 group int gl_texture
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE0
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE1
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE2
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE0
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE1
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE2
 
 group int gl_pixel_store_pname
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_SWAP_BYTES
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_LSB_FIRST
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_ROW_LENGTH
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_SKIP_ROWS
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_SKIP_PIXELS
-	com.mojang.blaze3d.opengl.GlConst.GL_UNPACK_ALIGNMENT
-	com.mojang.blaze3d.opengl.GlConst.GL_PACK_ALIGNMENT
-	com.mojang.blaze3d.opengl.GlConst.GL_PACK_ROW_LENGTH
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SWAP_BYTES
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_LSB_FIRST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ROW_LENGTH
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_ROWS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_PIXELS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ALIGNMENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ALIGNMENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ROW_LENGTH
 	org.lwjgl.opengl.GL12C.GL_UNPACK_IMAGE_HEIGHT
 
 group int gl_buffer_mask
 	@flags
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_BUFFER_BIT
-	com.mojang.blaze3d.opengl.GlConst.GL_COLOR_BUFFER_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_BUFFER_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_BUFFER_BIT
 
 group int gl_framebuffer_target
-	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_READ_FRAMEBUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_DRAW_FRAMEBUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_READ_FRAMEBUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DRAW_FRAMEBUFFER
 
 group int gl_tex_target
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_2D
-	com.mojang.blaze3d.opengl.GlConst.GL_PROXY_TEXTURE_2D
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_2D
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PROXY_TEXTURE_2D
 	org.lwjgl.opengl.GL13C.GL_TEXTURE_CUBE_MAP
 	org.lwjgl.opengl.GL31C.GL_TEXTURE_BUFFER
 
 group int gl_tex_parameter_pname
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_MAG_FILTER
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_MIN_FILTER
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_COMPARE_MODE
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_WRAP_S
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_WRAP_T
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MAG_FILTER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MIN_FILTER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_COMPARE_MODE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_S
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_T
 	org.lwjgl.opengl.GL12C.GL_TEXTURE_BASE_LEVEL
 	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LEVEL
 	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LOD
@@ -136,23 +136,23 @@ group int gl_tex_parameter_pname
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY
 
 group int gl_tex_parameter_value
-	com.mojang.blaze3d.opengl.GlConst.GL_NEAREST
-	com.mojang.blaze3d.opengl.GlConst.GL_LINEAR
-	com.mojang.blaze3d.opengl.GlConst.GL_NEAREST_MIPMAP_LINEAR
-	com.mojang.blaze3d.opengl.GlConst.GL_LINEAR_MIPMAP_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST_MIPMAP_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR_MIPMAP_LINEAR
 
 group int gl_tex_level_parameter_pname
-	com.mojang.blaze3d.opengl.GlConst.GL_TEXTURE_WIDTH
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WIDTH
 
 group int gl_tex_format
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_COMPONENT
 	org.lwjgl.opengl.GL11.GL_STENCIL_INDEX
 	org.lwjgl.opengl.GL30.GL_DEPTH_STENCIL
-	com.mojang.blaze3d.opengl.GlConst.GL_RED
-	com.mojang.blaze3d.opengl.GlConst.GL_RG
-	com.mojang.blaze3d.opengl.GlConst.GL_RGB
-	com.mojang.blaze3d.opengl.GlConst.GL_RGBA
-	com.mojang.blaze3d.opengl.GlConst.GL_BGR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RED
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RG
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RGB
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RGBA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_BGR
 
 	org.lwjgl.opengl.GL30.GL_RED_INTEGER
 	org.lwjgl.opengl.GL30.GL_RG_INTEGER
@@ -160,14 +160,14 @@ group int gl_tex_format
 	org.lwjgl.opengl.GL30.GL_RGBA_INTEGER
 
 group int gl_internal_tex_format
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_COMPONENT
 	org.lwjgl.opengl.GL11.GL_STENCIL_INDEX
 	org.lwjgl.opengl.GL30.GL_DEPTH_STENCIL
-	com.mojang.blaze3d.opengl.GlConst.GL_RED
-	com.mojang.blaze3d.opengl.GlConst.GL_RG
-	com.mojang.blaze3d.opengl.GlConst.GL_RGB
-	com.mojang.blaze3d.opengl.GlConst.GL_RGBA
-	com.mojang.blaze3d.opengl.GlConst.GL_BGR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RED
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RG
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RGB
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RGBA
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_BGR
 
 	org.lwjgl.opengl.GL30.GL_RED_INTEGER
 	org.lwjgl.opengl.GL30.GL_RG_INTEGER
@@ -175,20 +175,20 @@ group int gl_internal_tex_format
 	org.lwjgl.opengl.GL30.GL_RGBA_INTEGER
 
 	org.lwjgl.opengl.GL14.GL_DEPTH_COMPONENT16
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT24
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_COMPONENT32
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_COMPONENT24
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_COMPONENT32
 	org.lwjgl.opengl.GL30.GL_DEPTH_COMPONENT32F
 	org.lwjgl.opengl.GL30.GL_DEPTH32F_STENCIL8
 	org.lwjgl.opengl.GL30.GL_DEPTH24_STENCIL8
 
 	org.lwjgl.opengl.GL30.GL_STENCIL_INDEX8
 
-	com.mojang.blaze3d.opengl.GlConst.GL_RGBA8
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_RGBA8
 	org.lwjgl.opengl.GL11.GL_RGB10_A2
 	org.lwjgl.opengl.GL33.GL_RGB10_A2UI
 	org.lwjgl.opengl.GL11.GL_RGBA16
 	org.lwjgl.opengl.GL30.GL_R11F_G11F_B10F
-	com.mojang.blaze3d.opengl.GlConst.GL_R8
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_R8
 	org.lwjgl.opengl.GL30.GL_R16
 	org.lwjgl.opengl.GL30.GL_RG8
 	org.lwjgl.opengl.GL30.GL_RG16
@@ -226,18 +226,18 @@ group int gl_internal_tex_format
 	org.lwjgl.opengl.GL31.GL_RGBA16_SNORM
 
 group int gl_indices_type
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_BYTE
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_SHORT
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_INT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_BYTE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_SHORT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_INT
 
 group int gl_pixel_type
-	com.mojang.blaze3d.opengl.GlConst.GL_BYTE
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_BYTE
-	com.mojang.blaze3d.opengl.GlConst.GL_SHORT
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_SHORT
-	com.mojang.blaze3d.opengl.GlConst.GL_INT
-	com.mojang.blaze3d.opengl.GlConst.GL_UNSIGNED_INT
-	com.mojang.blaze3d.opengl.GlConst.GL_FLOAT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_BYTE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_BYTE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_SHORT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_SHORT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_INT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_INT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FLOAT
 	org.lwjgl.opengl.GL30.GL_HALF_FLOAT
 	org.lwjgl.opengl.GL12.GL_UNSIGNED_INT_2_10_10_10_REV
 	org.lwjgl.opengl.GL30.GL_UNSIGNED_INT_10F_11F_11F_REV
@@ -245,34 +245,34 @@ group int gl_pixel_type
 	org.lwjgl.opengl.GL30.GL_UNSIGNED_INT_24_8
 
 group int gl_framebuffer_attachment
-	com.mojang.blaze3d.opengl.GlConst.GL_COLOR_ATTACHMENT0
-	com.mojang.blaze3d.opengl.GlConst.GL_DEPTH_ATTACHMENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_ATTACHMENT
 
 #group int gl_framebuffer_status # not used for now
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_COMPLETE
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER
-#	com.mojang.blaze3d.opengl.GlConst.GL_FRAMEBUFFER_UNSUPPORTED
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_COMPLETE
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER
+#	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_UNSUPPORTED
 
 group int gl_buffer_storage_flags
 	@flags
-	com.mojang.blaze3d.opengl.GlConst.GL_MAP_READ_BIT
-	com.mojang.blaze3d.opengl.GlConst.GL_MAP_WRITE_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAP_READ_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAP_WRITE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_DYNAMIC_STORAGE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_CLIENT_STORAGE_BIT
 
 group int gl_buffer_target
-	com.mojang.blaze3d.opengl.GlConst.GL_ARRAY_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_ELEMENT_ARRAY_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_PIXEL_PACK_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_COPY_READ_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_COPY_WRITE_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_PIXEL_UNPACK_BUFFER
-	com.mojang.blaze3d.opengl.GlConst.GL_UNIFORM_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ARRAY_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_ELEMENT_ARRAY_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PIXEL_PACK_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COPY_READ_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COPY_WRITE_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PIXEL_UNPACK_BUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNIFORM_BUFFER
 	org.lwjgl.opengl.ARBDrawIndirect.GL_DRAW_INDIRECT_BUFFER
 
 # GlDebugLabel
@@ -319,20 +319,20 @@ group int gl_hint_mode
 
 # GlFence
 group int gl_fence_sync_condition
-	com.mojang.blaze3d.opengl.GlConst.GL_SYNC_GPU_COMMANDS_COMPLETE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_SYNC_GPU_COMMANDS_COMPLETE
 
 group int gl_client_wait_sync_flags
 	@flags
 	org.lwjgl.opengl.GL32C.GL_SYNC_FLUSH_COMMANDS_BIT
 
 group int gl_client_wait_sync_result
-	com.mojang.blaze3d.opengl.GlConst.GL_TIMEOUT_EXPIRED
-	com.mojang.blaze3d.opengl.GlConst.GL_WAIT_FAILED
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TIMEOUT_EXPIRED
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_WAIT_FAILED
 
 # GlProgram
 group int gl_program_pname
-	com.mojang.blaze3d.opengl.GlConst.GL_LINK_STATUS
-	com.mojang.blaze3d.opengl.GlConst.GL_COMPILE_STATUS # for glGetShaderi
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINK_STATUS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COMPILE_STATUS # for glGetShaderi
 	org.lwjgl.opengl.GL31.GL_ACTIVE_UNIFORM_BLOCKS
 
 # note: glGetProgramInfoLog 32768 is the maxLength
@@ -350,8 +350,8 @@ group int gl_query_object_pname
 
 # GlDevice
 group int gl_shader_type
-	com.mojang.blaze3d.opengl.GlConst.GL_VERTEX_SHADER
-	com.mojang.blaze3d.opengl.GlConst.GL_FRAGMENT_SHADER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_VERTEX_SHADER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAGMENT_SHADER
 
 group int gl_clip_origin
 	org.lwjgl.opengl.ARBClipControl.GL_LOWER_LEFT
@@ -363,7 +363,7 @@ group int gl_clip_depth
 
 group int gl_error
 	org.lwjgl.opengl.GL11.GL_NO_ERROR
-	com.mojang.blaze3d.opengl.GlConst.GL_OUT_OF_MEMORY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_OUT_OF_MEMORY
 
 group int gl_get_string_name
 	org.lwjgl.opengl.GL11.GL_VENDOR
@@ -372,7 +372,7 @@ group int gl_get_string_name
 
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
-	com.mojang.blaze3d.opengl.GlConst.GL_MAX_TEXTURE_SIZE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAX_TEXTURE_SIZE
 	org.lwjgl.opengl.GL20C.GL_MAX_DRAW_BUFFERS
 	org.lwjgl.opengl.GL31C.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
 	org.lwjgl.opengl.GL33C.GL_TIMESTAMP
@@ -417,8 +417,8 @@ group int gl_buffer
 # BufferStorage, GlTransientMemory
 group int gl_map_buffer_access
 	@flags
-	com.mojang.blaze3d.opengl.GlConst.GL_MAP_READ_BIT
-	com.mojang.blaze3d.opengl.GlConst.GL_MAP_WRITE_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAP_READ_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAP_WRITE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
 	org.lwjgl.opengl.GL30C.GL_MAP_INVALIDATE_RANGE_BIT
@@ -428,90 +428,90 @@ group int gl_map_buffer_access
 
 # Target definition
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/CompareOp;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/CompareOp;)I
 	return gl_compare_op
-target_field com.mojang.blaze3d.opengl.GlStateManager$DepthState func I gl_compare_op
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$DepthState func I gl_compare_op
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/PolygonMode;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/PolygonMode;)I
 	return gl_polygon_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/BlendFactor;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/BlendFactor;)I
 	return gl_blend_factor
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState srcRgb I gl_blend_factor
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState dstRgb I gl_blend_factor
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState srcAlpha I gl_blend_factor
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState dstAlpha I gl_blend_factor
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState srcRgb I gl_blend_factor
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState dstRgb I gl_blend_factor
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState srcAlpha I gl_blend_factor
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState dstAlpha I gl_blend_factor
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/BlendOp;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/BlendOp;)I
 	return gl_blend_op
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState modeRgb I gl_blend_op
-target_field com.mojang.blaze3d.opengl.GlStateManager$BlendState modeAlpha I gl_blend_op
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState modeRgb I gl_blend_op
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState modeAlpha I gl_blend_op
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/PrimitiveTopology;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/PrimitiveTopology;)I
 	return gl_draw_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/IndexType;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/IndexType;)I
 	return gl_indices_type
 
-target_method com.mojang.blaze3d.opengl.GlConst toGlType (Lcom/mojang/blaze3d/GpuFormat;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGlType (Lcom/mojang/renderpearl/api/GpuFormat;)I
 	return gl_pixel_type
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/textures/AddressMode;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/textures/AddressMode;)I
 	return gl_address_mode
 
-target_method com.mojang.blaze3d.opengl.GlConst glFormatChannelCount (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst glFormatChannelCount (I)I
 	param 0 gl_tex_format
-target_method com.mojang.blaze3d.opengl.GlConst isGlFormatInteger (I)Z
+target_method com.mojang.renderpearl.backend.opengl.GlConst isGlFormatInteger (I)Z
 	param 0 gl_tex_format
 
-target_method com.mojang.blaze3d.opengl.GlConst toGlInternalId (Lcom/mojang/blaze3d/GpuFormat;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGlInternalId (Lcom/mojang/renderpearl/api/GpuFormat;)I
 	return gl_internal_tex_format
-target_method com.mojang.blaze3d.opengl.GlConst toGlExternalId (Lcom/mojang/blaze3d/GpuFormat;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGlExternalId (Lcom/mojang/renderpearl/api/GpuFormat;)I
 	return gl_tex_format
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/shaders/ShaderType;)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/ShaderType;)I
 	return gl_shader_type
-target_method com.mojang.blaze3d.opengl.GlStateManager glCreateShader (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager glCreateShader (I)I
 	param 0 gl_shader_type
 
-target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlEnum (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst bufferUsageToGlEnum (I)I
 	return gl_buffer_data_usage
-target_method com.mojang.blaze3d.opengl.GlConst bufferUsageToGlFlag (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlConst bufferUsageToGlFlag (I)I
 	return gl_buffer_storage_flags
 
-target_method com.mojang.blaze3d.opengl.DirectStateAccess mapBufferRange (IJJII)Ljava/nio/ByteBuffer;
+target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess mapBufferRange (IJJII)Ljava/nio/ByteBuffer;
 	param 3 gl_map_buffer_access
 
-target_field com.mojang.blaze3d.opengl.GlBuffer$Direct mappingFlags I gl_map_buffer_access
+target_field com.mojang.renderpearl.backend.opengl.GlBuffer$Direct mappingFlags I gl_map_buffer_access
 
 target_method org.lwjgl.opengl.GL30C glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
-target_method com.mojang.blaze3d.opengl.GlStateManager _glBindFramebuffer (II)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glBindFramebuffer (II)V
 	param 0 gl_framebuffer_target
-target_method com.mojang.blaze3d.opengl.GlStateManager getFrameBuffer (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager getFrameBuffer (I)I
 	param 0 gl_framebuffer_target
-target_method com.mojang.blaze3d.opengl.GlStateManager _glFramebufferTexture2D (IIIII)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glFramebufferTexture2D (IIIII)V
 	param 0 gl_framebuffer_target
 	param 1 gl_framebuffer_attachment
 	param 2 gl_tex_target
 target_method org.lwjgl.opengl.ARBDirectStateAccess glNamedFramebufferTexture (IIII)V
 	param 1 gl_framebuffer_attachment
-target_method com.mojang.blaze3d.opengl.DirectStateAccess bindFrameBufferTextures (IIIII)V
+target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess bindFrameBufferTextures (IIIII)V
 	param 4 gl_framebuffer_target
 
-target_method com.mojang.blaze3d.opengl.DirectStateAccess blitFrameBuffers (IIIIIIIIIIII)V
+target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess blitFrameBuffers (IIIIIIIIIIII)V
 	param 10 gl_buffer_mask
 	param 11 gl_filter
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _clear(I)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _clear(I)V
 	param 0 gl_buffer_mask
 
 # GlCommandEncoder#createRenderPass no target available for clearMask, same for GL_COLOR_ATTACHMENT0 below
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _activeTexture (I)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _activeTexture (I)V
 	param 0 gl_texture
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _texParameter (III)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _texParameter (III)V
 	param 0 gl_tex_target
 	param 1 gl_tex_parameter_pname
 	param 2 gl_tex_parameter_value
@@ -522,21 +522,21 @@ target_method org.lwjgl.opengl.GL33C glSamplerParameterf (IIF)V
 	param 1 gl_tex_parameter_pname
 	param 2 gl_tex_parameter_value
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _texImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _texImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
 	param 0 gl_tex_target
 	param 2 gl_internal_tex_format
 	param 6 gl_tex_format
 	param 7 gl_pixel_type
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _texSubImage2D (IIIIIIIIJ)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _texSubImage2D (IIIIIIIIJ)V
 	param 0 gl_tex_target
 	param 6 gl_tex_format
 	param 7 gl_pixel_type
-target_method com.mojang.blaze3d.opengl.GlStateManager _texSubImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _texSubImage2D (IIIIIIIILjava/nio/ByteBuffer;)V
 	param 0 gl_tex_target
 	param 6 gl_tex_format
 	param 7 gl_pixel_type
-target_method com.mojang.blaze3d.opengl.GlStateManager _getTexLevelParameter (III)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getTexLevelParameter (III)I
 	param 0 gl_tex_target
 	param 2 gl_tex_level_parameter_pname
 target_method org.lwjgl.opengl.GL11C glBindTexture (II)V
@@ -544,16 +544,16 @@ target_method org.lwjgl.opengl.GL11C glBindTexture (II)V
 target_method org.lwjgl.opengl.GL31C glTexBuffer (III)V
 	param 0 gl_tex_target
 
-target_method com.mojang.blaze3d.opengl.GlDebug sourceToString (I)Ljava/lang/String;
+target_method com.mojang.renderpearl.backend.opengl.GlDebug sourceToString (I)Ljava/lang/String;
 	param 0 gl_debug_source
-target_method com.mojang.blaze3d.opengl.GlDebug typeToString (I)Ljava/lang/String;
+target_method com.mojang.renderpearl.backend.opengl.GlDebug typeToString (I)Ljava/lang/String;
 	param 0 gl_debug_type
-target_method com.mojang.blaze3d.opengl.GlDebug severityToString (I)Ljava/lang/String;
+target_method com.mojang.renderpearl.backend.opengl.GlDebug severityToString (I)Ljava/lang/String;
 	param 0 gl_debug_severity
 target_method org.lwjgl.opengl.KHRDebug glPushDebugGroup (IILjava/lang/CharSequence;)V
 	param 0 gl_debug_source
 
-target_method com.mojang.blaze3d.opengl.GlStateManager$BooleanState <init> (I)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager$BooleanState <init> (I)V
 	param 0 gl_enable_state
 target_method org.lwjgl.opengl.GL11C glEnable (I)V
 	param 0 gl_enable_state
@@ -565,24 +565,24 @@ target_method org.lwjgl.opengl.ARBDebugOutput glDebugMessageControlARB (III[IZ)V
 	param 0 gl_hint_mode
 	param 1 gl_hint_mode
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _glFenceSync (II)J
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glFenceSync (II)J
 	param 0 gl_fence_sync_condition
 target_method org.lwjgl.opengl.GL32C glFenceSync (II)J
 	param 0 gl_fence_sync_condition
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _glClientWaitSync (JIJ)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glClientWaitSync (JIJ)I
 	param 1 gl_client_wait_sync_flags
 	return gl_client_wait_sync_result
 
 target_method org.lwjgl.opengl.GL11C glDrawBuffer (I)V
 	param 0 gl_draw_buffer_buf
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _polygonMode (II)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _polygonMode (II)V
 	param 0 gl_polygon_mode_face
 
-target_method com.mojang.blaze3d.opengl.GlStateManager glGetProgrami (II)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager glGetProgrami (II)I
 	param 1 gl_program_pname
-target_method com.mojang.blaze3d.opengl.GlStateManager glGetShaderi (II)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager glGetShaderi (II)I
 	param 1 gl_program_pname
 
 target_method org.lwjgl.opengl.GL31C glGetUniformBlockIndex (ILjava/lang/CharSequence;)I
@@ -596,10 +596,10 @@ target_method org.lwjgl.opengl.GL15C glGetQueryObjecti (II)I
 target_method org.lwjgl.opengl.GL33C glGetQueryObjectui64 (II)J
 	param 1 gl_query_object_pname
 
-target_method com.mojang.blaze3d.opengl.GlUtil selectBufferBindTarget (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlUtil selectBufferBindTarget (I)I
 	return gl_buffer_target
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _glBindBuffer (II)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glBindBuffer (II)V
 	param 0 gl_buffer_target
 target_method org.lwjgl.opengl.GL30C glBindBufferRange (IIIJJ)V
 	param 0 gl_buffer_target
@@ -613,13 +613,13 @@ target_method org.lwjgl.opengl.ARBBufferStorage glBufferStorage (IJI)V
 	param 0 gl_buffer_target
 	param 2 gl_buffer_storage_flags
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _getError ()I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getError ()I
 	return gl_error
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _getString (I)Ljava/lang/String;
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getString (I)Ljava/lang/String;
 	param 0 gl_get_string_name
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _getInteger (I)I
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getInteger (I)I
 	param 0 gl_get_number_pname
 target_method org.lwjgl.opengl.GL11C glGetInteger (I)I
 	param 0 gl_get_number_pname
@@ -628,11 +628,11 @@ target_method org.lwjgl.opengl.GL11C glGetFloat (I)F
 target_method org.lwjgl.opengl.GL32C glGetInteger64 (I)J
 	param 0 gl_get_number_pname
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _logicOp (I)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _logicOp (I)V
 	param 0 gl_logic_op
-target_field com.mojang.blaze3d.opengl.GlStateManager$ColorLogicState op I gl_logic_op
+target_field com.mojang.renderpearl.backend.opengl.GlStateManager$ColorLogicState op I gl_logic_op
 
-target_method com.mojang.blaze3d.opengl.GlStateManager _pixelStore (II)V
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _pixelStore (II)V
 	param 0 gl_pixel_store_pname
 target_method org.lwjgl.opengl.GL11 glPixelStorei (II)V
 	param 0 gl_pixel_store_pname
