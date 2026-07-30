@@ -1,0 +1,29 @@
+unpick v4
+
+group int key_modifier
+	@flags
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_NONE
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_LSHIFT
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_RSHIFT
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_LEVEL5
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_LCTRL
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_RCTRL
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_LALT
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_RALT
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_LGUI
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_RGUI
+	com.mojang.blaze3d.platform.InputConstants.MOD_NUM_LOCK # SDL_KMOD_NUM
+	com.mojang.blaze3d.platform.InputConstants.MOD_CAPS_LOCK # SDL_KMOD_CAPS
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_MODE
+	org.lwjgl.sdl.SDLKeycode.SDL_KMOD_SCROLL
+	com.mojang.blaze3d.platform.InputConstants.MOD_CONTROL # SDL_KMOD_CTRL
+	com.mojang.blaze3d.platform.InputConstants.MOD_SHIFT # SDL_KMOD_SHIFT
+	com.mojang.blaze3d.platform.InputConstants.MOD_ALT # SDL_KMOD_ALT
+	com.mojang.blaze3d.platform.InputConstants.MOD_SUPER # SDL_KMOD_GUI
+
+target_method org.lwjgl.sdl.SDLKeyboard SDL_GetKeyFromScancode (ISZ)I
+	param 1 key_modifier
+target_method org.lwjgl.sdl.SDLKeyboard SDL_GetModState ()S
+	return key_modifier
+
+target_annotation net.minecraft.client.input.InputWithModifiers$Modifiers input_modifier

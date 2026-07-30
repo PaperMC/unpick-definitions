@@ -1,5 +1,9 @@
 unpick v4
 
+#group int container_click todo conflict with slot_index for doClick
+#	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_PRIMARY
+#	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_SECONDARY
+
 group int quick_crafting_type
 	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_CHARITABLE
 	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_GREEDY
@@ -55,6 +59,11 @@ group float teleport_effect_diameter
 group int horse_slot
 	net.minecraft.world.entity.animal.equine.AbstractHorse.CHEST_SLOT_OFFSET
 	net.minecraft.world.entity.animal.equine.AbstractHorse.INVENTORY_SLOT_OFFSET
+
+#target_method net.minecraft.world.inventory.AbstractContainerMenu isContainerClickButton (I)Z
+#	param 0 container_click
+#target_method net.minecraft.world.inventory.AbstractContainerMenu getClickAction (I)Lnet/minecraft/world/inventory/ClickAction;
+#	param 0 container_click
 
 target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftType I quick_crafting_type
 target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftStatus I quick_crafting_header
@@ -115,6 +124,8 @@ target_method net.minecraft.world.inventory.AbstractContainerMenu doClick (IILne
 	param 0 menu_slot_index
 
 target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ContainerInput;)V
+	param 1 menu_slot_index
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;ILnet/minecraft/client/input/MouseButtonEvent;Lnet/minecraft/world/inventory/ContainerInput;)V
 	param 1 menu_slot_index
 
 target_field net.minecraft.world.item.component.BundleContents selectedItem I bundle_selected_item_index

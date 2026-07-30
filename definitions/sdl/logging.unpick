@@ -1,0 +1,28 @@
+unpick v4
+
+group int log_category
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_APPLICATION
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_ERROR
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_ASSERT
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_SYSTEM
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_AUDIO
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_VIDEO
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_RENDER
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_INPUT
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_TEST
+	org.lwjgl.sdl.SDLLog.SDL_LOG_CATEGORY_GPU
+
+group int log_priority
+	org.lwjgl.sdl.SDLLog.SDL_LOG_PRIORITY_VERBOSE
+	org.lwjgl.sdl.SDLLog.SDL_LOG_PRIORITY_DEBUG
+	org.lwjgl.sdl.SDLLog.SDL_LOG_PRIORITY_INFO
+	org.lwjgl.sdl.SDLLog.SDL_LOG_PRIORITY_WARN
+	org.lwjgl.sdl.SDLLog.SDL_LOG_PRIORITY_ERROR
+
+target_method org.lwjgl.sdl.SDLLog SDL_SetLogPriorities (I)V
+	param 0 log_priority
+
+target_method com.mojang.blaze3d.platform.SdlDebug categoryToString (I)Ljava/lang/String;
+	param 0 log_category
+target_method com.mojang.blaze3d.platform.SdlDebug onLogMessage (JIIJ)V
+	param 1 log_priority

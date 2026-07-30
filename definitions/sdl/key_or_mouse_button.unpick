@@ -1,7 +1,7 @@
 unpick v4
 
-group int key
-	org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN
+group int key_or_mouse_button
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_UNKNOWN
 	com.mojang.blaze3d.platform.InputConstants.KEY_0
 	com.mojang.blaze3d.platform.InputConstants.KEY_1
 	com.mojang.blaze3d.platform.InputConstants.KEY_2
@@ -12,11 +12,11 @@ group int key
 	com.mojang.blaze3d.platform.InputConstants.KEY_7
 	com.mojang.blaze3d.platform.InputConstants.KEY_8
 	com.mojang.blaze3d.platform.InputConstants.KEY_9
-	com.mojang.blaze3d.platform.InputConstants.KEY_A
-	com.mojang.blaze3d.platform.InputConstants.KEY_B
-	com.mojang.blaze3d.platform.InputConstants.KEY_C
-	com.mojang.blaze3d.platform.InputConstants.KEY_D
-	com.mojang.blaze3d.platform.InputConstants.KEY_E
+#	com.mojang.blaze3d.platform.InputConstants.KEY_A
+#	com.mojang.blaze3d.platform.InputConstants.KEY_B
+#	com.mojang.blaze3d.platform.InputConstants.KEY_C
+#	com.mojang.blaze3d.platform.InputConstants.KEY_D
+#	com.mojang.blaze3d.platform.InputConstants.KEY_E
 	com.mojang.blaze3d.platform.InputConstants.KEY_F
 	com.mojang.blaze3d.platform.InputConstants.KEY_G
 	com.mojang.blaze3d.platform.InputConstants.KEY_H
@@ -62,7 +62,6 @@ group int key
 	com.mojang.blaze3d.platform.InputConstants.KEY_F22
 	com.mojang.blaze3d.platform.InputConstants.KEY_F23
 	com.mojang.blaze3d.platform.InputConstants.KEY_F24
-	com.mojang.blaze3d.platform.InputConstants.KEY_F25
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMLOCK
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD0
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD1
@@ -79,8 +78,8 @@ group int key
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADENTER
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADEQUALS
 	com.mojang.blaze3d.platform.InputConstants.KEY_MULTIPLY
-	org.lwjgl.glfw.GLFW.GLFW_KEY_KP_DIVIDE
-	org.lwjgl.glfw.GLFW.GLFW_KEY_KP_SUBTRACT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DIVIDE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MINUS
 	com.mojang.blaze3d.platform.InputConstants.KEY_DOWN
 	com.mojang.blaze3d.platform.InputConstants.KEY_LEFT
 	com.mojang.blaze3d.platform.InputConstants.KEY_RIGHT
@@ -101,11 +100,11 @@ group int key
 	com.mojang.blaze3d.platform.InputConstants.KEY_LALT
 	com.mojang.blaze3d.platform.InputConstants.KEY_LCONTROL
 	com.mojang.blaze3d.platform.InputConstants.KEY_LSHIFT
-	com.mojang.blaze3d.platform.InputConstants.KEY_LSUPER
+	com.mojang.blaze3d.platform.InputConstants.KEY_LGUI
 	com.mojang.blaze3d.platform.InputConstants.KEY_RALT
 	com.mojang.blaze3d.platform.InputConstants.KEY_RCONTROL
 	com.mojang.blaze3d.platform.InputConstants.KEY_RSHIFT
-	com.mojang.blaze3d.platform.InputConstants.KEY_RSUPER
+	com.mojang.blaze3d.platform.InputConstants.KEY_RGUI
 	com.mojang.blaze3d.platform.InputConstants.KEY_RETURN
 	com.mojang.blaze3d.platform.InputConstants.KEY_ESCAPE
 	com.mojang.blaze3d.platform.InputConstants.KEY_BACKSPACE
@@ -118,21 +117,38 @@ group int key
 	com.mojang.blaze3d.platform.InputConstants.KEY_CAPSLOCK
 	com.mojang.blaze3d.platform.InputConstants.KEY_PAUSE
 	com.mojang.blaze3d.platform.InputConstants.KEY_SCROLLLOCK
-	org.lwjgl.glfw.GLFW.GLFW_KEY_MENU
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MENU
 	com.mojang.blaze3d.platform.InputConstants.KEY_PRINTSCREEN
-	org.lwjgl.glfw.GLFW.GLFW_KEY_WORLD_1
-	org.lwjgl.glfw.GLFW.GLFW_KEY_WORLD_2
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSBACKSLASH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSHASH
+	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_LEFT
+	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_MIDDLE
+	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_RIGHT
+#	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_4 # todo duplicate with KEY_A..KEY_E
+#	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_5
+#	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_6
+#	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_7
+#	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_8
 
-target_method com.mojang.blaze3d.platform.InputConstants isKeyDown (Lcom/mojang/blaze3d/platform/Window;I)Z
-	param 1 key
+target_method com.mojang.blaze3d.platform.InputConstants$Type addKey (Lcom/mojang/blaze3d/platform/InputConstants$Type;Ljava/lang/String;I)V
+	param 2 key_or_mouse_button
+target_method com.mojang.blaze3d.platform.InputConstants$Type getOrCreate (I)Lcom/mojang/blaze3d/platform/InputConstants$Key;
+	param 0 key_or_mouse_button
 
-target_method net.minecraft.client.input.KeyEvent <init> (III)V
-	param 0 key
-target_method net.minecraft.client.input.KeyEvent key ()I
-	return key
+target_field com.mojang.blaze3d.platform.InputConstants$Key value I key_or_mouse_button
+target_method com.mojang.blaze3d.platform.InputConstants$Key <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;I)V
+	param 2 key_or_mouse_button
+target_method com.mojang.blaze3d.platform.InputConstants$Key getValue ()I
+	return key_or_mouse_button
 
-target_method org.lwjgl.glfw.GLFW glfwGetKeyName (II)Ljava/lang/String;
-	param 0 key
+target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;ILnet/minecraft/client/KeyMapping$Category;)V
+	param 1 key_or_mouse_button
+target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;ILnet/minecraft/client/KeyMapping$Category;)V
+	param 2 key_or_mouse_button
+target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;ILnet/minecraft/client/KeyMapping$Category;I)V
+	param 2 key_or_mouse_button
 
-target_method org.lwjgl.glfw.GLFW glfwGetKey (JI)I
-	param 0 key
+target_method net.minecraft.client.ToggleKeyMapping <init> (Ljava/lang/String;ILnet/minecraft/client/KeyMapping$Category;Ljava/util/function/BooleanSupplier;Z)V
+	param 1 key_or_mouse_button
+target_method net.minecraft.client.ToggleKeyMapping <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;ILnet/minecraft/client/KeyMapping$Category;Ljava/util/function/BooleanSupplier;Z)V
+	param 2 key_or_mouse_button

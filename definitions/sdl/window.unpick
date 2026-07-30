@@ -1,0 +1,34 @@
+unpick v4
+
+group int pixel_format
+	org.lwjgl.sdl.SDLPixels.SDL_PIXELFORMAT_ABGR8888
+
+group long window_flags
+	@flags
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_FULLSCREEN
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_OPENGL
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_HIDDEN
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_RESIZABLE
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_HIGH_PIXEL_DENSITY
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_VULKAN
+
+group int window_attribute
+	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_MAJOR_VERSION
+	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_MINOR_VERSION
+	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_FLAGS
+	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_PROFILE_MASK
+	org.lwjgl.sdl.SDLVideo.SDL_GL_FRAMEBUFFER_SRGB_CAPABLE
+
+target_method org.lwjgl.sdl.SDLSurface SDL_CreateSurfaceFrom (IIILjava/nio/ByteBuffer;I)Lorg/lwjgl/sdl/SDL_Surface;
+	param 2 pixel_format
+
+target_method org.lwjgl.sdl.SDLVideo SDL_CreateWindow (Ljava/lang/CharSequence;IIJ)J
+	param 3 window_flags
+target_method org.lwjgl.sdl.SDLVideo SDL_GetWindowFlags (J)J
+	return window_flags
+
+target_method com.mojang.renderpearl.api.device.GpuBackend getWindowFlags ()J
+	return window_flags
+
+target_method org.lwjgl.sdl.SDLVideo SDL_GL_SetAttribute (II)Z
+	param 0 window_attribute

@@ -3,29 +3,7 @@ unpick v4
 group int level_event
 	net.minecraft.world.level.block.LevelEvent.*
 
-target_method net.minecraft.network.protocol.game.ClientboundLevelEventPacket <init> (ILnet/minecraft/core/BlockPos;IZ)V
-	param 0 level_event
-target_method net.minecraft.network.protocol.game.ClientboundLevelEventPacket getType ()I
-	return level_event
-
-target_method net.minecraft.world.level.LevelAccessor levelEvent (Lnet/minecraft/world/entity/Entity;ILnet/minecraft/core/BlockPos;I)V
-	param 1 level_event
-target_method net.minecraft.world.level.LevelAccessor levelEvent (ILnet/minecraft/core/BlockPos;I)V
-	param 0 level_event
-
-target_method net.minecraft.world.level.Level globalLevelEvent (ILnet/minecraft/core/BlockPos;I)V
-	param 0 level_event
-
 target_method net.minecraft.world.level.block.SpeleothemBlock getStalactiteLandingSound ()I
 	return level_event
 
-target_method net.minecraft.core.component.BlockTransformer$TransformParticle <init> (Ljava/lang/String;IILjava/lang/String;I)V
-	param 4 level_event
-
-target_method net.minecraft.world.item.ProjectileItem$DispenseConfig$Builder overrideDispenseEvent (I)Lnet/minecraft/world/item/ProjectileItem$DispenseConfig$Builder;
-	param 0 level_event
-
-target_method net.minecraft.client.renderer.LevelEventHandler levelEvent (ILnet/minecraft/core/BlockPos;I)V
-	param 0 level_event
-target_method net.minecraft.client.renderer.LevelEventHandler globalLevelEvent (ILnet/minecraft/core/BlockPos;I)V
-	param 0 level_event
+target_annotation net.minecraft.world.level.block.LevelEvent$Value level_event
