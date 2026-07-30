@@ -1,0 +1,14 @@
+unpick v4
+
+group int cursor_shape
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_DEFAULT
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_TEXT
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_CROSSHAIR
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_POINTER
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_NS_RESIZE
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_EW_RESIZE
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_MOVE
+	org.lwjgl.sdl.SDLMouse.SDL_SYSTEM_CURSOR_NOT_ALLOWED
+
+target_method com.mojang.blaze3d.platform.cursor.CursorType createStandardCursor (ILjava/lang/String;Lcom/mojang/blaze3d/platform/cursor/CursorType;)Lcom/mojang/blaze3d/platform/cursor/CursorType;
+	param 0 cursor_shape

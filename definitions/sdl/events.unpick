@@ -1,0 +1,48 @@
+unpick v4
+
+group int event_type
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_QUIT
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_TERMINATING
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_ADDED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_REMOVED
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MOVED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_RESIZED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MINIMIZED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MAXIMIZED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MOUSE_ENTER
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MOUSE_LEAVE
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_FOCUS_GAINED
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_FOCUS_LOST
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_CLOSE_REQUESTED
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_DISPLAY_CHANGED
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_ENTER_FULLSCREEN
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_LEAVE_FULLSCREEN
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_KEY_DOWN
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_KEY_UP
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_TEXT_EDITING
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_TEXT_INPUT
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_KEYMAP_CHANGED
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_MOTION
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_BUTTON_DOWN
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_BUTTON_UP
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DROP_FILE
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DROP_BEGIN
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DROP_COMPLETE
+
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_PEN_AXIS
+
+target_method org.lwjgl.sdl.SDL_Event type ()I
+	return event_type
+
+target_method org.lwjgl.sdl.SDLEvents SDL_FlushEvents (II)V
+	param 0 event_type
+	param 1 event_type

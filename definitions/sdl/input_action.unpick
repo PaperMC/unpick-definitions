@@ -1,0 +1,13 @@
+unpick v4
+
+group int key_action
+	com.mojang.blaze3d.platform.InputConstants.RELEASE
+	com.mojang.blaze3d.platform.InputConstants.PRESS
+	com.mojang.blaze3d.platform.InputConstants.REPEAT
+
+group int mouse_action
+	com.mojang.blaze3d.platform.InputConstants.RELEASE
+	com.mojang.blaze3d.platform.InputConstants.PRESS
+
+target_annotation net.minecraft.client.input.KeyEvent$Action key_action
+target_annotation net.minecraft.client.input.MouseButtonInfo$Action mouse_action

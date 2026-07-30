@@ -1,0 +1,31 @@
+unpick v4
+
+group int sdl_init_flags
+	@flags
+	org.lwjgl.sdl.SDLInit.SDL_INIT_AUDIO
+	org.lwjgl.sdl.SDLInit.SDL_INIT_VIDEO
+
+group String sdl_metadata_property
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_NAME_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_VERSION_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_IDENTIFIER_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_CREATOR_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_COPYRIGHT_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_URL_STRING
+	org.lwjgl.sdl.SDLInit.SDL_PROP_APP_METADATA_TYPE_STRING
+
+group String sdl_hint
+	org.lwjgl.sdl.SDLHints.SDL_HINT_NO_SIGNAL_HANDLERS
+	org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES
+	org.lwjgl.sdl.SDLHints.SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH
+	org.lwjgl.sdl.SDLHints.SDL_HINT_IME_IMPLEMENTED_UI
+
+target_method org.lwjgl.sdl.SDLInit SDL_Init (I)Z
+	param 0 sdl_init_flags
+
+# todo see tinyfd comment
+#target_method org.lwjgl.sdl.SDLInit SDL_SetAppMetadataProperty (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+#	param 0 sdl_metadata_property
+
+#target_method org.lwjgl.sdl.SDLHints SDL_SetHint (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+#	param 0 sdl_hint

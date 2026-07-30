@@ -423,7 +423,6 @@ group int gl_map_buffer_access
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
 	org.lwjgl.opengl.GL30C.GL_MAP_INVALIDATE_RANGE_BIT
 	org.lwjgl.opengl.GL30C.GL_MAP_INVALIDATE_BUFFER_BIT
-	org.lwjgl.opengl.GL30C.GL_MAP_FLUSH_EXPLICIT_BIT
 	org.lwjgl.opengl.GL30C.GL_MAP_UNSYNCHRONIZED_BIT
 
 # Target definition
