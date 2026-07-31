@@ -34,11 +34,11 @@ abstract class DownloadFile : DefaultTask() {
     fun run() {
         downloader.get().download(
             URI.create(url.get()), output.path,
-            expectedSha1.map { Hash(it, HashingAlgorithm.SHA1) }.orNull,
-            {
-                if (verbose.get()) {
-                    logger.lifecycle("Downloading ${url.get()}...")
-                }
-            })
+            expectedSha1.map { Hash(it, HashingAlgorithm.SHA1) }.orNull
+        ) {
+            if (verbose.get()) {
+                logger.lifecycle("Downloading ${url.get()}...")
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ class McBasePlugin : Plugin<Project> {
             maven("https://libraries.minecraft.net/")
         }
 
-        val minecraft by target.configurations.registering {
+        val minecraft = target.configurations.register("minecraft") {
             isTransitive = false
         }
 
@@ -54,10 +54,10 @@ class McBasePlugin : Plugin<Project> {
     }
 
     private fun download(project: Project, url: String, target: Provider<RegularFile>, hash: Hash? = null) {
-        project.download.download(URI.create(url), target.path, hash, {
+        project.download.download(URI.create(url), target.path, hash) {
             if (project.gradle.startParameter.logLevel != LogLevel.QUIET) {
                 project.logger.lifecycle("Downloading $url...")
             }
-        })
+        }
     }
 }

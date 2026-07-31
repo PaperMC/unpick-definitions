@@ -12,7 +12,7 @@ repositories {
     maven("https://maven.fabricmc.net/")
 }
 
-val enigma by configurations.registering
+val enigma = configurations.register("enigma")
 
 mcBase {
     mcVersion = providers.gradleProperty("minecraft_version")
@@ -24,7 +24,7 @@ dependencies {
     enigma(project(":enigma-plugin", "runtimeElements"))
 }
 
-val downloadJar by tasks.registering(DownloadFile::class) {
+val downloadJar = tasks.register<DownloadFile>("downloadJar") {
     group = "unpick"
 
     url = mcBase.manifest.map { it.downloads.client.url }
@@ -34,13 +34,13 @@ val downloadJar by tasks.registering(DownloadFile::class) {
     verbose = project.gradle.startParameter.logLevel != LogLevel.QUIET
 }
 
-val generateUnpickData by tasks.registering(GenerateUnpickData::class) {
+val generateUnpickData = tasks.register<GenerateUnpickData>("generateUnpickData") {
     group = "unpick"
     definitions = project.layout.projectDirectory.dir("definitions")
     output = temporaryDir.resolve("unpick_combined.unpick")
 }
 
-val unpickJar by tasks.registering(UnpickJar::class) {
+val unpickJar = tasks.register<UnpickJar>("unpickJar") {
     group = "unpick"
     input = downloadJar.flatMap { it.output }
     output = project.layout.buildDirectory.file("client-unpicked.jar")
@@ -79,7 +79,7 @@ val artifactVersionProvider = providers.of(ArtifactVersionProvider::class) {
     }
 }
 
-val exportZip by tasks.registering(Zip::class) {
+val exportZip = tasks.register<Zip>("exportZip") {
     group = LifecycleBasePlugin.BUILD_GROUP
     from(generateUnpickData.flatMap { it.output })
     rename { "extras/definitions.unpick" } // for legacy compatibility with yarn

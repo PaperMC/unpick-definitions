@@ -1,6 +1,6 @@
 plugins {
     `kotlin-dsl`
-    kotlin("plugin.serialization") version "2.3.20" // stay in sync with gradle built-in version of the DSL
+    kotlin("plugin.serialization") version "2.3.20" // stay in sync with Gradle built-in version of the DSL
 }
 
 kotlin {
