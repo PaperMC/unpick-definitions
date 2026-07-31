@@ -26,14 +26,28 @@ group int spv_image_dimension
 	org.lwjgl.util.spvc.Spv.SpvDimSubpassData
 
 group int spv_decoration
+	org.lwjgl.util.spvc.Spv.SpvDecorationFlat
 	org.lwjgl.util.spvc.Spv.SpvDecorationLocation
+	org.lwjgl.util.spvc.Spv.SpvDecorationComponent
 	org.lwjgl.util.spvc.Spv.SpvDecorationBinding
+	org.lwjgl.util.spvc.Spv.SpvDecorationDescriptorSet
+
+group int spv_execution_model
+	org.lwjgl.util.spvc.Spv.SpvExecutionModelVertex
+	org.lwjgl.util.spvc.Spv.SpvExecutionModelFragment
 
 group int spvc_resource_type
 	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_UNIFORM_BUFFER
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STORAGE_BUFFER
 	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STAGE_INPUT
 	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STAGE_OUTPUT
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_SUBPASS_INPUT
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_STORAGE_IMAGE
 	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_SAMPLED_IMAGE
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_ATOMIC_COUNTER
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_PUSH_CONSTANT
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_SEPARATE_IMAGE
+	org.lwjgl.util.spvc.Spvc.SPVC_RESOURCE_TYPE_SEPARATE_SAMPLERS
 
 group int spvc_backend
 	org.lwjgl.util.spvc.Spvc.SPVC_BACKEND_NONE
@@ -41,7 +55,6 @@ group int spvc_backend
 
 group int spvc_capture_mode
 	org.lwjgl.util.spvc.Spvc.SPVC_CAPTURE_MODE_COPY
-	org.lwjgl.util.spvc.Spvc.SPVC_CAPTURE_MODE_TAKE_OWNERSHIP
 
 group int spvc_error_code
 	org.lwjgl.util.spvc.Spvc.SPVC_SUCCESS
@@ -49,6 +62,38 @@ group int spvc_error_code
 	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_UNSUPPORTED_SPIRV
 	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_OUT_OF_MEMORY
 	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_INVALID_ARGUMENT
+
+group int spvc_option
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FORCE_TEMPORARY
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FLATTEN_MULTIDIMENSIONAL_ARRAYS
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FORCE_ZERO_INITIALIZED_VARIABLES
+
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_GLSL_SUPPORT_NONZERO_BASE_INSTANCE
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_GLSL_ENABLE_420PACK_EXTENSION
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_GLSL_VERSION
+	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_GLSL_EMIT_PUSH_CONSTANT_AS_UNIFORM_BUFFER
+
+group int spvc_base_type
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_UNKNOWN
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_VOID
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_BOOLEAN
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_INT8
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_UINT8
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_INT16
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_UINT16
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_INT32
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_UINT32
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_INT64
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_UINT64
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_ATOMIC_COUNTER
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_FP16
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_FP32
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_FP64
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_STRUCT
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_IMAGE
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_SAMPLED_IMAGE
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_SAMPLER
+	org.lwjgl.util.spvc.Spvc.SPVC_BASETYPE_ACCELERATION_STRUCTURE
 
 target_method org.lwjgl.util.shaderc.Shaderc shaderc_compile_options_set_target_env (JII)V
 	param 1 shader_env_target
@@ -63,13 +108,24 @@ target_method org.lwjgl.util.shaderc.Shaderc shaderc_compile_into_spv (JLjava/ni
 target_method org.lwjgl.util.shaderc.Shaderc shaderc_result_get_compilation_status (J)I
 	return shader_compilation_status
 
-target_method com.mojang.renderpearl.backend.vulkan.glsl.SpvSampler dimensions ()I
-	return spv_image_dimension
-target_method com.mojang.renderpearl.backend.vulkan.glsl.SpvcUtil imageDimensionToString (I)Ljava/lang/String;
-	param 0 spv_image_dimension
-
-target_method com.mojang.renderpearl.backend.vulkan.glsl.IntermediaryShaderModule getDecorationOffset (JLorg/lwjgl/util/spvc/SpvcReflectedResource;ILjava/nio/IntBuffer;)I
+target_method org.lwjgl.util.spvc.Spvc spvc_compiler_get_binary_offset_for_decoration (JIILjava/nio/IntBuffer;)Z
 	param 2 spv_decoration
+
+target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$InterfaceVariable hasDecoration (I)Z
+	param 0 spv_decoration
+target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$InterfaceVariable decoration (I)I
+	param 0 spv_decoration
+
+target_method com.mojang.renderpearl.frontend.shaders.SpvUtil baseTypeString (I)Ljava/lang/String;
+	param 0 spvc_base_type
+target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$Type baseType ()I
+	return spvc_base_type
+
+target_method com.mojang.renderpearl.frontend.shaders.SpvUtil getDecorationOffset (JLorg/lwjgl/util/spvc/SpvcReflectedResource;ILjava/nio/IntBuffer;)I
+	param 2 spv_decoration
+
+target_method org.lwjgl.util.spvc.Spvc spvc_compiler_set_entry_point (JLjava/lang/CharSequence;I)I
+	param 2 spv_execution_model
 
 target_method org.lwjgl.util.spvc.Spvc spvc_context_create_compiler (JIJILorg/lwjgl/PointerBuffer;)I
 	param 1 spvc_backend
@@ -77,6 +133,19 @@ target_method org.lwjgl.util.spvc.Spvc spvc_context_create_compiler (JIJILorg/lw
 
 target_method org.lwjgl.util.spvc.Spvc spvc_resources_get_resource_list_for_type (JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I
 	param 1 spvc_resource_type
+target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameInterfaceVariables (JJLjava/nio/IntBuffer;ILjava/lang/String;)V
+	param 3 spvc_resource_type
+target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameDescriptors (JJLjava/nio/IntBuffer;I)V
+	param 3 spvc_resource_type
+target_method com.mojang.renderpearl.frontend.shaders.SPIRVModule generateInterfaceVariableList (JJLjava/nio/IntBuffer;I)Ljava/util/List;
+	param 3 spvc_resource_type
+target_method com.mojang.renderpearl.frontend.shaders.SpvUtil resourceType (Lcom/mojang/renderpearl/api/pipeline/UniformType;)I
+	return spvc_resource_type
 
-target_method com.mojang.renderpearl.backend.vulkan.glsl.IntermediaryShaderModule throwIfError (ILjava/lang/String;)V
+target_method com.mojang.renderpearl.frontend.shaders.SpvUtil spvcErrorString (I)Ljava/lang/String;
 	param 0 spvc_error_code
+
+target_method org.lwjgl.util.spvc.Spvc spvc_compiler_options_set_uint (JII)I
+	param 1 spvc_option
+target_method org.lwjgl.util.spvc.Spvc spvc_compiler_options_set_bool (JIZ)I
+	param 1 spvc_option

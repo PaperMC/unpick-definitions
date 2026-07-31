@@ -37,28 +37,12 @@ target_method net.minecraft.nbt.NbtAccounter create (J)Lnet/minecraft/nbt/NbtAcc
 	param 0 max_nbt_size
 
 group int
-	@scope class net.minecraft.network.FriendlyByteBuf
-	net.minecraft.network.FriendlyByteBuf.MAX_PUBLIC_KEY_LENGTH
-
-group int
-	@scope class net.minecraft.world.entity.player.ProfilePublicKey$Data
-	net.minecraft.world.entity.player.ProfilePublicKey$Data.MAX_KEY_SIGNATURE_SIZE
-
-group int
 	@scope class net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket$ChunkBiomeData
 	net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket.TWO_MEGABYTES
 
 group int
 	@scope class net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData
 	net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData.TWO_MEGABYTES
-
-group int
-	@scope class com.mojang.blaze3d.vertex.ByteBufferBuilder
-	com.mojang.blaze3d.vertex.ByteBufferBuilder.MAX_GROWTH_SIZE
-	com.mojang.blaze3d.vertex.ByteBufferBuilder.BUFFER_FREED_GENERATION
-group long
-	@scope class com.mojang.blaze3d.vertex.ByteBufferBuilder
-	com.mojang.blaze3d.vertex.ByteBufferBuilder.DEFAULT_MAX_CAPACITY
 
 group int move_player_flags
 	@flags
