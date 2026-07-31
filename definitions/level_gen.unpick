@@ -1,5 +1,20 @@
 unpick v4
 
+#group int update_flags
+#	@flags
+#	net.minecraft.world.level.levelgen.feature.TreeFeature.BLOCK_UPDATE_FLAGS
+
+group int function_axes
+	@flags
+	net.minecraft.world.level.levelgen.DensityFunction.AXIS_X
+	net.minecraft.world.level.levelgen.DensityFunction.AXIS_Y
+	net.minecraft.world.level.levelgen.DensityFunction.AXIS_Z
+
+	net.minecraft.world.level.levelgen.DensityFunction.NO_AXES
+	net.minecraft.world.level.levelgen.DensityFunction.ALL_AXES
+
+target_annotation net.minecraft.world.level.levelgen.DensityFunction$Axes function_axes
+
 group int mansion_size
 	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.DEFAULT_SIZE
 

@@ -376,7 +376,7 @@ group int gl_get_number_pname
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
 
 # GlStateManager
-group int gl_enable_state
+group int gl_capability
 	org.lwjgl.opengl.GL11C.GL_BLEND
 	org.lwjgl.opengl.GL11C.GL_DEPTH_TEST
 	org.lwjgl.opengl.GL11C.GL_CULL_FACE
@@ -550,9 +550,13 @@ target_method org.lwjgl.opengl.KHRDebug glPushDebugGroup (IILjava/lang/CharSeque
 	param 0 gl_debug_source
 
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager$BooleanState <init> (I)V
-	param 0 gl_enable_state
+	param 0 gl_capability
 target_method org.lwjgl.opengl.GL11C glEnable (I)V
-	param 0 gl_enable_state
+	param 0 gl_capability
+target_method org.lwjgl.opengl.GL30C glEnablei (II)V
+	param 0 gl_capability
+target_method org.lwjgl.opengl.GL30C glDisablei (II)V
+	param 0 gl_capability
 
 target_method org.lwjgl.opengl.KHRDebug glDebugMessageControl (III[IZ)V
 	param 0 gl_hint_mode

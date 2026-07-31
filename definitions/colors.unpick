@@ -45,6 +45,7 @@ group int argb_color
 group int argb_color
 	@scope class net.minecraft.client.gui.components.IMEPreeditOverlay
 	net.minecraft.client.gui.components.IMEPreeditOverlay.TEXT_COLOR
+	net.minecraft.client.gui.components.IMEPreeditOverlay.SELECTED_CANDIDATE_BACKGROUND
 
 group int argb_color
 	@scope class net.minecraft.client.renderer.fog.environment.LavaFogEnvironment

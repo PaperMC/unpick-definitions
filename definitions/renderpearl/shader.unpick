@@ -121,6 +121,8 @@ target_method com.mojang.renderpearl.frontend.shaders.SpvUtil baseTypeString (I)
 target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$Type baseType ()I
 	return spvc_base_type
 
+target_method org.lwjgl.util.spvc.Spvc spvc_compiler_get_decoration (JII)I
+	param 2 spv_decoration
 target_method com.mojang.renderpearl.frontend.shaders.SpvUtil getDecorationOffset (JLorg/lwjgl/util/spvc/SpvcReflectedResource;ILjava/nio/IntBuffer;)I
 	param 2 spv_decoration
 
@@ -133,10 +135,10 @@ target_method org.lwjgl.util.spvc.Spvc spvc_context_create_compiler (JIJILorg/lw
 
 target_method org.lwjgl.util.spvc.Spvc spvc_resources_get_resource_list_for_type (JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I
 	param 1 spvc_resource_type
-target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameInterfaceVariables (JJLjava/nio/IntBuffer;ILjava/lang/String;)V
-	param 3 spvc_resource_type
-target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameDescriptors (JJLjava/nio/IntBuffer;I)V
-	param 3 spvc_resource_type
+target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameInterfaceVariables (JJILjava/lang/String;)V
+	param 2 spvc_resource_type
+target_method com.mojang.renderpearl.backend.opengl.GlPipelineRecompiler renameDescriptors (JJI)V
+	param 2 spvc_resource_type
 target_method com.mojang.renderpearl.frontend.shaders.SPIRVModule generateInterfaceVariableList (JJLjava/nio/IntBuffer;I)Ljava/util/List;
 	param 3 spvc_resource_type
 target_method com.mojang.renderpearl.frontend.shaders.SpvUtil resourceType (Lcom/mojang/renderpearl/api/pipeline/UniformType;)I

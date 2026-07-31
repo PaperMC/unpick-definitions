@@ -17,7 +17,11 @@ group String sdl_metadata_property
 group String sdl_hint
 	org.lwjgl.sdl.SDLHints.SDL_HINT_NO_SIGNAL_HANDLERS
 	org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES
+	org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY
+	org.lwjgl.sdl.SDLHints.SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE
+	org.lwjgl.sdl.SDLHints.SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK
 	org.lwjgl.sdl.SDLHints.SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH
+	org.lwjgl.sdl.SDLHints.SDL_HINT_ENABLE_SCREEN_KEYBOARD
 	org.lwjgl.sdl.SDLHints.SDL_HINT_IME_IMPLEMENTED_UI
 
 target_method org.lwjgl.sdl.SDLInit SDL_Init (I)Z

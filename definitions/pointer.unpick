@@ -48,6 +48,8 @@ target_method net.minecraft.client.KeyboardHandler charTyped (JLnet/minecraft/cl
 	param 0 pointer
 target_method net.minecraft.client.KeyboardHandler textEditing (JLnet/minecraft/client/input/PreeditEvent;)V
 	param 0 pointer
+target_method net.minecraft.client.KeyboardHandler textEditingCandidates (JLnet/minecraft/client/input/IMECandidatesEvent;)V
+	param 0 pointer
 
 target_method net.minecraft.client.MouseHandler onButton (JLnet/minecraft/client/input/MouseButtonInfo;I)V
 	param 0 pointer
@@ -59,4 +61,6 @@ target_method net.minecraft.client.MouseHandler onMove (JDDDD)V
 target_field com.mojang.blaze3d.audio.Library currentDevice J pointer
 target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
 target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
+target_field com.mojang.renderpearl.backend.util.TransientBlockAllocator$Allocator$CpuBlock address J pointer
+target_field com.mojang.renderpearl.frontend.shaders.SPIRVModule spvcContext J pointer
 target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer
