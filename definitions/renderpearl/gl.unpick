@@ -280,14 +280,12 @@ group int gl_khr_label_identifier
 	org.lwjgl.opengl.KHRDebug.GL_BUFFER
 	org.lwjgl.opengl.KHRDebug.GL_SHADER
 	org.lwjgl.opengl.KHRDebug.GL_PROGRAM
-	org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY
 	org.lwjgl.opengl.GL11.GL_TEXTURE
 
 group int gl_ext_label_identifier
 	org.lwjgl.opengl.EXTDebugLabel.GL_BUFFER_OBJECT_EXT
 	org.lwjgl.opengl.EXTDebugLabel.GL_SHADER_OBJECT_EXT
 	org.lwjgl.opengl.EXTDebugLabel.GL_PROGRAM_OBJECT_EXT
-	org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY
 	org.lwjgl.opengl.GL11.GL_TEXTURE
 
 # GlDebug
@@ -333,7 +331,6 @@ group int gl_client_wait_sync_result
 group int gl_program_pname
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINK_STATUS
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_COMPILE_STATUS # for glGetShaderi
-	org.lwjgl.opengl.GL31.GL_ACTIVE_UNIFORM_BLOCKS
 
 # note: glGetProgramInfoLog 32768 is the maxLength
 
@@ -366,9 +363,9 @@ group int gl_error
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_OUT_OF_MEMORY
 
 group int gl_get_string_name
-	org.lwjgl.opengl.GL11.GL_VENDOR
-	org.lwjgl.opengl.GL11.GL_RENDERER
-	org.lwjgl.opengl.GL11.GL_VERSION
+	org.lwjgl.opengl.GL11C.GL_VENDOR
+	org.lwjgl.opengl.GL11C.GL_RENDERER
+	org.lwjgl.opengl.GL11C.GL_VERSION
 
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
@@ -615,6 +612,8 @@ target_method org.lwjgl.opengl.ARBBufferStorage glBufferStorage (IJI)V
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getError ()I
 	return gl_error
 
+target_method org.lwjgl.opengl.GL11C glGetString (I)Ljava/lang/String;
+	param 0 gl_get_string_name
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager _getString (I)Ljava/lang/String;
 	param 0 gl_get_string_name
 

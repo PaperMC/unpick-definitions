@@ -170,6 +170,11 @@ group int vk_present_mode
 	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_FIFO_KHR
 	org.lwjgl.vulkan.KHRSurface.VK_PRESENT_MODE_FIFO_RELAXED_KHR
 
+group int vk_shader_stage_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_VERTEX_BIT
+	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_FRAGMENT_BIT
+
 # VulkanRenderPipeline
 group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_BUFFER
@@ -186,16 +191,6 @@ group int vk_physical_device_type
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU
 	org.lwjgl.vulkan.VK10.VK_PHYSICAL_DEVICE_TYPE_CPU
-
-# VulkanBindGroupLayout
-group int vk_shader_stage_flags
-	@flags
-	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_VERTEX_BIT
-	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_FRAGMENT_BIT
-
-group int vk_descriptor_set_layout_create_flags
-	@flags
-	org.lwjgl.vulkan.KHRPushDescriptor.VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR
 
 # VulkanCommandEncoder
 group int vk_semaphore_type
@@ -422,6 +417,10 @@ group int vk_front_face
 	org.lwjgl.vulkan.VK10.VK_FRONT_FACE_COUNTER_CLOCKWISE
 	org.lwjgl.vulkan.VK10.VK_FRONT_FACE_CLOCKWISE
 
+group int vk_descriptor_set_layout_create_flags
+	@flags
+	org.lwjgl.vulkan.KHRPushDescriptor.VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR
+
 # VulkanUtils
 group int vk_result
 	org.lwjgl.vulkan.VK10.VK_SUCCESS
@@ -499,6 +498,9 @@ target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojan
 target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojang/renderpearl/api/device/GpuSurface$PresentMode;)I
 	return vk_present_mode
 
+target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojang/renderpearl/api/pipeline/ShaderType;)I
+	return vk_shader_stage_flags
+
 target_method com.mojang.renderpearl.backend.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/lang/String;)V
 	param 1 vk_object_type
 target_method com.mojang.renderpearl.backend.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/util/function/Supplier;)V
@@ -506,12 +508,6 @@ target_method com.mojang.renderpearl.backend.vulkan.VulkanDebug setObjectName (L
 
 target_method org.lwjgl.vulkan.VkPhysicalDeviceProperties deviceType ()I
 	return vk_physical_device_type
-
-target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding stageFlags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutBinding;
-	param 0 vk_shader_stage_flags
-
-target_method org.lwjgl.vulkan.VkDescriptorSetLayoutCreateInfo flags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutCreateInfo;
-	param 0 vk_descriptor_set_layout_create_flags
 
 target_method org.lwjgl.vulkan.VkSemaphoreTypeCreateInfo semaphoreType (I)Lorg/lwjgl/vulkan/VkSemaphoreTypeCreateInfo;
 	param 0 vk_semaphore_type
@@ -593,8 +589,8 @@ target_method org.lwjgl.vulkan.VkPhysicalDeviceDriverProperties driverID ()I
 	return vk_driver_id
 
 target_field com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline withDepthPipeline J vk_handle
-target_method com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline <init> (Lcom/mojang/renderpearl/backend/vulkan/VulkanDevice;Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;JJJLcom/mojang/renderpearl/backend/vulkan/VulkanBindGroupLayout;JJ)V
-	param 3 vk_handle
+target_method com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline <init> (Lcom/mojang/renderpearl/backend/vulkan/VulkanDevice;JJJJLit/unimi/dsi/fastutil/longs/LongList;Ljava/util/List;)V
+	param 2 vk_handle
 
 target_method org.lwjgl.vulkan.VkBufferCreateInfo usage (I)Lorg/lwjgl/vulkan/VkBufferCreateInfo;
 	param 0 vk_buffer_usage_flags
@@ -725,9 +721,6 @@ target_method org.lwjgl.vulkan.VkDescriptorImageInfo$Buffer imageLayout (I)Lorg/
 target_method org.lwjgl.vulkan.KHRPushDescriptor vkCmdPushDescriptorSetKHR (Lorg/lwjgl/vulkan/VkCommandBuffer;IJILorg/lwjgl/vulkan/VkWriteDescriptorSet$Buffer;)V
 	param 1 vk_pipeline_bind_point
 
-target_method org.lwjgl.vulkan.VkPipelineShaderStageCreateInfo stage (I)Lorg/lwjgl/vulkan/VkPipelineShaderStageCreateInfo;
-	param 0 vk_shader_stage_flags
-
 target_method org.lwjgl.vulkan.VkVertexInputBindingDescription inputRate (I)Lorg/lwjgl/vulkan/VkVertexInputBindingDescription;
 	param 0 vk_vertex_input_rate
 
@@ -736,6 +729,9 @@ target_method org.lwjgl.vulkan.VkPipelineRasterizationStateCreateInfo cullMode (
 
 target_method org.lwjgl.vulkan.VkPipelineRasterizationStateCreateInfo frontFace (I)Lorg/lwjgl/vulkan/VkPipelineRasterizationStateCreateInfo;
 	param 0 vk_front_face
+
+target_method org.lwjgl.vulkan.VkDescriptorSetLayoutCreateInfo flags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutCreateInfo;
+	param 0 vk_descriptor_set_layout_create_flags
 
 target_method org.lwjgl.vulkan.VkPipelineMultisampleStateCreateInfo rasterizationSamples (I)Lorg/lwjgl/vulkan/VkPipelineMultisampleStateCreateInfo;
 	param 0 vk_sample_count_flags
@@ -749,13 +745,13 @@ target_method org.lwjgl.vulkan.VK10 vkCreateGraphicsPipelines (Lorg/lwjgl/vulkan
 target_method com.mojang.renderpearl.backend.vulkan.VulkanUtils pipelineStageToString (J)Ljava/lang/String;
 	param 0 vk_pipeline_stage_flags
 
+target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding stageFlags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutBinding;
+	param 0 vk_shader_stage_flags
+
 target_method com.mojang.renderpearl.backend.vulkan.VulkanUtils resultToString (I)Ljava/lang/String;
 	param 0 vk_result
 
 target_method org.lwjgl.util.vma.Vma vmaDestroyAllocator (J)V
-	param 0 vk_handle
-
-target_method com.mojang.renderpearl.backend.vulkan.VulkanBindGroupLayout <init> (JLjava/util/List;)V
 	param 0 vk_handle
 
 target_field com.mojang.renderpearl.backend.vulkan.VulkanDebug$Enabled messenger J vk_handle

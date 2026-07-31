@@ -17,6 +17,9 @@ target_method org.lwjgl.sdl.SDLVideo SDL_CreateWindow (Ljava/lang/CharSequence;I
 target_method org.lwjgl.sdl.SDLVideo SDL_GL_CreateContext (J)J
 	return pointer
 
+target_method org.lwjgl.util.spvc.Spvc spvc_context_destroy (J)V
+	param 0 pointer
+
 target_method com.mojang.blaze3d.platform.SdlDebug onLogMessage (JIIJ)V
 	param 3 pointer
 
