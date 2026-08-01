@@ -24,9 +24,6 @@ abstract class DownloadFile : DefaultTask() {
     @get:OutputFile
     abstract val output: RegularFileProperty
 
-    @get:Console
-    abstract val verbose: Property<Boolean>
-
     @get:ServiceReference("download")
     abstract val downloader: Property<DownloadService>
 
@@ -36,9 +33,7 @@ abstract class DownloadFile : DefaultTask() {
             URI.create(url.get()), output.path,
             expectedSha1.map { Hash(it, HashingAlgorithm.SHA1) }.orNull
         ) {
-            if (verbose.get()) {
-                logger.lifecycle("Downloading ${url.get()}...")
-            }
+            logger.lifecycle("Downloading ${url.get()}...")
         }
     }
 }

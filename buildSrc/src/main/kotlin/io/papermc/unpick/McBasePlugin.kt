@@ -6,7 +6,6 @@ import io.papermc.unpick.util.*
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFile
-import org.gradle.api.logging.LogLevel
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.*
 import java.net.URI
@@ -55,9 +54,7 @@ class McBasePlugin : Plugin<Project> {
 
     private fun download(project: Project, url: String, target: Provider<RegularFile>, hash: Hash? = null) {
         project.download.download(URI.create(url), target.path, hash) {
-            if (project.gradle.startParameter.logLevel != LogLevel.QUIET) {
-                project.logger.lifecycle("Downloading $url...")
-            }
+            project.logger.lifecycle("Downloading $url...")
         }
     }
 }

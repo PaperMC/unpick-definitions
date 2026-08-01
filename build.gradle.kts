@@ -31,7 +31,6 @@ val downloadJar = tasks.register<DownloadFile>("downloadJar") {
     expectedSha1 = mcBase.manifest.map { it.downloads.client.sha1 }
 
     output = project.layout.buildDirectory.file("client.jar")
-    verbose = project.gradle.startParameter.logLevel != LogLevel.QUIET
 }
 
 val generateUnpickData = tasks.register<GenerateUnpickData>("generateUnpickData") {
