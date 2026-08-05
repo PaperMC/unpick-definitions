@@ -74,12 +74,17 @@ group int key_or_mouse_button
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD8
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD9
 	com.mojang.blaze3d.platform.InputConstants.KEY_ADD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PERIOD
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADCOMMA
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADENTER
 	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADEQUALS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_COMMA
 	com.mojang.blaze3d.platform.InputConstants.KEY_MULTIPLY
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DIVIDE
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MINUS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PLUSMINUS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_LEFTPAREN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_RIGHTPAREN
 	com.mojang.blaze3d.platform.InputConstants.KEY_DOWN
 	com.mojang.blaze3d.platform.InputConstants.KEY_LEFT
 	com.mojang.blaze3d.platform.InputConstants.KEY_RIGHT
@@ -117,10 +122,25 @@ group int key_or_mouse_button
 	com.mojang.blaze3d.platform.InputConstants.KEY_CAPSLOCK
 	com.mojang.blaze3d.platform.InputConstants.KEY_PAUSE
 	com.mojang.blaze3d.platform.InputConstants.KEY_SCROLLLOCK
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_APPLICATION
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MENU
 	com.mojang.blaze3d.platform.InputConstants.KEY_PRINTSCREEN
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSBACKSLASH
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSHASH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MUTE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEUP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEDOWN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PLAY_PAUSE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_STOP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AGAIN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_UNDO
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CUT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_COPY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_PASTE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_FIND
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_HELP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_NEW
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_SAVE
 	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_LEFT
 	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_MIDDLE
 	com.mojang.blaze3d.platform.InputConstants.MOUSE_BUTTON_RIGHT

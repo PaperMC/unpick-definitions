@@ -317,6 +317,10 @@ group int vk_driver_id # probably wrong
 group long vk_handle
 	org.lwjgl.vulkan.VK10.VK_NULL_HANDLE
 
+group int vk_time_domain
+	org.lwjgl.vulkan.KHRCalibratedTimestamps.VK_TIME_DOMAIN_DEVICE_KHR
+	org.lwjgl.vulkan.KHRCalibratedTimestamps.VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR
+
 # VulkanGpuBuffer
 group int vk_sharing_mode
 	org.lwjgl.vulkan.VK10.VK_SHARING_MODE_EXCLUSIVE
@@ -373,7 +377,7 @@ group int vk_access_mask_legacy
 group int vk_pipeline_stage_flags_legacy
 	@flags
 	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT
-	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_ALL_COMMANDS_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT
 
 group int vk_image_view_type
 	org.lwjgl.vulkan.VK10.VK_IMAGE_VIEW_TYPE_2D
@@ -591,6 +595,9 @@ target_method org.lwjgl.vulkan.VkPhysicalDeviceDriverProperties driverID ()I
 target_field com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline withDepthPipeline J vk_handle
 target_method com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline <init> (Lcom/mojang/renderpearl/backend/vulkan/VulkanDevice;JJJJLit/unimi/dsi/fastutil/longs/LongList;Ljava/util/List;)V
 	param 2 vk_handle
+
+target_method org.lwjgl.vulkan.VkCalibratedTimestampInfoKHR timeDomain (I)Lorg/lwjgl/vulkan/VkCalibratedTimestampInfoKHR;
+	param 0 vk_time_domain
 
 target_method org.lwjgl.vulkan.VkBufferCreateInfo usage (I)Lorg/lwjgl/vulkan/VkBufferCreateInfo;
 	param 0 vk_buffer_usage_flags

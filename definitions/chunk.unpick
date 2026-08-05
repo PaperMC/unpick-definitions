@@ -58,7 +58,7 @@ group int file_storage_version
 target_method net.minecraft.world.level.storage.WorldData getStorageVersionName (I)Ljava/lang/String;
 	param 0 file_storage_version
 
-target_method net.minecraft.world.level.storage.PrimaryLevelData <init> (Ljava/util/UUID;ZLnet/minecraft/world/level/storage/LevelData$RespawnData;JIZLjava/util/Set;Ljava/util/Set;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/storage/PrimaryLevelData$SpecialWorldProperty;Lcom/mojang/serialization/Lifecycle;)V
+target_method net.minecraft.world.level.storage.PrimaryLevelData <init> (Ljava/util/UUID;ZLnet/minecraft/world/level/storage/LevelData$RespawnData;JIZLjava/util/Set;Ljava/util/Set;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/storage/PrimaryLevelData$SpecialWorldProperty;Lcom/mojang/serialization/Lifecycle;Ljava/util/List;)V
 	param 4 file_storage_version
 
 target_method net.minecraft.world.level.storage.LevelStorageSource getStorageVersion ()I

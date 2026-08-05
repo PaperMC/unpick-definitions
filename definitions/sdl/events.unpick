@@ -7,6 +7,8 @@ group int event_type
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_ADDED
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_REMOVED
 
+	org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_CURRENT_MODE_CHANGED
+
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_MOVED
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_RESIZED
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED

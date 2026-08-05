@@ -54,9 +54,7 @@ group int move_entity_flags
 	net.minecraft.network.protocol.game.ClientboundMoveEntityPacket.ON_GROUND_FLAG
 
 group int animation_action
-	net.minecraft.network.protocol.game.ClientboundAnimatePacket.SWING_MAIN_HAND
 	net.minecraft.network.protocol.game.ClientboundAnimatePacket.WAKE_UP
-	net.minecraft.network.protocol.game.ClientboundAnimatePacket.SWING_OFF_HAND
 	net.minecraft.network.protocol.game.ClientboundAnimatePacket.CRITICAL_HIT
 	net.minecraft.network.protocol.game.ClientboundAnimatePacket.MAGIC_CRITICAL_HIT
 
