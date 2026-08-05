@@ -11,9 +11,6 @@ group int entity_event
 	@scope class net.minecraft.world.level.BaseSpawner
 	net.minecraft.world.level.BaseSpawner.EVENT_SPAWN
 
-target_method net.minecraft.world.entity.LivingEntity entityEventForEquipmentBreak (Lnet/minecraft/world/entity/EquipmentSlot;)B
-	return entity_event
-
 target_annotation net.minecraft.world.entity.EntityEvent$Value entity_event
 
 # technically both a block/entity event

@@ -87,15 +87,6 @@ group int argb_color
 	@scope class net.minecraft.world.entity.projectile.arrow.Arrow
 	net.minecraft.world.entity.projectile.arrow.Arrow.NO_EFFECT_COLOR
 
-group int argb_color
-	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationType
-	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationTypes
-	net.minecraft.world.level.saveddata.maps.MapDecorationType.NO_MAP_COLOR
-
-group int argb_color
-	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationTypes
-	net.minecraft.world.level.saveddata.maps.MapDecorationTypes.COPPER_COLOR
-
 group int rgb_color
 	@scope class net.minecraft.client.multiplayer.chat.GuiMessageTag
 	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_NOT_SECURE_INDICATOR_COLOR
@@ -314,11 +305,6 @@ target_method net.minecraft.world.entity.projectile.arrow.Arrow getColor ()I
 
 target_method net.minecraft.world.item.alchemy.PotionContents getColorOr (I)I
 	param 0 argb_color
-
-target_field net.minecraft.world.level.saveddata.maps.MapDecorationType mapColor I argb_color
-
-target_method net.minecraft.world.level.saveddata.maps.MapDecorationTypes register (Ljava/lang/String;Ljava/lang/String;ZIZZ)Lnet/minecraft/core/Holder;
-	param 3 argb_color
 
 target_method net.minecraft.world.level.ColorMapColorUtil get (DD[II)I
 	param 3 argb_color
