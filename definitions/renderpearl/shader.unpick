@@ -64,7 +64,6 @@ group int spvc_error_code
 	org.lwjgl.util.spvc.Spvc.SPVC_ERROR_INVALID_ARGUMENT
 
 group int spvc_option
-	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FORCE_TEMPORARY
 	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FLATTEN_MULTIDIMENSIONAL_ARRAYS
 	org.lwjgl.util.spvc.Spvc.SPVC_COMPILER_OPTION_FORCE_ZERO_INITIALIZED_VARIABLES
 
