@@ -149,6 +149,7 @@ group int key_code
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_E
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_F
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_L
+	com.mojang.blaze3d.platform.InputConstants.KEYCODE_M
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_O
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_R
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_U
