@@ -3,7 +3,4 @@ unpick v4
 group int level_event
 	net.minecraft.world.level.block.LevelEvent.*
 
-target_method net.minecraft.world.level.block.SpeleothemBlock getStalactiteLandingSound ()I
-	return level_event
-
 target_annotation net.minecraft.world.level.block.LevelEvent$Value level_event

@@ -10,7 +10,9 @@ group long window_flags
 	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_HIDDEN
 	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_RESIZABLE
 	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_HIGH_PIXEL_DENSITY
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_UTILITY
 	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_VULKAN
+	org.lwjgl.sdl.SDLVideo.SDL_WINDOW_NOT_FOCUSABLE
 
 group int window_attribute
 	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_MAJOR_VERSION
@@ -27,8 +29,8 @@ target_method org.lwjgl.sdl.SDLVideo SDL_CreateWindow (Ljava/lang/CharSequence;I
 target_method org.lwjgl.sdl.SDLVideo SDL_GetWindowFlags (J)J
 	return window_flags
 
-target_method com.mojang.renderpearl.api.device.GpuBackend getWindowFlags ()J
-	return window_flags
+target_method com.mojang.renderpearl.api.device.GpuBackend createWindow (Ljava/lang/String;IIJ)J
+	param 3 window_flags
 
 target_method org.lwjgl.sdl.SDLVideo SDL_GL_SetAttribute (II)Z
 	param 0 window_attribute
