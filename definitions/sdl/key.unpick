@@ -2,16 +2,6 @@ unpick v4
 
 group int key # scan_code
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_UNKNOWN
-	com.mojang.blaze3d.platform.InputConstants.KEY_0
-	com.mojang.blaze3d.platform.InputConstants.KEY_1
-	com.mojang.blaze3d.platform.InputConstants.KEY_2
-	com.mojang.blaze3d.platform.InputConstants.KEY_3
-	com.mojang.blaze3d.platform.InputConstants.KEY_4
-	com.mojang.blaze3d.platform.InputConstants.KEY_5
-	com.mojang.blaze3d.platform.InputConstants.KEY_6
-	com.mojang.blaze3d.platform.InputConstants.KEY_7
-	com.mojang.blaze3d.platform.InputConstants.KEY_8
-	com.mojang.blaze3d.platform.InputConstants.KEY_9
 	com.mojang.blaze3d.platform.InputConstants.KEY_A
 	com.mojang.blaze3d.platform.InputConstants.KEY_B
 	com.mojang.blaze3d.platform.InputConstants.KEY_C
@@ -38,6 +28,34 @@ group int key # scan_code
 	com.mojang.blaze3d.platform.InputConstants.KEY_X
 	com.mojang.blaze3d.platform.InputConstants.KEY_Y
 	com.mojang.blaze3d.platform.InputConstants.KEY_Z
+	com.mojang.blaze3d.platform.InputConstants.KEY_1
+	com.mojang.blaze3d.platform.InputConstants.KEY_2
+	com.mojang.blaze3d.platform.InputConstants.KEY_3
+	com.mojang.blaze3d.platform.InputConstants.KEY_4
+	com.mojang.blaze3d.platform.InputConstants.KEY_5
+	com.mojang.blaze3d.platform.InputConstants.KEY_6
+	com.mojang.blaze3d.platform.InputConstants.KEY_7
+	com.mojang.blaze3d.platform.InputConstants.KEY_8
+	com.mojang.blaze3d.platform.InputConstants.KEY_9
+	com.mojang.blaze3d.platform.InputConstants.KEY_0
+	com.mojang.blaze3d.platform.InputConstants.KEY_RETURN
+	com.mojang.blaze3d.platform.InputConstants.KEY_ESCAPE
+	com.mojang.blaze3d.platform.InputConstants.KEY_BACKSPACE
+	com.mojang.blaze3d.platform.InputConstants.KEY_TAB
+	com.mojang.blaze3d.platform.InputConstants.KEY_SPACE
+	com.mojang.blaze3d.platform.InputConstants.KEY_MINUS
+	com.mojang.blaze3d.platform.InputConstants.KEY_EQUALS
+	com.mojang.blaze3d.platform.InputConstants.KEY_LBRACKET
+	com.mojang.blaze3d.platform.InputConstants.KEY_RBRACKET
+	com.mojang.blaze3d.platform.InputConstants.KEY_BACKSLASH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSHASH
+	com.mojang.blaze3d.platform.InputConstants.KEY_SEMICOLON
+	com.mojang.blaze3d.platform.InputConstants.KEY_APOSTROPHE
+	com.mojang.blaze3d.platform.InputConstants.KEY_GRAVE
+	com.mojang.blaze3d.platform.InputConstants.KEY_COMMA
+	com.mojang.blaze3d.platform.InputConstants.KEY_PERIOD
+	com.mojang.blaze3d.platform.InputConstants.KEY_SLASH
+	com.mojang.blaze3d.platform.InputConstants.KEY_CAPSLOCK
 	com.mojang.blaze3d.platform.InputConstants.KEY_F1
 	com.mojang.blaze3d.platform.InputConstants.KEY_F2
 	com.mojang.blaze3d.platform.InputConstants.KEY_F3
@@ -50,6 +68,40 @@ group int key # scan_code
 	com.mojang.blaze3d.platform.InputConstants.KEY_F10
 	com.mojang.blaze3d.platform.InputConstants.KEY_F11
 	com.mojang.blaze3d.platform.InputConstants.KEY_F12
+	com.mojang.blaze3d.platform.InputConstants.KEY_PRINTSCREEN
+	com.mojang.blaze3d.platform.InputConstants.KEY_SCROLLLOCK
+	com.mojang.blaze3d.platform.InputConstants.KEY_PAUSE
+	com.mojang.blaze3d.platform.InputConstants.KEY_INSERT
+	com.mojang.blaze3d.platform.InputConstants.KEY_HOME
+	com.mojang.blaze3d.platform.InputConstants.KEY_PAGEUP
+	com.mojang.blaze3d.platform.InputConstants.KEY_DELETE
+	com.mojang.blaze3d.platform.InputConstants.KEY_END
+	com.mojang.blaze3d.platform.InputConstants.KEY_PAGEDOWN
+	com.mojang.blaze3d.platform.InputConstants.KEY_RIGHT
+	com.mojang.blaze3d.platform.InputConstants.KEY_LEFT
+	com.mojang.blaze3d.platform.InputConstants.KEY_DOWN
+	com.mojang.blaze3d.platform.InputConstants.KEY_UP
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMLOCK
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DIVIDE
+	com.mojang.blaze3d.platform.InputConstants.KEY_MULTIPLY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MINUS
+	com.mojang.blaze3d.platform.InputConstants.KEY_ADD
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADENTER
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD1
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD2
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD3
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD4
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD5
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD6
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD7
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD8
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD9
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD0
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PERIOD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSBACKSLASH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_APPLICATION
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_POWER
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADEQUALS
 	com.mojang.blaze3d.platform.InputConstants.KEY_F13
 	com.mojang.blaze3d.platform.InputConstants.KEY_F14
 	com.mojang.blaze3d.platform.InputConstants.KEY_F15
@@ -62,75 +114,10 @@ group int key # scan_code
 	com.mojang.blaze3d.platform.InputConstants.KEY_F22
 	com.mojang.blaze3d.platform.InputConstants.KEY_F23
 	com.mojang.blaze3d.platform.InputConstants.KEY_F24
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMLOCK
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD0
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD1
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD2
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD3
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD4
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD5
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD6
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD7
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD8
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPAD9
-	com.mojang.blaze3d.platform.InputConstants.KEY_ADD
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PERIOD
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADCOMMA
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADENTER
-	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADEQUALS
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_COMMA
-	com.mojang.blaze3d.platform.InputConstants.KEY_MULTIPLY
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DIVIDE
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MINUS
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PLUSMINUS
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_LEFTPAREN
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_RIGHTPAREN
-	com.mojang.blaze3d.platform.InputConstants.KEY_DOWN
-	com.mojang.blaze3d.platform.InputConstants.KEY_LEFT
-	com.mojang.blaze3d.platform.InputConstants.KEY_RIGHT
-	com.mojang.blaze3d.platform.InputConstants.KEY_UP
-	com.mojang.blaze3d.platform.InputConstants.KEY_APOSTROPHE
-	com.mojang.blaze3d.platform.InputConstants.KEY_BACKSLASH
-	com.mojang.blaze3d.platform.InputConstants.KEY_COMMA
-	com.mojang.blaze3d.platform.InputConstants.KEY_EQUALS
-	com.mojang.blaze3d.platform.InputConstants.KEY_GRAVE
-	com.mojang.blaze3d.platform.InputConstants.KEY_LBRACKET
-	com.mojang.blaze3d.platform.InputConstants.KEY_MINUS
-	com.mojang.blaze3d.platform.InputConstants.KEY_PERIOD
-	com.mojang.blaze3d.platform.InputConstants.KEY_RBRACKET
-	com.mojang.blaze3d.platform.InputConstants.KEY_SEMICOLON
-	com.mojang.blaze3d.platform.InputConstants.KEY_SLASH
-	com.mojang.blaze3d.platform.InputConstants.KEY_SPACE
-	com.mojang.blaze3d.platform.InputConstants.KEY_TAB
-	com.mojang.blaze3d.platform.InputConstants.KEY_LALT
-	com.mojang.blaze3d.platform.InputConstants.KEY_LCONTROL
-	com.mojang.blaze3d.platform.InputConstants.KEY_LSHIFT
-	com.mojang.blaze3d.platform.InputConstants.KEY_LGUI
-	com.mojang.blaze3d.platform.InputConstants.KEY_RALT
-	com.mojang.blaze3d.platform.InputConstants.KEY_RCONTROL
-	com.mojang.blaze3d.platform.InputConstants.KEY_RSHIFT
-	com.mojang.blaze3d.platform.InputConstants.KEY_RGUI
-	com.mojang.blaze3d.platform.InputConstants.KEY_RETURN
-	com.mojang.blaze3d.platform.InputConstants.KEY_ESCAPE
-	com.mojang.blaze3d.platform.InputConstants.KEY_BACKSPACE
-	com.mojang.blaze3d.platform.InputConstants.KEY_DELETE
-	com.mojang.blaze3d.platform.InputConstants.KEY_END
-	com.mojang.blaze3d.platform.InputConstants.KEY_HOME
-	com.mojang.blaze3d.platform.InputConstants.KEY_INSERT
-	com.mojang.blaze3d.platform.InputConstants.KEY_PAGEDOWN
-	com.mojang.blaze3d.platform.InputConstants.KEY_PAGEUP
-	com.mojang.blaze3d.platform.InputConstants.KEY_CAPSLOCK
-	com.mojang.blaze3d.platform.InputConstants.KEY_PAUSE
-	com.mojang.blaze3d.platform.InputConstants.KEY_SCROLLLOCK
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_APPLICATION
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_EXECUTE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_HELP
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MENU
-	com.mojang.blaze3d.platform.InputConstants.KEY_PRINTSCREEN
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSBACKSLASH
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_NONUSHASH
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MUTE
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEUP
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEDOWN
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PLAY_PAUSE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SELECT
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_STOP
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AGAIN
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_UNDO
@@ -138,9 +125,129 @@ group int key # scan_code
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_COPY
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_PASTE
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_FIND
-	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_HELP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MUTE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEUP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_VOLUMEDOWN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_COMMA
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_EQUALSAS400
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL1
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL2
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL3
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL4
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL5
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL6
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL7
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL8
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_INTERNATIONAL9
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG1
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG2
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG3
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG4
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG5
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG6
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG7
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG8
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_LANG9
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_ALTERASE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SYSREQ
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CANCEL
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CLEAR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_PRIOR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_RETURN2
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SEPARATOR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_OUT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_OPER
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CLEARAGAIN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CRSEL
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_EXSEL
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_00
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_000
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_THOUSANDSSEPARATOR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_DECIMALSEPARATOR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CURRENCYUNIT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CURRENCYSUBUNIT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_LEFTPAREN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_RIGHTPAREN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_LEFTBRACE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_RIGHTBRACE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_TAB
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_BACKSPACE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_A
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_B
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_C
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_D
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_E
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_F
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_XOR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_POWER
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PERCENT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_LESS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_GREATER
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_AMPERSAND
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DBLAMPERSAND
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_VERTICALBAR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_DBLVERTICALBAR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_COLON
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_HASH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_SPACE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_AT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_EXCLAM
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMSTORE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMRECALL
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMCLEAR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMADD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMSUBTRACT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMMULTIPLY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_MEMDIVIDE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_PLUSMINUS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_CLEAR
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_CLEARENTRY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_BINARY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_OCTAL
+	com.mojang.blaze3d.platform.InputConstants.KEY_NUMPADCOMMA
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_KP_HEXADECIMAL
+	com.mojang.blaze3d.platform.InputConstants.KEY_LCONTROL
+	com.mojang.blaze3d.platform.InputConstants.KEY_LSHIFT
+	com.mojang.blaze3d.platform.InputConstants.KEY_LALT
+	com.mojang.blaze3d.platform.InputConstants.KEY_LGUI
+	com.mojang.blaze3d.platform.InputConstants.KEY_RCONTROL
+	com.mojang.blaze3d.platform.InputConstants.KEY_RSHIFT
+	com.mojang.blaze3d.platform.InputConstants.KEY_RALT
+	com.mojang.blaze3d.platform.InputConstants.KEY_RGUI
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MODE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SLEEP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_WAKE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CHANNEL_INCREMENT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CHANNEL_DECREMENT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PLAY
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PAUSE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_RECORD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_FAST_FORWARD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_REWIND
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_NEXT_TRACK
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PREVIOUS_TRACK
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_STOP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_EJECT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_PLAY_PAUSE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_MEDIA_SELECT
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_NEW
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_OPEN
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_CLOSE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_EXIT
 	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_SAVE
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_PRINT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_PROPERTIES
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_SEARCH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_HOME
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_BACK
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_FORWARD
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_STOP
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_REFRESH
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_AC_BOOKMARKS
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SOFTLEFT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_SOFTRIGHT
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_CALL
+	org.lwjgl.sdl.SDLScancode.SDL_SCANCODE_ENDCALL
 
 group int key_code
 	com.mojang.blaze3d.platform.InputConstants.KEYCODE_A

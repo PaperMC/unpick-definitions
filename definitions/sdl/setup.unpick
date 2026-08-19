@@ -27,7 +27,7 @@ group String sdl_hint
 target_method org.lwjgl.sdl.SDLInit SDL_Init (I)Z
 	param 0 sdl_init_flags
 
-# todo see tinyfd comment
+# todo enable when linter is fixed
 #target_method org.lwjgl.sdl.SDLInit SDL_SetAppMetadataProperty (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 #	param 0 sdl_metadata_property
 

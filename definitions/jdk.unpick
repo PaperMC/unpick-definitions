@@ -72,7 +72,7 @@ group int window_operation
 target_method javax.swing.JFrame setDefaultCloseOperation (I)V
 	param 0 window_operation
 
-# linter is broken
+# todo enable when linter is fixed
 #group String layout_constraint
 #	java.awt.BorderLayout.NORTH
 #	java.awt.BorderLayout.SOUTH

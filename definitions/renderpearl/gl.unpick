@@ -262,6 +262,7 @@ group int gl_buffer_storage_flags
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAP_WRITE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
+	org.lwjgl.opengl.ARBBufferStorage.GL_DYNAMIC_STORAGE_BIT
 	org.lwjgl.opengl.ARBBufferStorage.GL_CLIENT_STORAGE_BIT
 
 group int gl_buffer_target

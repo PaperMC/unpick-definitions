@@ -1,0 +1,20 @@
+unpick v4
+
+group int button_id
+	@scope class com.mojang.blaze3d.platform.MessageBox
+	com.mojang.blaze3d.platform.MessageBox.BUTTON_ID_YES
+	com.mojang.blaze3d.platform.MessageBox.BUTTON_ID_NO
+
+group int message_box_flags
+	@flags
+	org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_ERROR
+	org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_WARNING
+	org.lwjgl.sdl.SDLMessageBox.SDL_MESSAGEBOX_INFORMATION
+
+target_method org.lwjgl.sdl.SDL_MessageBoxButtonData buttonID (I)Lorg/lwjgl/sdl/SDL_MessageBoxButtonData;
+	param 0 button_id
+
+target_method org.lwjgl.sdl.SDL_MessageBoxData flags (I)Lorg/lwjgl/sdl/SDL_MessageBoxData;
+	param 0 message_box_flags
+target_method org.lwjgl.sdl.SDLMessageBox SDL_ShowSimpleMessageBox (ILjava/lang/CharSequence;Ljava/lang/CharSequence;J)Z
+	param 0 message_box_flags

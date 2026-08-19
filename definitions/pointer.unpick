@@ -12,10 +12,11 @@ target_method org.lwjgl.PointerBuffer get ()J
 target_method org.lwjgl.sdl.SDLLog SDL_SetLogOutputFunction (Lorg/lwjgl/sdl/SDL_LogOutputFunctionI;J)V
 	param 1 pointer
 
-target_method org.lwjgl.sdl.SDLVideo SDL_CreateWindow (Ljava/lang/CharSequence;IIJ)J
-	return pointer
 target_method org.lwjgl.sdl.SDLVideo SDL_GL_CreateContext (J)J
 	return pointer
+
+target_method org.lwjgl.sdl.SDLMessageBox SDL_ShowSimpleMessageBox (ILjava/lang/CharSequence;Ljava/lang/CharSequence;J)Z
+	param 3 pointer
 
 target_method org.lwjgl.util.spvc.Spvc spvc_context_destroy (J)V
 	param 0 pointer
@@ -36,6 +37,9 @@ target_method com.mojang.renderpearl.backend.vulkan.init.VulkanPNextStruct findS
 	return pointer
 target_method com.mojang.renderpearl.backend.vulkan.init.VulkanPNextStruct findStructInPNextChain (JI)J
 	param 0 pointer
+	return pointer
+
+target_method com.mojang.renderpearl.api.device.GpuBackend createWindow (Ljava/lang/String;IIJ)J
 	return pointer
 
 target_field com.mojang.blaze3d.platform.cursor.CursorType handle J pointer
@@ -63,4 +67,6 @@ target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
 target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
 target_field com.mojang.renderpearl.backend.util.TransientBlockAllocator$Allocator$CpuBlock address J pointer
 target_field com.mojang.renderpearl.frontend.shaders.SPIRVModule spvcContext J pointer
+target_field com.mojang.renderpearl.backend.opengl.GlDevice initialWindowHandle J pointer
+target_field com.mojang.renderpearl.backend.opengl.GlDevice currentWindow J pointer
 target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer
