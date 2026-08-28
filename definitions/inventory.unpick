@@ -167,7 +167,7 @@ target_method net.minecraft.world.item.Item$Properties tool (Lnet/minecraft/worl
 
 target_field net.minecraft.world.item.component.WrittenBookContent generation I book_generation
 
-target_method net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect <init> (F)V
+target_method net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect <init> (FZ)V
 	param 0 teleport_effect_diameter
 
 target_method net.minecraft.world.entity.animal.equine.AbstractHorse getSlot (I)Lnet/minecraft/world/entity/SlotAccess;
