@@ -46,7 +46,9 @@ class McBasePlugin : Plugin<Project> {
 
             target.dependencies {
                 for (library in gameManifest.libraries) {
-                    minecraft(library.name)
+                    if (library.isValid) {
+                        minecraft(library.name)
+                    }
                 }
             }
         }

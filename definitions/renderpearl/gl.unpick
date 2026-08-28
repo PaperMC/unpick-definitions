@@ -84,7 +84,7 @@ group int gl_filter
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
 
 # GlCommandEncoder, DirectStateAccess
-group int gl_draw_buffer_buf
+group int gl_framebuffer_pos
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_NONE
 
@@ -575,7 +575,9 @@ target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glClientWait
 	return gl_client_wait_sync_result
 
 target_method org.lwjgl.opengl.GL11C glDrawBuffer (I)V
-	param 0 gl_draw_buffer_buf
+	param 0 gl_framebuffer_pos
+target_method com.mojang.renderpearl.backend.opengl.GlStateManager _glReadBuffer (I)V
+	param 0 gl_framebuffer_pos
 
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager _polygonMode (II)V
 	param 0 gl_polygon_mode_face

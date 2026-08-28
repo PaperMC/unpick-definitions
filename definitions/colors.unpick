@@ -48,13 +48,6 @@ group int argb_color
 	net.minecraft.client.gui.components.IMEPreeditOverlay.SELECTED_CANDIDATE_BACKGROUND
 
 group int argb_color
-	@scope class net.minecraft.client.renderer.fog.environment.LavaFogEnvironment
-	net.minecraft.client.renderer.fog.environment.LavaFogEnvironment.COLOR
-group int argb_color
-	@scope class net.minecraft.client.renderer.fog.environment.PowderedSnowFogEnvironment
-	net.minecraft.client.renderer.fog.environment.PowderedSnowFogEnvironment.COLOR
-
-group int argb_color
 	@scope class net.minecraft.client.renderer.debug.BeeDebugRenderer
 	net.minecraft.client.renderer.debug.BeeDebugRenderer.ORANGE
 	net.minecraft.client.renderer.debug.BeeDebugRenderer.GRAY
@@ -82,6 +75,10 @@ group int argb_color
 group int argb_color
 	@scope class net.minecraft.client.renderer.state.gui.GuiRenderState
 	net.minecraft.client.renderer.state.gui.GuiRenderState.DEBUG_RECTANGLE_COLOR
+
+group int argb_color
+	@scope class net.minecraft.world.timeline.Timelines
+	net.minecraft.world.timeline.Timelines.NIGHT_SKY_COLOR_MULTIPLIER
 
 group int argb_color
 	@scope class net.minecraft.world.entity.projectile.arrow.Arrow
@@ -142,9 +139,9 @@ target_method net.minecraft.client.gui.GuiGraphicsExtractor centeredText (Lnet/m
 	param 4 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor centeredText (Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)V
 	param 4 argb_color
-target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIII)V
+target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIII)I
 	param 5 argb_color
-target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIIIZ)V
+target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIIIZ)I
 	param 5 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithBackdrop (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIII)V
 	param 5 argb_color
@@ -323,6 +320,8 @@ target_method net.minecraft.util.ARGB color (II)I
 target_method net.minecraft.util.ARGB color (FI)I
 	param 1 argb_color
 	return argb_color
+target_method net.minecraft.util.ARGB vector3fFromRGB24 (I)Lorg/joml/Vector3f;
+	param 0 argb_color
 target_method net.minecraft.util.ARGB vector4fFromARGB32 (I)Lorg/joml/Vector4f;
 	param 0 argb_color
 
