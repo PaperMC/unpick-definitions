@@ -34,3 +34,5 @@ target_method com.mojang.renderpearl.api.device.GpuBackend createWindow (Ljava/l
 
 target_method org.lwjgl.sdl.SDLVideo SDL_GL_SetAttribute (II)Z
 	param 0 window_attribute
+target_method org.lwjgl.sdl.SDLVideo SDL_GL_GetAttribute (ILjava/nio/IntBuffer;)Z
+	param 0 window_attribute
