@@ -32,8 +32,6 @@ group int event_type
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_TEXT_INPUT
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_KEYMAP_CHANGED
 
-	org.lwjgl.sdl.SDLEvents.SDL_EVENT_TEXT_EDITING_CANDIDATES
-
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_MOTION
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_BUTTON_DOWN
 	org.lwjgl.sdl.SDLEvents.SDL_EVENT_MOUSE_BUTTON_UP

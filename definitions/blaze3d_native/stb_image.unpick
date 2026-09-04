@@ -1,0 +1,23 @@
+unpick v4
+
+group int stb_image_format
+	org.lwjgl.stb.STBImage.STBI_default
+	org.lwjgl.stb.STBImage.STBI_grey
+	org.lwjgl.stb.STBImage.STBI_grey_alpha
+	org.lwjgl.stb.STBImage.STBI_rgb
+	org.lwjgl.stb.STBImage.STBI_rgb_alpha
+
+target_method com.mojang.blaze3d.platform.NativeImage$Format getStbFormat (I)Lcom/mojang/blaze3d/platform/NativeImage$Format; # unused currently after rollback
+	param 0 stb_image_format
+
+group int png_color_type
+	net.minecraft.util.PngInfo.COLOR_TYPE_GRAYSCALE
+	net.minecraft.util.PngInfo.COLOR_TYPE_TRUECOLOR
+	net.minecraft.util.PngInfo.COLOR_TYPE_INDEXED
+	net.minecraft.util.PngInfo.COLOR_TYPE_GRAYSCALE_ALPHA
+	net.minecraft.util.PngInfo.COLOR_TYPE_TRUECOLOR_ALPHA
+
+target_method net.minecraft.util.PngInfo <init> (IIBB)V
+	param 3 png_color_type
+target_method net.minecraft.util.PngInfo validateColorType (I)Z
+	param 0 png_color_type

@@ -27,10 +27,8 @@ target_method com.mojang.blaze3d.platform.SdlDebug onLogMessage (JIIJ)V
 target_method org.lwjgl.openal.ALC10 alcOpenDevice (Ljava/lang/CharSequence;)J
 	return pointer
 
-target_method org.lwjgl.util.spng.SPNG spng_ctx_new (I)J
-	return pointer
-target_method org.lwjgl.util.spng.SPNG nspng_set_png_stream (JJJ)I
-	param 2 pointer
+target_method org.lwjgl.stb.STBImageWrite nstbi_write_png_to_func (JJIIIJI)I
+	param 1 pointer
 
 target_method com.mojang.renderpearl.backend.opengl.GlTransientMemory$PersistentMapping$GlAllocation <init> (IJJ)V
 	param 1 pointer
@@ -53,8 +51,6 @@ target_method net.minecraft.client.KeyboardHandler keyPress (JILnet/minecraft/cl
 target_method net.minecraft.client.KeyboardHandler charTyped (JLnet/minecraft/client/input/CharacterEvent;)V
 	param 0 pointer
 target_method net.minecraft.client.KeyboardHandler textEditing (JLnet/minecraft/client/input/PreeditEvent;)V
-	param 0 pointer
-target_method net.minecraft.client.KeyboardHandler textEditingCandidates (JLnet/minecraft/client/input/IMECandidatesEvent;)V
 	param 0 pointer
 
 target_method net.minecraft.client.MouseHandler onButton (JLnet/minecraft/client/input/MouseButtonInfo;I)V
