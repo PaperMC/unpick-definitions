@@ -293,7 +293,7 @@ target_method com.mojang.blaze3d.platform.InputConstants isKeyDown (I)Z
 target_method org.lwjgl.sdl.SDL_KeyboardEvent scancode ()I
 	return key
 
-target_method net.minecraft.client.input.KeyEvent <init> (III)V
+target_method net.minecraft.client.input.KeyEvent <init> (IIIZ)V
 	param 1 key_code
 target_method net.minecraft.client.input.KeyEvent shortcutKey ()I
 	return key_code

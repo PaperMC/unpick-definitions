@@ -55,7 +55,7 @@ group int gl_blend_op
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_MIN
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAX
 
-group int gl_draw_mode
+group int gl_primitive_topology
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINES
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINE_STRIP
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_TRIANGLE_STRIP
@@ -63,87 +63,14 @@ group int gl_draw_mode
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_TRIANGLES
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_POINTS
 
-group int gl_address_mode
+group int gl_index_type
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_BYTE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_SHORT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_INT
+
+group int gl_sampler_address_mode
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_CLAMP_TO_EDGE
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_REPEAT
-
-group int gl_buffer_data_usage
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_DRAW
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_DRAW
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_DRAW
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_READ
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_READ
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_READ
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_COPY
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_COPY
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_COPY
-
-# GlSampler
-group int gl_filter
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
-
-# GlCommandEncoder, DirectStateAccess
-group int gl_framebuffer_pos
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_NONE
-
-group int gl_polygon_mode_face
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRONT_AND_BACK
-
-group int gl_texture
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE0
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE1
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE2
-
-group int gl_pixel_store_pname
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SWAP_BYTES
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_LSB_FIRST
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ROW_LENGTH
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_ROWS
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_PIXELS
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ALIGNMENT
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ALIGNMENT
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ROW_LENGTH
-	org.lwjgl.opengl.GL12C.GL_UNPACK_IMAGE_HEIGHT
-
-group int gl_buffer_mask
-	@flags
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_BUFFER_BIT
-	org.lwjgl.opengl.GL11C.GL_STENCIL_BUFFER_BIT
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_BUFFER_BIT
-
-group int gl_framebuffer_target
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_READ_FRAMEBUFFER
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_DRAW_FRAMEBUFFER
-
-group int gl_tex_target
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_2D
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_PROXY_TEXTURE_2D
-	org.lwjgl.opengl.GL13C.GL_TEXTURE_CUBE_MAP
-	org.lwjgl.opengl.GL31C.GL_TEXTURE_BUFFER
-
-group int gl_tex_parameter_pname
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MAG_FILTER
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MIN_FILTER
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_COMPARE_MODE
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_S
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_T
-	org.lwjgl.opengl.GL12C.GL_TEXTURE_BASE_LEVEL
-	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LEVEL
-	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LOD
-	org.lwjgl.opengl.GL12C.GL_TEXTURE_MIN_LOD
-	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY
-
-group int gl_tex_parameter_value
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST_MIPMAP_LINEAR
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR_MIPMAP_LINEAR
-
-group int gl_tex_level_parameter_pname
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WIDTH
 
 group int gl_tex_format
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_COMPONENT
@@ -226,10 +153,99 @@ group int gl_internal_tex_format
 	org.lwjgl.opengl.GL31.GL_RG16_SNORM
 	org.lwjgl.opengl.GL31.GL_RGBA16_SNORM
 
-group int gl_indices_type
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_BYTE
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_SHORT
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNSIGNED_INT
+group int gl_shader_type
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_VERTEX_SHADER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAGMENT_SHADER
+
+group int gl_stencil_op
+	org.lwjgl.opengl.GL11.GL_KEEP
+	org.lwjgl.opengl.GL11.GL_ZERO
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_REPLACE
+	org.lwjgl.opengl.GL11.GL_INCR
+	org.lwjgl.opengl.GL11.GL_DECR
+	org.lwjgl.opengl.GL11.GL_INVERT
+	org.lwjgl.opengl.GL14.GL_INCR_WRAP
+	org.lwjgl.opengl.GL14.GL_DECR_WRAP
+
+group int gl_buffer_data_usage
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_DRAW
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_READ
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STATIC_COPY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DYNAMIC_COPY
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_STREAM_COPY
+
+# GlSampler
+group int gl_filter
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
+
+# GlCommandEncoder, DirectStateAccess
+group int gl_framebuffer_pos
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NONE
+
+group int gl_face
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRONT
+	org.lwjgl.opengl.GL11.GL_BACK
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRONT_AND_BACK
+
+group int gl_texture
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE0
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE1
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE2
+
+group int gl_pixel_store_pname
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SWAP_BYTES
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_LSB_FIRST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ROW_LENGTH
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_ROWS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_SKIP_PIXELS
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNPACK_ALIGNMENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ALIGNMENT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PACK_ROW_LENGTH
+	org.lwjgl.opengl.GL12C.GL_UNPACK_IMAGE_HEIGHT
+
+group int gl_buffer_mask
+	@flags
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_BUFFER_BIT
+	org.lwjgl.opengl.GL11C.GL_STENCIL_BUFFER_BIT
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_BUFFER_BIT
+
+group int gl_framebuffer_target
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_READ_FRAMEBUFFER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_DRAW_FRAMEBUFFER
+
+group int gl_tex_target
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_2D
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_PROXY_TEXTURE_2D
+	org.lwjgl.opengl.GL13C.GL_TEXTURE_CUBE_MAP
+	org.lwjgl.opengl.GL31C.GL_TEXTURE_BUFFER
+
+group int gl_tex_parameter_pname
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MAG_FILTER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_MIN_FILTER
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_COMPARE_MODE
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_S
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WRAP_T
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_BASE_LEVEL
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LEVEL
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MAX_LOD
+	org.lwjgl.opengl.GL12C.GL_TEXTURE_MIN_LOD
+	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY
+
+group int gl_tex_parameter_value
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_NEAREST_MIPMAP_LINEAR
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_LINEAR_MIPMAP_LINEAR
+
+group int gl_tex_level_parameter_pname
+	com.mojang.renderpearl.backend.opengl.GlConst.GL_TEXTURE_WIDTH
 
 group int gl_pixel_type
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_BYTE
@@ -248,6 +264,7 @@ group int gl_pixel_type
 group int gl_framebuffer_attachment
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_ATTACHMENT0
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_ATTACHMENT
+	org.lwjgl.opengl.GL30C.GL_STENCIL_ATTACHMENT
 
 #group int gl_framebuffer_status # not used for now
 #	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAMEBUFFER_COMPLETE
@@ -347,10 +364,6 @@ group int gl_query_object_pname
 	org.lwjgl.opengl.GL15.GL_QUERY_RESULT_AVAILABLE
 
 # GlDevice
-group int gl_shader_type
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_VERTEX_SHADER
-	com.mojang.renderpearl.backend.opengl.GlConst.GL_FRAGMENT_SHADER
-
 group int gl_clip_origin
 	org.lwjgl.opengl.ARBClipControl.GL_LOWER_LEFT
 	org.lwjgl.opengl.ARBClipControl.GL_UPPER_LEFT
@@ -360,7 +373,7 @@ group int gl_clip_depth
 	org.lwjgl.opengl.ARBClipControl.GL_ZERO_TO_ONE
 
 group int gl_error
-	org.lwjgl.opengl.GL11.GL_NO_ERROR
+	org.lwjgl.opengl.GL11C.GL_NO_ERROR
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_OUT_OF_MEMORY
 
 group int gl_get_string_name
@@ -443,16 +456,16 @@ target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState mod
 target_field com.mojang.renderpearl.backend.opengl.GlStateManager$BlendState modeAlpha I gl_blend_op
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/PrimitiveTopology;)I
-	return gl_draw_mode
+	return gl_primitive_topology
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/IndexType;)I
-	return gl_indices_type
+	return gl_index_type
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst toGlType (Lcom/mojang/renderpearl/api/GpuFormat;)I
 	return gl_pixel_type
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/textures/AddressMode;)I
-	return gl_address_mode
+	return gl_sampler_address_mode
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst glFormatChannelCount (I)I
 	param 0 gl_tex_format
@@ -468,6 +481,9 @@ target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/re
 	return gl_shader_type
 target_method org.lwjgl.opengl.GL20C glCreateShader (I)I
 	param 0 gl_shader_type
+
+target_method com.mojang.renderpearl.backend.opengl.GlConst toGl (Lcom/mojang/renderpearl/api/pipeline/StencilTest$Op;)I
+	return gl_stencil_op
 
 target_method com.mojang.renderpearl.backend.opengl.GlConst bufferUsageToGlEnum (I)I
 	return gl_buffer_data_usage
@@ -491,8 +507,8 @@ target_method com.mojang.renderpearl.backend.opengl.GlStateManager getFrameBuffe
 	param 0 gl_framebuffer_target
 target_method org.lwjgl.opengl.ARBDirectStateAccess glNamedFramebufferTexture (IIII)V
 	param 1 gl_framebuffer_attachment
-target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess bindFrameBufferTextures (IIIII)V
-	param 4 gl_framebuffer_target
+target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess bindFrameBufferTextures (IIIIII)V
+	param 5 gl_framebuffer_target
 
 target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess blitFrameBuffers (IIIIIIIIIIII)V
 	param 10 gl_buffer_mask
@@ -581,7 +597,7 @@ target_method org.lwjgl.opengl.GL11C glReadBuffer (I)V
 	param 0 gl_framebuffer_pos
 
 target_method org.lwjgl.opengl.GL11C glPolygonMode (II)V
-	param 0 gl_polygon_mode_face
+	param 0 gl_face
 
 target_method org.lwjgl.opengl.GL20C glGetProgrami (II)I
 	param 1 gl_program_pname
@@ -646,3 +662,6 @@ target_method org.lwjgl.opengl.ARBClipControl glClipControl (II)V
 
 target_method org.lwjgl.opengl.GL30C glClearBufferfv (II[F)V
 	param 0 gl_buffer
+
+target_method com.mojang.renderpearl.backend.opengl.GlRenderPipeline setupStencilState (ILcom/mojang/renderpearl/api/pipeline/StencilTest$PerFace;)V
+	param 0 gl_face

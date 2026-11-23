@@ -1,8 +1,8 @@
 unpick v4
 
-#group int container_click todo conflict with slot_index for doClick
-#	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_PRIMARY
-#	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_SECONDARY
+group int container_click
+	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_PRIMARY
+	net.minecraft.world.inventory.AbstractContainerMenu.CONTAINER_CLICK_SECONDARY
 
 group int quick_crafting_type
 	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_CHARITABLE
@@ -25,6 +25,18 @@ group int base_index
 
 group int pop_time
 	net.minecraft.world.entity.player.Inventory.POP_TIME_DURATION
+
+group int tab_order_group
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.EQUIPMENT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.CONTAINER_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.BEFORE_INPUT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.INPUT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.SECOND_INPUT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.FUEL_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.BETWEEN_INPUT_OUTPUT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.RESULT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.INVENTORY_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.HOTBAR_TAB_GROUP
 
 group int count_limit
 	net.minecraft.world.entity.EquipmentSlot.NO_COUNT_LIMIT
@@ -60,6 +72,12 @@ group int horse_slot
 	net.minecraft.world.entity.animal.equine.AbstractHorse.CHEST_SLOT_OFFSET
 	net.minecraft.world.entity.animal.equine.AbstractHorse.INVENTORY_SLOT_OFFSET
 
+# todo conflict with mouse_button, really flawed should have a priority system or other
+#target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen getContainerClickButton (Lnet/minecraft/client/input/MouseButtonEvent;)I
+#	return container_click
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen getContainerClickButton (Lnet/minecraft/client/input/KeyEvent;)I
+	return container_click
+# todo conflict with slot_index for doClick
 #target_method net.minecraft.world.inventory.AbstractContainerMenu isContainerClickButton (I)Z
 #	param 0 container_click
 #target_method net.minecraft.world.inventory.AbstractContainerMenu getClickAction (I)Lnet/minecraft/world/inventory/ClickAction;
@@ -125,11 +143,9 @@ target_method net.minecraft.world.inventory.AbstractContainerMenu isValidSlotInd
 target_method net.minecraft.world.inventory.AbstractContainerMenu doClick (IILnet/minecraft/world/inventory/ContainerInput;Lnet/minecraft/world/entity/player/Player;)V
 	param 0 menu_slot_index
 
-target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ContainerInput;)V
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/client/gui/components/inventory/SlotWidget;IILnet/minecraft/world/inventory/ContainerInput;)V
 	param 1 menu_slot_index
-target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen tryPickUpItem (Lnet/minecraft/world/inventory/Slot;IIZZ)V
-	param 1 menu_slot_index
-target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen handleDoublePress (Lnet/minecraft/world/inventory/Slot;IZZZI)Z
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen tryPickUpItem (Lnet/minecraft/client/gui/components/inventory/SlotWidget;IIZZ)V
 	param 1 menu_slot_index
 
 target_field net.minecraft.world.item.component.BundleContents selectedItem I bundle_selected_item_index
@@ -176,3 +192,12 @@ target_method net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEf
 
 target_method net.minecraft.world.entity.animal.equine.AbstractHorse getSlot (I)Lnet/minecraft/world/entity/SlotAccess;
 	param 0 horse_slot
+
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen getTabOrderGroup (Lnet/minecraft/world/inventory/Slot$Section;)I
+	return tab_order_group
+
+target_method net.minecraft.client.gui.components.AbstractWidget setTabOrderGroup (I)V
+	param 0 tab_order_group
+
+target_method net.minecraft.client.gui.components.ScrollableLayout setTabGroup (I)V
+	param 0 tab_order_group

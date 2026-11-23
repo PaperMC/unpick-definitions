@@ -31,6 +31,18 @@ group int argb_color
 	net.minecraft.client.gui.components.MultiLineEditBox.CURSOR_COLOR
 
 group int argb_color
+	@scope class net.minecraft.client.gui.components.inventory.EnchantmentOptionButton
+	net.minecraft.client.gui.components.inventory.EnchantmentOptionButton.ACTIVE_TEXT_COLOR
+	net.minecraft.client.gui.components.inventory.EnchantmentOptionButton.NOT_ACTIVE_XP_TEXT_COLOR
+	net.minecraft.client.gui.components.inventory.EnchantmentOptionButton.ACTIVE_HOVERED_TEXT_COLOR
+	net.minecraft.client.gui.components.inventory.EnchantmentOptionButton.ACTIVE_XP_TEXT_COLOR
+	net.minecraft.client.gui.components.inventory.EnchantmentOptionButton.NOT_ACTIVE_TEXT_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.gui.components.inventory.SlotWidget
+	net.minecraft.client.gui.components.inventory.SlotWidget.QUICK_CRAFT_TINT_COLOR
+
+group int argb_color
 	@scope class net.minecraft.client.gui.components.toasts.NowPlayingToast
 	net.minecraft.client.gui.components.toasts.NowPlayingToast.TEXT_COLOR
 

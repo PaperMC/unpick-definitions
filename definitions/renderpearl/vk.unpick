@@ -176,6 +176,16 @@ group int vk_shader_stage_flags
 	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_VERTEX_BIT
 	org.lwjgl.vulkan.VK10.VK_SHADER_STAGE_FRAGMENT_BIT
 
+group int vk_stencil_op
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_KEEP
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_ZERO
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_REPLACE
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_INCREMENT_AND_CLAMP
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_DECREMENT_AND_CLAMP
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_INVERT
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_INCREMENT_AND_WRAP
+	org.lwjgl.vulkan.VK10.VK_STENCIL_OP_DECREMENT_AND_WRAP
+
 # VulkanRenderPipeline
 group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_BUFFER
@@ -543,6 +553,9 @@ target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojan
 
 target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojang/renderpearl/api/pipeline/ShaderType;)I
 	return vk_shader_stage_flags
+
+target_method com.mojang.renderpearl.backend.vulkan.VulkanConst toVk (Lcom/mojang/renderpearl/api/pipeline/StencilTest$Op;)I
+	return vk_stencil_op
 
 target_method com.mojang.renderpearl.backend.vulkan.VulkanDebug setObjectName (Lorg/lwjgl/vulkan/VkDevice;IJLjava/lang/String;)V
 	param 1 vk_object_type

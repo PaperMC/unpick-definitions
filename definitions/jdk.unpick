@@ -83,6 +83,8 @@ target_method java.net.HttpURLConnection getResponseCode ()I
 	return http_status_code
 target_method com.mojang.realmsclient.client.Request responseCode ()I
 	return http_status_code
+target_method com.mojang.realmsclient.client.worldupload.UploadRetry isTransient (I)Z
+	param 0 http_status_code
 target_method com.mojang.realmsclient.client.RealmsError errorCode ()I
 	return http_status_code
 
