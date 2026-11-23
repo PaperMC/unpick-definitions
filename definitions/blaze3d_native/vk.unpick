@@ -331,6 +331,10 @@ group int vk_composite_alpha_flags
 	@flags
 	org.lwjgl.vulkan.KHRSurface.VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR
 
+group int vk_queue_family_index
+	org.lwjgl.vulkan.VK10.VK_QUEUE_FAMILY_IGNORED
+	org.lwjgl.vulkan.VK11.VK_QUEUE_FAMILY_EXTERNAL
+
 # VulkanGpuTexture
 group int vk_image_type
 	org.lwjgl.vulkan.VK10.VK_IMAGE_TYPE_1D
@@ -618,6 +622,16 @@ target_method org.lwjgl.vulkan.VkSwapchainCreateInfoKHR imageSharingMode (I)Lorg
 
 target_method org.lwjgl.vulkan.VkSwapchainCreateInfoKHR compositeAlpha (I)Lorg/lwjgl/vulkan/VkSwapchainCreateInfoKHR;
 	param 0 vk_composite_alpha_flags
+
+target_method org.lwjgl.vulkan.VkImageMemoryBarrier$Buffer srcQueueFamilyIndex (I)Lorg/lwjgl/vulkan/VkImageMemoryBarrier$Buffer;
+	param 0 vk_queue_family_index
+target_method org.lwjgl.vulkan.VkImageMemoryBarrier$Buffer dstQueueFamilyIndex (I)Lorg/lwjgl/vulkan/VkImageMemoryBarrier$Buffer;
+	param 0 vk_queue_family_index
+
+target_method org.lwjgl.vulkan.VkImageMemoryBarrier2$Buffer srcQueueFamilyIndex (I)Lorg/lwjgl/vulkan/VkImageMemoryBarrier2$Buffer;
+	param 0 vk_queue_family_index
+target_method org.lwjgl.vulkan.VkImageMemoryBarrier2$Buffer dstQueueFamilyIndex (I)Lorg/lwjgl/vulkan/VkImageMemoryBarrier2$Buffer;
+	param 0 vk_queue_family_index
 
 target_method org.lwjgl.vulkan.KHRSwapchain vkAcquireNextImageKHR (Lorg/lwjgl/vulkan/VkDevice;JJJJLjava/nio/IntBuffer;)I
 	param 4 vk_handle
