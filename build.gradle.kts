@@ -2,7 +2,6 @@ import io.papermc.unpick.task.*
 import io.papermc.unpick.util.ArtifactVersionProvider
 
 plugins {
-    java
     `maven-publish`
     id("mc-base")
 }
@@ -12,7 +11,15 @@ repositories {
     maven("https://maven.fabricmc.net/")
 }
 
-val enigma = configurations.register("enigma")
+val enigma = configurations.register("enigma") {
+    isCanBeConsumed = false
+    attributes {
+        attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage.JAVA_RUNTIME))
+        attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.LIBRARY))
+        attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.JAR))
+        attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
+    }
+}
 
 mcBase {
     mcVersion = providers.gradleProperty("minecraft_version")
@@ -21,7 +28,7 @@ mcBase {
 dependencies {
     enigma("cuchaz:enigma-swing:4.0.2")
     enigma("org.vineflower:vineflower:1.12.0") // sync with mache
-    enigma(project(":enigma-plugin", "runtimeElements"))
+    enigma(project(":enigma-plugin"))
 }
 
 val downloadJar = tasks.register<DownloadFile>("downloadJar") {

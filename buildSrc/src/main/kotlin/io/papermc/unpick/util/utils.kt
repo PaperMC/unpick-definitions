@@ -18,9 +18,8 @@ val json = Json {
     ignoreUnknownKeys = true
 }
 
-val xml = XML {
-    recommended()
-    defaultPolicy {
+val xml = XML.v1 {
+    policy {
         ignoreUnknownChildren()
     }
 }

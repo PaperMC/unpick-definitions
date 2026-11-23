@@ -1,5 +1,5 @@
 plugins {
-    `kotlin-dsl`
+    kotlin("jvm") version "2.4.10"
 }
 
 repositories {
@@ -9,7 +9,6 @@ repositories {
 
 dependencies {
     implementation("cuchaz:enigma:4.0.2")
-    implementation("org.ow2.asm:asm:9.10.1")
-    implementation("org.ow2.asm:asm-tree:9.10.1")
-    implementation(gradleKotlinDsl())
+    implementation("org.ow2.asm:asm:9.11.1")
+    implementation("org.ow2.asm:asm-tree:9.11.1")
 }
