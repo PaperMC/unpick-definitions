@@ -138,10 +138,10 @@ group int
 group int transport_target_interact_time
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.TARGET_INTERACTION_TIME
 
-group long memoryTime
+group long memory_time
 	@scope class net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.VISITED_POSITIONS_MEMORY_TIME
-group long memoryTime
+group long memory_time
 	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
 	net.minecraft.world.entity.ai.behavior.warden.Roar.TICKS_BEFORE_PLAYING_ROAR_SOUND
 
@@ -301,7 +301,7 @@ target_method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContai
 	return transport_distance
 
 target_method net.minecraft.world.entity.ai.Brain setMemoryWithExpiry (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;Ljava/lang/Object;J)V
-	param 2 memoryTime
+	param 2 memory_time
 
 target_field net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer lookTime I look_time
 target_field net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer cycleCounter I look_time

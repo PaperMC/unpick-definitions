@@ -26,19 +26,19 @@ group int chunk_level
 	net.minecraft.server.level.ChunkLevel.ENTITY_TICKING_LEVEL
 
 target_method net.minecraft.server.level.ChunkLevel generationStatus (I)Lnet/minecraft/world/level/chunk/status/ChunkStatus;
-    param 0 chunk_level
+	param 0 chunk_level
 target_method net.minecraft.server.level.ChunkLevel byStatus (Lnet/minecraft/world/level/chunk/status/ChunkStatus;)I
-    return chunk_level
+	return chunk_level
 target_method net.minecraft.server.level.ChunkLevel fullStatus (I)Lnet/minecraft/server/level/FullChunkStatus;
-    param 0 chunk_level
+	param 0 chunk_level
 target_method net.minecraft.server.level.ChunkLevel byStatus (Lnet/minecraft/server/level/FullChunkStatus;)I
-    return chunk_level
+	return chunk_level
 target_method net.minecraft.server.level.ChunkLevel isEntityTicking (I)Z
-    param 0 chunk_level
+	param 0 chunk_level
 target_method net.minecraft.server.level.ChunkLevel isBlockTicking (I)Z
-    param 0 chunk_level
+	param 0 chunk_level
 target_method net.minecraft.server.level.ChunkLevel isLoaded (I)Z
-    param 0 chunk_level
+	param 0 chunk_level
 
 group int region_flags
 	@flags
