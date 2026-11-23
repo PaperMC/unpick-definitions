@@ -210,15 +210,19 @@ group int max_time_to_gift
 group int turn_head_delay
 	net.minecraft.world.entity.ai.behavior.GiveGiftToHero.TIME_TO_DELAY_FOR_HEAD_TO_FINISH_TURNING
 
-group int croak_duration
+group int frog_croak_duration
 	net.minecraft.world.entity.ai.behavior.Croak.CROAK_TICKS
 
-group int sonic_cooldown
+group int warden_sonic_cooldown
 	net.minecraft.world.entity.ai.behavior.warden.SonicBoom.COOLDOWN
 
 group int warden_anger_increase
 	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
 	net.minecraft.world.entity.ai.behavior.warden.Roar.ROAR_ANGER_INCREASE
+
+group long copper_golem_weathering_tick
+	net.minecraft.world.entity.animal.golem.CopperGolem.IGNORE_WEATHERING_TICK
+	net.minecraft.world.entity.animal.golem.CopperGolem.UNSET_WEATHERING_TICK
 
 target_method net.minecraft.world.entity.ai.village.poi.PoiManager getInRange (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream;
 	param 2 poi_range
@@ -335,10 +339,12 @@ target_field net.minecraft.world.entity.ai.behavior.GiveGiftToHero timeUntilNext
 target_method net.minecraft.world.entity.ai.behavior.GiveGiftToHero calculateTimeUntilNextGift (Lnet/minecraft/server/level/ServerLevel;)I
 	return max_time_to_gift
 
-target_field net.minecraft.world.entity.ai.behavior.Croak croakCounter I croak_duration
+target_field net.minecraft.world.entity.ai.behavior.Croak croakCounter I frog_croak_duration
 
 target_method net.minecraft.world.entity.ai.behavior.warden.SonicBoom setCooldown (Lnet/minecraft/world/entity/LivingEntity;I)V
-	param 1 sonic_cooldown
+	param 1 warden_sonic_cooldown
 
 target_method net.minecraft.world.entity.monster.warden.Warden increaseAngerAt (Lnet/minecraft/world/entity/Entity;IZ)V
 	param 1 warden_anger_increase
+
+target_field net.minecraft.world.entity.animal.golem.CopperGolem nextWeatheringTick J copper_golem_weathering_tick

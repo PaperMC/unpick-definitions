@@ -60,6 +60,8 @@ target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftType 
 target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftStatus I quick_crafting_header
 target_method net.minecraft.world.inventory.AbstractContainerMenu getQuickCraftPlaceCount (IILnet/minecraft/world/item/ItemStack;)I
 	param 1 quick_crafting_type
+target_method net.minecraft.world.inventory.AbstractContainerMenu getQuickcraftMask (II)I
+	param 0 quick_crafting_header
 target_method net.minecraft.world.inventory.AbstractContainerMenu getQuickcraftHeader (I)I
 	return quick_crafting_header
 target_method net.minecraft.world.inventory.AbstractContainerMenu isValidQuickcraftType (ILnet/minecraft/world/entity/player/Player;)Z
