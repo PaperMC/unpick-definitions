@@ -169,7 +169,7 @@ target_annotation net.minecraft.world.scores.PlayerTeam$OptionFlags team_option_
 target_method net.minecraft.network.protocol.game.ClientboundBossEventPacket encodeProperties (ZZZ)I
 	return boss_event_flags
 
-target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket read (Lnet/minecraft/network/FriendlyByteBuf;B)Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;
+target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket read (Lnet/minecraft/network/RegistryFriendlyByteBuf;B)Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;
 	param 1 command_flags
 target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry <init> (Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;II[I)V
 	param 1 command_flags

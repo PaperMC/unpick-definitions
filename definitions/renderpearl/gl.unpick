@@ -291,6 +291,7 @@ group int gl_buffer_target
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_COPY_WRITE_BUFFER
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_PIXEL_UNPACK_BUFFER
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_UNIFORM_BUFFER
+	org.lwjgl.opengl.GL31.GL_TEXTURE_BUFFER
 	org.lwjgl.opengl.ARBDrawIndirect.GL_DRAW_INDIRECT_BUFFER
 
 # GlDebugLabel
@@ -385,6 +386,7 @@ group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAX_TEXTURE_SIZE
 	org.lwjgl.opengl.GL31C.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
+	org.lwjgl.opengl.GL31C.GL_MAX_TEXTURE_BUFFER_SIZE
 	org.lwjgl.opengl.GL33C.GL_TIMESTAMP
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
 

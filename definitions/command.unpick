@@ -9,18 +9,6 @@ target_field net.minecraft.commands.execution.ChainModifiers flags B chain_modif
 target_method net.minecraft.commands.execution.ChainModifiers setFlag (B)Lnet/minecraft/commands/execution/ChainModifiers;
 	param 0 chain_modifier_flags
 
-group int number_argument_flags
-	@flags
-	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MIN
-	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MAX
-
-target_method net.minecraft.commands.synchronization.ArgumentUtils createNumberFlags (ZZ)I
-	return number_argument_flags
-target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMin (B)Z
-	param 0 number_argument_flags
-target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMax (B)Z
-	param 0 number_argument_flags
-
 group int command_result
 	com.mojang.brigadier.Command.SINGLE_SUCCESS
 
@@ -34,6 +22,9 @@ target_method net.minecraft.server.commands.AttributeCommand resetAttributeBase 
 target_method net.minecraft.server.commands.AttributeCommand addModifier (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;DLnet/minecraft/world/entity/ai/attributes/AttributeModifier$Operation;)I
 	return command_result
 target_method net.minecraft.server.commands.AttributeCommand removeModifier (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/Identifier;)I
+	return command_result
+
+target_method net.minecraft.server.commands.EnvironmentAttributeCommand getValue (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/core/Holder$Reference;Lnet/minecraft/world/phys/Vec3;)I
 	return command_result
 
 target_method net.minecraft.server.commands.ExecuteCommand checkUnlessRegions (Lcom/mojang/brigadier/context/CommandContext;Z)I
