@@ -30,3 +30,5 @@ target_method org.lwjgl.sdl.SDL_KeyboardEvent mod ()S
 	return key_modifier
 
 target_annotation net.minecraft.client.input.InputWithModifiers$Modifiers key_modifier
+
+target_field net.minecraft.client.input.InputQuirks EDIT_SHORTCUT_KEY_MODIFIER I key_modifier

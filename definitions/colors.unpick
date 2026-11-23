@@ -177,6 +177,8 @@ target_field net.minecraft.client.gui.components.EditBox textColor I argb_color
 target_method net.minecraft.client.gui.components.EditBox setTextColor (I)V
 	param 0 argb_color
 
+target_method net.minecraft.client.gui.components.MultiLineEditBox setTextColor (I)V
+	param 0 argb_color
 target_field net.minecraft.client.gui.components.MultiLineEditBox$Builder textColor I argb_color
 target_field net.minecraft.client.gui.components.MultiLineEditBox$Builder cursorColor I argb_color
 target_method net.minecraft.client.gui.components.MultiLineEditBox$Builder setTextColor (I)Lnet/minecraft/client/gui/components/MultiLineEditBox$Builder;

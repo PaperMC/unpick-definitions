@@ -27,6 +27,7 @@ group int pop_time
 	net.minecraft.world.entity.player.Inventory.POP_TIME_DURATION
 
 group int tab_order_group
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.RECIPE_BOOK_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.EQUIPMENT_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.CONTAINER_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.BEFORE_INPUT_TAB_GROUP
@@ -35,6 +36,7 @@ group int tab_order_group
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.FUEL_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.BETWEEN_INPUT_OUTPUT_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.RESULT_TAB_GROUP
+	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.AFTER_RESULT_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.INVENTORY_TAB_GROUP
 	net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.HOTBAR_TAB_GROUP
 
@@ -194,6 +196,9 @@ target_method net.minecraft.world.entity.animal.equine.AbstractHorse getSlot (I)
 	param 0 horse_slot
 
 target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen getTabOrderGroup (Lnet/minecraft/world/inventory/Slot$Section;)I
+	return tab_order_group
+
+target_method net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen getRecipeBookButtonTabOrderGroup ()I
 	return tab_order_group
 
 target_method net.minecraft.client.gui.components.AbstractWidget setTabOrderGroup (I)V

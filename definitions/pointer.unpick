@@ -4,7 +4,7 @@ group long pointer
 	org.lwjgl.system.MemoryUtil.NULL
 
 target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
-	return pointer
+	return pointer # this is causing some issues in MeshData usage is wild
 
 target_method org.lwjgl.PointerBuffer get ()J
 	return pointer
