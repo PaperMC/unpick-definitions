@@ -108,17 +108,20 @@ target_method org.lwjgl.util.shaderc.Shaderc shaderc_compile_into_spv (JLjava/ni
 target_method org.lwjgl.util.shaderc.Shaderc shaderc_result_get_compilation_status (J)I
 	return shader_compilation_status
 
+target_method com.mojang.renderpearl.api.pipeline.SpvModule$Reflection$Type dimensions ()I
+	return spv_image_dimension
+
 target_method org.lwjgl.util.spvc.Spvc spvc_compiler_get_binary_offset_for_decoration (JIILjava/nio/IntBuffer;)Z
 	param 2 spv_decoration
 
-target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$InterfaceVariable hasDecoration (I)Z
+target_method com.mojang.renderpearl.api.pipeline.SpvModule$Reflection$InterfaceVariable hasDecoration (I)Z
 	param 0 spv_decoration
-target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$InterfaceVariable decoration (I)I
+target_method com.mojang.renderpearl.api.pipeline.SpvModule$Reflection$InterfaceVariable decoration (I)I
 	param 0 spv_decoration
 
 target_method com.mojang.renderpearl.frontend.shaders.SpvUtil baseTypeString (I)Ljava/lang/String;
 	param 0 spvc_base_type
-target_method com.mojang.renderpearl.backend.api.SpvModule$Reflection$Type baseType ()I
+target_method com.mojang.renderpearl.api.pipeline.SpvModule$Reflection$Type baseType ()I
 	return spvc_base_type
 
 target_method org.lwjgl.util.spvc.Spvc spvc_compiler_get_decoration (JII)I
@@ -128,6 +131,8 @@ target_method com.mojang.renderpearl.frontend.shaders.SpvUtil getDecorationOffse
 
 target_method org.lwjgl.util.spvc.Spvc spvc_compiler_set_entry_point (JLjava/lang/CharSequence;I)I
 	param 2 spv_execution_model
+target_method com.mojang.renderpearl.frontend.shaders.SpvUtil executionModel (Lcom/mojang/renderpearl/api/pipeline/ShaderType;)I
+	return spv_execution_model
 
 target_method org.lwjgl.util.spvc.Spvc spvc_context_create_compiler (JIJILorg/lwjgl/PointerBuffer;)I
 	param 1 spvc_backend

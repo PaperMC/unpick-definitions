@@ -282,6 +282,9 @@ group int vk_query_result_flags
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WAIT_BIT
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WITH_AVAILABILITY_BIT
 
+group int vk_subpass_contents
+	org.lwjgl.vulkan.VK10.VK_SUBPASS_CONTENTS_INLINE
+
 # VulkanCommandPool
 group int vk_command_pool_reset_flags
 	@flags
@@ -425,10 +428,6 @@ group int vk_front_face
 	org.lwjgl.vulkan.VK10.VK_FRONT_FACE_COUNTER_CLOCKWISE
 	org.lwjgl.vulkan.VK10.VK_FRONT_FACE_CLOCKWISE
 
-group int vk_descriptor_set_layout_create_flags
-	@flags
-	org.lwjgl.vulkan.KHRPushDescriptor.VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR
-
 # VulkanUtils
 group int vk_result
 	org.lwjgl.vulkan.VK10.VK_SUCCESS
@@ -568,6 +567,8 @@ target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo storeOp (I)Lorg/lwjgl/v
 	param 0 vk_attachment_store_op
 target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer storeOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
 	param 0 vk_attachment_store_op
+target_method org.lwjgl.vulkan.VkAttachmentDescription2 storeOp (I)Lorg/lwjgl/vulkan/VkAttachmentDescription2;
+	param 0 vk_attachment_store_op
 
 target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo loadOp (I)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo;
 	param 0 vk_attachment_load_op
@@ -579,6 +580,9 @@ target_method org.lwjgl.vulkan.VkRenderingInfo flags (I)Lorg/lwjgl/vulkan/VkRend
 
 target_method org.lwjgl.vulkan.VK10 vkGetQueryPoolResults (Lorg/lwjgl/vulkan/VkDevice;JIILjava/nio/LongBuffer;JI)I
 	param 6 vk_query_result_flags
+
+target_method org.lwjgl.vulkan.VkSubpassBeginInfo contents (I)Lorg/lwjgl/vulkan/VkSubpassBeginInfo;
+	param 0 vk_subpass_contents
 
 target_method org.lwjgl.vulkan.VK10 vkResetCommandPool (Lorg/lwjgl/vulkan/VkDevice;JI)I
 	param 2 vk_command_pool_reset_flags
@@ -735,11 +739,13 @@ target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding descriptorType (I)Lo
 	param 0 vk_descriptor_type
 target_method org.lwjgl.vulkan.VkWriteDescriptorSet descriptorType (I)Lorg/lwjgl/vulkan/VkWriteDescriptorSet;
 	param 0 vk_descriptor_type
+target_method org.lwjgl.vulkan.VkDescriptorPoolSize type (I)Lorg/lwjgl/vulkan/VkDescriptorPoolSize;
+	param 0 vk_descriptor_type
 
 target_method org.lwjgl.vulkan.VkDescriptorImageInfo$Buffer imageLayout (I)Lorg/lwjgl/vulkan/VkDescriptorImageInfo$Buffer;
 	param 0 vk_image_layout
 
-target_method org.lwjgl.vulkan.KHRPushDescriptor vkCmdPushDescriptorSetKHR (Lorg/lwjgl/vulkan/VkCommandBuffer;IJILorg/lwjgl/vulkan/VkWriteDescriptorSet$Buffer;)V
+target_method org.lwjgl.vulkan.VK10 vkCmdBindDescriptorSets (Lorg/lwjgl/vulkan/VkCommandBuffer;IJILjava/nio/LongBuffer;Ljava/nio/IntBuffer;)V
 	param 1 vk_pipeline_bind_point
 
 target_method org.lwjgl.vulkan.VkVertexInputBindingDescription inputRate (I)Lorg/lwjgl/vulkan/VkVertexInputBindingDescription;
@@ -750,9 +756,6 @@ target_method org.lwjgl.vulkan.VkPipelineRasterizationStateCreateInfo cullMode (
 
 target_method org.lwjgl.vulkan.VkPipelineRasterizationStateCreateInfo frontFace (I)Lorg/lwjgl/vulkan/VkPipelineRasterizationStateCreateInfo;
 	param 0 vk_front_face
-
-target_method org.lwjgl.vulkan.VkDescriptorSetLayoutCreateInfo flags (I)Lorg/lwjgl/vulkan/VkDescriptorSetLayoutCreateInfo;
-	param 0 vk_descriptor_set_layout_create_flags
 
 target_method org.lwjgl.vulkan.VkPipelineMultisampleStateCreateInfo rasterizationSamples (I)Lorg/lwjgl/vulkan/VkPipelineMultisampleStateCreateInfo;
 	param 0 vk_sample_count_flags
@@ -771,6 +774,32 @@ target_method org.lwjgl.vulkan.VkDescriptorSetLayoutBinding stageFlags (I)Lorg/l
 
 target_method com.mojang.renderpearl.backend.vulkan.VulkanUtils resultToString (I)Ljava/lang/String;
 	param 0 vk_result
+
+target_method org.lwjgl.vulkan.VK10 vkAllocateDescriptorSets (Lorg/lwjgl/vulkan/VkDevice;Lorg/lwjgl/vulkan/VkDescriptorSetAllocateInfo;Ljava/nio/LongBuffer;)I
+	return vk_result
+
+target_method org.lwjgl.vulkan.VkAttachmentDescription2 samples (I)Lorg/lwjgl/vulkan/VkAttachmentDescription2;
+	param 0 vk_sample_count_flags
+
+target_method org.lwjgl.vulkan.VkAttachmentDescription2 initialLayout (I)Lorg/lwjgl/vulkan/VkAttachmentDescription2;
+	param 0 vk_image_layout
+target_method org.lwjgl.vulkan.VkAttachmentDescription2 finalLayout (I)Lorg/lwjgl/vulkan/VkAttachmentDescription2;
+	param 0 vk_image_layout
+
+target_method org.lwjgl.vulkan.VkSubpassDescription2$Buffer pipelineBindPoint (I)Lorg/lwjgl/vulkan/VkSubpassDescription2$Buffer;
+	param 0 vk_pipeline_bind_point
+
+target_method org.lwjgl.vulkan.VkAttachmentReference2 layout (I)Lorg/lwjgl/vulkan/VkAttachmentReference2;
+	param 0 vk_image_layout
+
+target_method org.lwjgl.vulkan.VkAttachmentReference2 aspectMask (I)Lorg/lwjgl/vulkan/VkAttachmentReference2;
+	param 0 vk_image_aspect_mask
+
+target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache getRenderPass (ILjava/util/List;)J
+	param 0 vk_image_format
+target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache$AttachmentDescription <init> (II)V
+	param 0 vk_image_format
+	param 1 vk_attachment_load_op
 
 target_method org.lwjgl.util.vma.Vma vmaDestroyAllocator (J)V
 	param 0 vk_handle

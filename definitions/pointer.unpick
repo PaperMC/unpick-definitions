@@ -33,6 +33,16 @@ target_method org.lwjgl.stb.STBImageWrite nstbi_write_png_to_func (JJIIIJI)I
 target_method com.mojang.renderpearl.backend.opengl.GlTransientMemory$PersistentMapping$GlAllocation <init> (IJJ)V
 	param 1 pointer
 
+target_method com.mojang.renderpearl.backend.opengl.GlDevice makeCurrent (J)V
+	param 0 pointer
+
+target_method com.mojang.renderpearl.backend.opengl.GlGlobalState makeCurrent (JJ)V
+	param 0 pointer
+	param 1 pointer
+
+target_method com.mojang.renderpearl.backend.vulkan.DescriptorPool allocateSet (J)J
+	return pointer
+
 target_method com.mojang.renderpearl.backend.vulkan.init.VulkanPNextStruct findStructInPNextChain (J)J
 	return pointer
 target_method com.mojang.renderpearl.backend.vulkan.init.VulkanPNextStruct findStructInPNextChain (JI)J
@@ -63,8 +73,9 @@ target_method net.minecraft.client.MouseHandler onMove (JDDDD)V
 target_field com.mojang.blaze3d.audio.Library currentDevice J pointer
 target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
 target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
+target_field com.mojang.renderpearl.backend.opengl.GlDevice initialWindowHandle J pointer
+target_field com.mojang.renderpearl.backend.opengl.GlGlobalState currentWindow J pointer
+target_field com.mojang.renderpearl.backend.opengl.GlGlobalState currentContext J pointer
 target_field com.mojang.renderpearl.backend.util.TransientBlockAllocator$Allocator$CpuBlock address J pointer
 target_field com.mojang.renderpearl.frontend.shaders.SPIRVModule spvcContext J pointer
-target_field com.mojang.renderpearl.backend.opengl.GlDevice initialWindowHandle J pointer
-target_field com.mojang.renderpearl.backend.opengl.GlDevice currentWindow J pointer
 target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer

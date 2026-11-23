@@ -31,6 +31,10 @@ group int argb_color
 	net.minecraft.client.gui.components.MultiLineEditBox.CURSOR_COLOR
 
 group int argb_color
+	@scope class net.minecraft.client.gui.components.toasts.NowPlayingToast
+	net.minecraft.client.gui.components.toasts.NowPlayingToast.TEXT_COLOR
+
+group int argb_color
 	@scope class net.minecraft.client.gui.components.debugchart.BandwidthDebugChart
 	net.minecraft.client.gui.components.debugchart.BandwidthDebugChart.MIN_COLOR
 	net.minecraft.client.gui.components.debugchart.BandwidthDebugChart.MID_COLOR
@@ -58,6 +62,12 @@ group int argb_color
 	net.minecraft.client.renderer.debug.BrainDebugRenderer.GRAY
 	net.minecraft.client.renderer.debug.BrainDebugRenderer.PINK
 	net.minecraft.client.renderer.debug.BrainDebugRenderer.ORANGE
+
+group int argb_color
+	@scope class net.minecraft.client.renderer.debug.PathfindingRenderer
+	net.minecraft.client.renderer.debug.PathfindingRenderer.TARGET_NODE_COLOR
+	net.minecraft.client.renderer.debug.PathfindingRenderer.PAST_NODE_COLOR
+	net.minecraft.client.renderer.debug.PathfindingRenderer.NEXT_NODE_COLOR
 
 group int argb_color
 	@scope class net.minecraft.client.renderer.debug.PoiDebugRenderer
@@ -118,7 +128,7 @@ target_method net.minecraft.client.gui.GuiGraphicsExtractor verticalLine (IIII)V
 	param 3 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor fill (IIIII)V
 	param 4 argb_color
-target_method net.minecraft.client.gui.GuiGraphicsExtractor fill (Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;IIIII)V
+target_method net.minecraft.client.gui.GuiGraphicsExtractor fill (Lcom/mojang/blaze3d/pipeline/RenderPipeline;IIIII)V
 	param 5 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor text (Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V
 	param 4 argb_color
@@ -188,6 +198,10 @@ target_method net.minecraft.client.particle.SquidInkParticle <init> (Lnet/minecr
 target_method net.minecraft.client.renderer.LevelRenderer submitHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/state/level/BlockOutlineRenderState;IFZ)V
 	param 4 argb_color
 
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
+	param 7 argb_color
+	param 8 argb_color
+	param 9 argb_color
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/UvMapping;I)V
 	param 8 argb_color
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/UvMapping;I)V
@@ -224,19 +238,16 @@ target_method net.minecraft.client.renderer.debug.PoiDebugRenderer renderTextOve
 target_method net.minecraft.client.renderer.debug.SupportBlockRenderer drawHighlights (Lnet/minecraft/world/entity/Entity;Ljava/util/function/DoubleSupplier;I)V
 	param 2 argb_color
 
-target_method net.minecraft.client.renderer.blockentity.AbstractSignRenderer getDarkColor (Lnet/minecraft/world/level/block/entity/SignText;)I
-	return argb_color
-
 target_method net.minecraft.client.renderer.entity.DragonFireballRenderer buildQuad (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;I)V
 	param 3 argb_color
 
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
 	return argb_color
 
-target_method net.minecraft.client.renderer.state.gui.BlitRenderState <init> (Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIFFFFILnet/minecraft/client/gui/navigation/ScreenRectangle;Lnet/minecraft/client/gui/navigation/ScreenRectangle;)V
+target_method net.minecraft.client.renderer.state.gui.BlitRenderState <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIFFFFILnet/minecraft/client/gui/navigation/ScreenRectangle;Lnet/minecraft/client/gui/navigation/ScreenRectangle;)V
 	param 11 argb_color
 
-target_method net.minecraft.client.renderer.state.gui.ColoredRectangleRenderState <init> (Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIIILnet/minecraft/client/gui/navigation/ScreenRectangle;)V
+target_method net.minecraft.client.renderer.state.gui.ColoredRectangleRenderState <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIIILnet/minecraft/client/gui/navigation/ScreenRectangle;)V
 	param 7 argb_color
 	param 8 argb_color
 
@@ -282,6 +293,8 @@ target_method net.minecraft.gizmos.Gizmos billboardTextOverMob (Lnet/minecraft/w
 target_method net.minecraft.gizmos.GizmoStyle stroke (I)Lnet/minecraft/gizmos/GizmoStyle;
 	param 0 argb_color
 target_method net.minecraft.gizmos.GizmoStyle stroke (IF)Lnet/minecraft/gizmos/GizmoStyle;
+	param 0 argb_color
+target_method net.minecraft.gizmos.GizmoStyle fill (I)Lnet/minecraft/gizmos/GizmoStyle;
 	param 0 argb_color
 
 target_method net.minecraft.gizmos.TextGizmo$Style forColorAndCentered (I)Lnet/minecraft/gizmos/TextGizmo$Style;
