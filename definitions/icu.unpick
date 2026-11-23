@@ -1,0 +1,44 @@
+unpick v4
+
+group int icu_bidi_paragraph_level
+	com.ibm.icu.text.Bidi.DIRECTION_LEFT_TO_RIGHT
+	com.ibm.icu.text.Bidi.DIRECTION_RIGHT_TO_LEFT
+	com.ibm.icu.text.Bidi.DIRECTION_DEFAULT_LEFT_TO_RIGHT
+	com.ibm.icu.text.Bidi.DIRECTION_DEFAULT_RIGHT_TO_LEFT
+
+group int icu_bidi_reordering_mode
+	com.ibm.icu.text.Bidi.REORDER_DEFAULT
+	com.ibm.icu.text.Bidi.REORDER_NUMBERS_SPECIAL
+	com.ibm.icu.text.Bidi.REORDER_GROUP_NUMBERS_WITH_R
+	com.ibm.icu.text.Bidi.REORDER_RUNS_ONLY
+	com.ibm.icu.text.Bidi.REORDER_INVERSE_NUMBERS_AS_L
+	com.ibm.icu.text.Bidi.REORDER_INVERSE_LIKE_DIRECT
+	com.ibm.icu.text.Bidi.REORDER_INVERSE_FOR_NUMBERS_SPECIAL
+
+group int icu_bidi_reordered_options
+	@flags
+	com.ibm.icu.text.Bidi.OPTION_DEFAULT
+	com.ibm.icu.text.Bidi.KEEP_BASE_COMBINING
+	com.ibm.icu.text.Bidi.DO_MIRRORING
+	com.ibm.icu.text.Bidi.INSERT_LRM_FOR_NUMERIC
+	com.ibm.icu.text.Bidi.REMOVE_BIDI_CONTROLS
+	com.ibm.icu.text.Bidi.OUTPUT_REVERSE
+
+group int icu_arabic_shaping_flags
+	@flags
+	com.ibm.icu.text.ArabicShaping.LETTERS_NOOP
+	com.ibm.icu.text.ArabicShaping.LETTERS_SHAPE
+	com.ibm.icu.text.ArabicShaping.LETTERS_UNSHAPE
+	com.ibm.icu.text.ArabicShaping.LETTERS_SHAPE_TASHKEEL_ISOLATED
+
+target_method com.ibm.icu.text.Bidi <init> (Ljava/lang/String;I)V
+	param 1 icu_bidi_paragraph_level
+
+target_method com.ibm.icu.text.Bidi setReorderingMode (I)V
+	param 0 icu_bidi_reordering_mode
+
+target_method com.ibm.icu.text.Bidi writeReordered (I)Ljava/lang/String;
+	param 0 icu_bidi_reordered_options
+
+target_method com.ibm.icu.text.ArabicShaping <init> (I)V
+	param 0 icu_arabic_shaping_flags
