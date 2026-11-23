@@ -290,6 +290,9 @@ target_annotation com.mojang.blaze3d.platform.InputConstants$Value key
 target_method com.mojang.blaze3d.platform.InputConstants isKeyDown (I)Z
 	param 0 key
 
+target_method org.lwjgl.sdl.SDL_KeyboardEvent scancode ()I
+	return key
+
 target_method net.minecraft.client.input.KeyEvent <init> (III)V
 	param 1 key_code
 target_method net.minecraft.client.input.KeyEvent shortcutKey ()I

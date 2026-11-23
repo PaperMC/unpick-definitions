@@ -458,6 +458,23 @@ group int vk_result
 	org.lwjgl.vulkan.KHRSwapchain.VK_SUBOPTIMAL_KHR
 	org.lwjgl.vulkan.KHRSwapchain.VK_ERROR_OUT_OF_DATE_KHR
 
+# D3D12GpuSurface
+group int vk_external_memory_handle_type_flags
+	@flags
+		org.lwjgl.vulkan.VK11.VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT
+
+group int vk_external_memory_feature_flags
+	@flags
+	org.lwjgl.vulkan.VK11.VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT
+
+group int vk_external_semaphore_handle_type_flags
+	@flags
+	org.lwjgl.vulkan.VK11.VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE_BIT
+
+group int vk_external_semaphore_feature_flags
+	@flags
+	org.lwjgl.vulkan.VK11.VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT
+
 # Target definition
 
 target_method com.mojang.renderpearl.backend.vulkan.VulkanConst textureUsageToVk (ILcom/mojang/renderpearl/api/GpuFormat;)I
@@ -801,6 +818,48 @@ target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache$AttachmentDe
 
 target_method org.lwjgl.util.vma.Vma vmaDestroyAllocator (J)V
 	param 0 vk_handle
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceImageFormatInfo2 format (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2;
+	param 0 vk_image_format
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceImageFormatInfo2 type (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2;
+	param 0 vk_image_type
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceImageFormatInfo2 tiling (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2;
+	param 0 vk_image_tiling
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceImageFormatInfo2 usage (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2;
+	param 0 vk_image_usage_flags
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceExternalImageFormatInfo handleType (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceExternalImageFormatInfo;
+	param 0 vk_external_memory_handle_type_flags
+
+target_method org.lwjgl.vulkan.VkExternalMemoryProperties externalMemoryFeatures ()I
+	return vk_external_memory_feature_flags
+
+target_method org.lwjgl.vulkan.VkPhysicalDeviceExternalSemaphoreInfo handleType (I)Lorg/lwjgl/vulkan/VkPhysicalDeviceExternalSemaphoreInfo;
+	param 0 vk_external_semaphore_handle_type_flags
+
+target_method org.lwjgl.vulkan.VkExternalSemaphoreProperties externalSemaphoreFeatures ()I
+	return vk_external_semaphore_feature_flags
+
+target_method org.lwjgl.vulkan.VkImportSemaphoreWin32HandleInfoKHR handleType (I)Lorg/lwjgl/vulkan/VkImportSemaphoreWin32HandleInfoKHR;
+	param 0 vk_external_semaphore_handle_type_flags
+
+target_method org.lwjgl.vulkan.VkExternalMemoryImageCreateInfo handleTypes (I)Lorg/lwjgl/vulkan/VkExternalMemoryImageCreateInfo;
+	param 0 vk_external_memory_handle_type_flags
+
+target_method org.lwjgl.vulkan.VkImageCreateInfo format (I)Lorg/lwjgl/vulkan/VkImageCreateInfo;
+	param 0 vk_image_format
+
+target_method org.lwjgl.vulkan.VkImageCreateInfo usage (I)Lorg/lwjgl/vulkan/VkImageCreateInfo;
+	param 0 vk_image_usage_flags
+
+target_method org.lwjgl.vulkan.KHRExternalMemoryWin32 vkGetMemoryWin32HandlePropertiesKHR (Lorg/lwjgl/vulkan/VkDevice;IJLorg/lwjgl/vulkan/VkMemoryWin32HandlePropertiesKHR;)I
+	param 1 vk_external_memory_handle_type_flags
+
+target_method org.lwjgl.vulkan.VkImportMemoryWin32HandleInfoKHR handleType (I)Lorg/lwjgl/vulkan/VkImportMemoryWin32HandleInfoKHR;
+	param 0 vk_external_memory_handle_type_flags
 
 target_field com.mojang.renderpearl.backend.vulkan.VulkanDebug$Enabled messenger J vk_handle
 

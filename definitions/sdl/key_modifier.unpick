@@ -26,4 +26,7 @@ target_method org.lwjgl.sdl.SDLKeyboard SDL_GetKeyFromScancode (ISZ)I
 target_method org.lwjgl.sdl.SDLKeyboard SDL_GetModState ()S
 	return key_modifier
 
+target_method org.lwjgl.sdl.SDL_KeyboardEvent mod ()S
+	return key_modifier
+
 target_annotation net.minecraft.client.input.InputWithModifiers$Modifiers key_modifier

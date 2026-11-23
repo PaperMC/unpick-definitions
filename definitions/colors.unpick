@@ -180,6 +180,9 @@ target_method net.minecraft.client.gui.components.debugchart.AbstractDebugChart 
 	param 4 argb_color
 	param 6 argb_color
 
+target_method net.minecraft.client.gui.components.debug.DebugEntryChunkSectionStatus getColorForSection (Lnet/minecraft/client/RotatingSectionStorage;II)I
+	return argb_color
+
 target_method net.minecraft.client.gui.components.tabs.MenuTabBar$MenuTabButton extractFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
 	param 2 argb_color
 
@@ -240,6 +243,9 @@ target_method net.minecraft.client.renderer.debug.SupportBlockRenderer drawHighl
 
 target_method net.minecraft.client.renderer.entity.DragonFireballRenderer buildQuad (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;I)V
 	param 3 argb_color
+
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer coloredCutoutModelCopyLayerRender (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/Identifier;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
+	param 6 argb_color
 
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
 	return argb_color

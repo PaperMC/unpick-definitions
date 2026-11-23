@@ -1,0 +1,334 @@
+unpick v4
+
+# Unpick definition for DirectX
+
+# Editing Note:
+# This file sorts constant declarations by the class name it is
+# most frequently used in. Lines declaring or using the same constants
+# are grouped.
+
+# Where possible, this will unpick the constant using values from
+# the client jar (usually DXConst in RenderPearl).
+
+# DXConst
+group int dx_feature_level
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_10_0
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_10_1
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_11_0
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_11_1
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_12_0
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_12_1
+	com.mojang.renderpearl.util.dx.DXConst.D3D_FEATURE_LEVEL_12_2
+
+group int dx_command_list_type
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_DIRECT
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_BUNDLE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_COMPUTE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_COPY
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_VIDEO_DECODE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_VIDEO_PROCESS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_VIDEO_ENCODE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_LIST_TYPE_NONE
+
+group int dx_command_queue_priority
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_QUEUE_PRIORITY_NORMAL
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_QUEUE_PRIORITY_HIGH
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_QUEUE_PRIORITY_GLOBAL_REALTIME
+
+group int dx_command_queue_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_QUEUE_FLAG_NONE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT
+
+group int dx_fence_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_FENCE_FLAG_NONE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_FENCE_FLAG_SHARED
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_FENCE_FLAG_SHARED_CROSS_ADAPTER
+
+group int dx_image_format
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_FORMAT_R8G8B8A8_UNORM
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_FORMAT_B8G8R8A8_UNORM
+
+group int dx_image_scaling
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SCALING_STRETCH
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SCALING_NONE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SCALING_ASPECT_RATIO_STRETCH
+
+group int dx_swap_effect
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_EFFECT_FLIP_DISCARD
+
+group int dx_alpha_mode
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ALPHA_MODE_UNSPECIFIED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ALPHA_MODE_PREMULTIPLIED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ALPHA_MODE_STRAIGHT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ALPHA_MODE_IGNORE
+
+group int dx_swapchain_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_NONPREROTATED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_GDI_COMPATIBLE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_RESTRICTED_CONTENT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_RESTRICT_SHARED_RESOURCE_DRIVER
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_DISPLAY_ONLY
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_FULLSCREEN_VIDEO
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_YUV_VIDEO
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_SWAP_CHAIN_FLAG_RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS
+
+group int dx_window_association_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_MWA_NO_WINDOW_CHANGES
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_MWA_NO_ALT_ENTER
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_MWA_NO_PRINT_SCREEN
+
+group int dx_heap_type
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_TYPE_DEFAULT
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_TYPE_UPLOAD
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_TYPE_READBACK
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_TYPE_CUSTOM
+
+group int dx_cpu_page
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_CPU_PAGE_PROPERTY_UNKNOWN
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_CPU_PAGE_PROPERTY_NOT_AVAILABLE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_CPU_PAGE_PROPERTY_WRITE_BACK
+
+group int dx_memory_pool
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_MEMORY_POOL_UNKNOWN
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_MEMORY_POOL_L0
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_MEMORY_POOL_L1
+
+group int dx_resource_dimension
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_DIMENSION_UNKNOWN
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_DIMENSION_BUFFER
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_DIMENSION_TEXTURE1D
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_DIMENSION_TEXTURE2D
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_DIMENSION_TEXTURE3D
+
+group int dx_texture_layout
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_TEXTURE_LAYOUT_UNKNOWN
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_TEXTURE_LAYOUT_ROW_MAJOR
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE
+
+group int dx_resource_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_NONE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_DENY_SHADER_RESOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_ALLOW_CROSS_ADAPTER
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_VIDEO_ENCODE_REFERENCE_ONLY
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_FLAG_RAYTRACING_ACCELERATION_STRUCTURE
+
+group int dx_heap_flags
+	@flags
+	#com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_NONE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_SHARED
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_DENY_BUFFERS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_DISPLAY
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_SHARED_CROSS_ADAPTER
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_DENY_RT_DS_TEXTURES
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_DENY_NON_RT_DS_TEXTURES
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_HARDWARE_PROTECTED
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_WRITE_WATCH
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_SHADER_ATOMICS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_CREATE_NOT_RESIDENT
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_CREATE_NOT_ZEROED
+	#com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES - duplicate
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_ONLY_BUFFERS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES
+
+group int dx_resource_state
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_COMMON
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_INDEX_BUFFER
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_RENDER_TARGET
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_UNORDERED_ACCESS
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_DEPTH_WRITE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_DEPTH_READ
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_STREAM_OUT
+	#com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_INDIRECT_ARGUMENT - duplicate
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_COPY_DEST
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_COPY_SOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_RESOLVE_DEST
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_RESOLVE_SOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_RAYTRACING_ACCELERATION_STRUCTURE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_GENERIC_READ
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_ALL_SHADER_RESOURCE
+	#com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_PRESENT - duplicate
+	#com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_PREDICATION
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_DECODE_READ
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_DECODE_WRITE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_PROCESS_READ
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_PROCESS_WRITE
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_ENCODE_READ
+	com.mojang.renderpearl.util.dx.DXConst.D3D12_RESOURCE_STATE_VIDEO_ENCODE_WRITE
+
+group int dx_present_flags
+	@flags
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_PRESENT_RESTART
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_PRESENT_ALLOW_TEARING
+
+group int dx_result
+	com.mojang.renderpearl.util.dx.DXConst.S_OK
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_INVALID_CALL
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NOT_FOUND
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_MORE_DATA
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_UNSUPPORTED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_DEVICE_REMOVED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_DEVICE_HUNG
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_DEVICE_RESET
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_WAS_STILL_DRAWING
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_FRAME_STATISTICS_DISJOINT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_DRIVER_INTERNAL_ERROR
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NONEXCLUSIVE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NOT_CURRENTLY_AVAILABLE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_REMOTE_OUTOFMEMORY
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_ACCESS_LOST
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_WAIT_TIMEOUT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_SESSION_DISCONNECTED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_RESTRICT_TO_OUTPUT_STALE
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_CANNOT_PROTECT_CONTENT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_ACCESS_DENIED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NAME_ALREADY_EXISTS
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_SDK_COMPONENT_MISSING
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NOT_CURRENT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_HW_PROTECTION_OUTOFMEMORY
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_NON_COMPOSITED_UI
+	com.mojang.renderpearl.util.dx.DXConst.DXCORE_ERROR_EVENT_NOT_UNREGISTERED
+	com.mojang.renderpearl.util.dx.DXConst.PRESENTATION_ERROR_LOST
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_STATUS_UNOCCLUDED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_STATUS_DDA_WAS_STILL_DRAWING
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_MODE_CHANGE_IN_PROGRESS
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_STATUS_PRESENT_REQUIRED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_CACHE_CORRUPT
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_CACHE_FULL
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_CACHE_HASH_COLLISION
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_ALREADY_EXISTS
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_MPO_UNPINNED
+	com.mojang.renderpearl.util.dx.DXConst.DXGI_ERROR_SETDISPLAYMODE_REQUIRED
+
+# Target definition
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGIAdapter createD3D12Device (I)Lcom/mojang/renderpearl/util/dx/d3d12/D3D12Device;
+	param 0 dx_feature_level
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc type ()I
+	return dx_command_list_type
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc type (I)V
+	param 0 dx_command_list_type
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc priority ()I
+	return dx_command_queue_priority
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc priority (I)V
+	param 0 dx_command_queue_priority
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc flags ()I
+	return dx_command_queue_flags
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12CommandQueueDesc flags (I)V
+	param 0 dx_command_queue_flags
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12Device createFence (JI)Lcom/mojang/renderpearl/util/dx/d3d12/D3D12Fence;
+	param 1 dx_fence_flags
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 format ()I
+	return dx_image_format
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 format (I)V
+	param 0 dx_image_format
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 scaling ()I
+	return dx_image_scaling
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 scaling (I)V
+	param 0 dx_image_scaling
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 swapEffect ()I
+	return dx_swap_effect
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 swapEffect (I)V
+	param 0 dx_swap_effect
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 alphaMode ()I
+	return dx_alpha_mode
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 alphaMode (I)V
+	param 0 dx_alpha_mode
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 flags ()I
+	return dx_swapchain_flags
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchainDesc1 flags (I)V
+	param 0 dx_swapchain_flags
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGIFactory5 makeWindowAssociation (JI)V
+	param 1 dx_window_association_flags
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties type ()I
+	return dx_heap_type
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties type (I)V
+	param 0 dx_heap_type
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties cpuPageProperty ()I
+	return dx_cpu_page
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties cpuPageProperty (I)V
+	param 0 dx_cpu_page
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties memoryPoolPreference ()I
+	return dx_memory_pool
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12HeapProperties memoryPoolPreference (I)V
+	param 0 dx_memory_pool
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc dimension ()I
+	return dx_resource_dimension
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc dimension (I)V
+	param 0 dx_resource_dimension
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc format ()I
+	return dx_image_format
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc format (I)V
+	param 0 dx_image_format
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc layout ()I
+	return dx_texture_layout
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc layout (I)V
+	param 0 dx_texture_layout
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc flags ()I
+	return dx_resource_flags
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12ResourceDesc flags (I)V
+	param 0 dx_resource_flags
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12Device createCommittedResource (Lcom/mojang/renderpearl/util/dx/d3d12/D3D12HeapProperties;ILcom/mojang/renderpearl/util/dx/d3d12/D3D12ResourceDesc;I)Lcom/mojang/renderpearl/util/dx/d3d12/D3D12Resource;
+	param 1 dx_heap_flags
+	param 3 dx_resource_state
+
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12Device createCommandAllocator (I)Lcom/mojang/renderpearl/util/dx/d3d12/D3D12CommandAllocator;
+	param 0 dx_command_list_type
+target_method com.mojang.renderpearl.util.dx.d3d12.D3D12Device createCommandList (IILcom/mojang/renderpearl/util/dx/d3d12/D3D12CommandAllocator;)Lcom/mojang/renderpearl/util/dx/d3d12/D3D12GraphicsCommandList;
+	param 1 dx_command_list_type
+
+target_method com.mojang.renderpearl.util.dx.dxgi.DXGISwapchain3 present (II)I
+	param 1 dx_present_flags
+
+target_method com.mojang.renderpearl.util.dx.Win32Handle waitSingleObject (IZ)I
+	return dx_result
+
+target_method com.mojang.renderpearl.util.dx.DXUtils failure (I)Z
+	param 0 dx_result
+target_method com.mojang.renderpearl.util.dx.DXUtils crashIfFailure (I)V
+	param 0 dx_result
+target_method com.mojang.renderpearl.util.dx.DXUtils hresultString (I)Ljava/lang/String;
+	param 0 dx_result

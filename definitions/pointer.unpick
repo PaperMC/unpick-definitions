@@ -18,6 +18,9 @@ target_method org.lwjgl.sdl.SDLVideo SDL_GL_CreateContext (J)J
 target_method org.lwjgl.sdl.SDLMessageBox SDL_ShowSimpleMessageBox (ILjava/lang/CharSequence;Ljava/lang/CharSequence;J)Z
 	param 3 pointer
 
+target_method org.lwjgl.sdl.SDLProperties SDL_GetPointerProperty (ILjava/lang/CharSequence;J)J
+	param 2 pointer
+
 target_method org.lwjgl.util.spvc.Spvc spvc_context_destroy (J)V
 	param 0 pointer
 

@@ -48,3 +48,6 @@ target_method org.lwjgl.sdl.SDL_Event type ()I
 target_method org.lwjgl.sdl.SDLEvents SDL_FlushEvents (II)V
 	param 0 event_type
 	param 1 event_type
+
+target_method org.lwjgl.sdl.SDL_KeyboardEvent type ()I
+	return event_type

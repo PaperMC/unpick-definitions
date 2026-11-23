@@ -21,6 +21,9 @@ group int window_attribute
 	org.lwjgl.sdl.SDLVideo.SDL_GL_CONTEXT_PROFILE_MASK
 	org.lwjgl.sdl.SDLVideo.SDL_GL_FRAMEBUFFER_SRGB_CAPABLE
 
+#group int window_properties
+#	org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_WIN32_HWND_POINTER
+
 target_method org.lwjgl.sdl.SDLSurface SDL_CreateSurfaceFrom (IIILjava/nio/ByteBuffer;I)Lorg/lwjgl/sdl/SDL_Surface;
 	param 2 pixel_format
 
@@ -36,3 +39,7 @@ target_method org.lwjgl.sdl.SDLVideo SDL_GL_SetAttribute (II)Z
 	param 0 window_attribute
 target_method org.lwjgl.sdl.SDLVideo SDL_GL_GetAttribute (ILjava/nio/IntBuffer;)Z
 	param 0 window_attribute
+
+# todo enable when linter is fixed
+#target_method org.lwjgl.sdl.SDLProperties SDL_GetPointerProperty (ILjava/lang/CharSequence;J)J
+#	param 1 window_properties
