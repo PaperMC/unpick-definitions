@@ -51,6 +51,23 @@ target_method net.minecraft.util.Crypt cipherData (ILjava/security/Key;[B)[B
 target_method net.minecraft.util.Crypt getCipher (ILjava/security/Key;)Ljavax/crypto/Cipher;
 	param 0 cipher_op_mode
 
+group int http_status_code
+	java.net.HttpURLConnection.HTTP_NO_CONTENT
+	java.net.HttpURLConnection.HTTP_UNAUTHORIZED
+	java.net.HttpURLConnection.HTTP_CLIENT_TIMEOUT
+	java.net.HttpURLConnection.HTTP_UNAVAILABLE
+
+group int http_status_code
+	@scope class com.mojang.realmsclient.client.RealmsError$AuthenticationError
+	com.mojang.realmsclient.client.RealmsError$AuthenticationError.ERROR_CODE
+
+target_method java.net.HttpURLConnection getResponseCode ()I
+	return http_status_code
+target_method com.mojang.realmsclient.client.Request responseCode ()I
+	return http_status_code
+target_method com.mojang.realmsclient.client.RealmsError errorCode ()I
+	return http_status_code
+
 group int calendar_field
 	java.util.Calendar.MONTH
 

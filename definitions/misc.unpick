@@ -12,3 +12,12 @@ group int cursor3d_type
 
 target_method net.minecraft.core.Cursor3D getNextType ()I
 	return cursor3d_type
+
+group int tar_long_file_mode
+	org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.LONGFILE_ERROR
+	org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.LONGFILE_TRUNCATE
+	org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.LONGFILE_GNU
+	org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.LONGFILE_POSIX
+
+target_method org.apache.commons.compress.archivers.tar.TarArchiveOutputStream setLongFileMode (I)V
+	param 0 tar_long_file_mode
