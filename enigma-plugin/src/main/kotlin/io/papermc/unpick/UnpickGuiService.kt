@@ -27,16 +27,21 @@ class UnpickGuiService : GuiService {
             .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, KeyEvent.CTRL_DOWN_MASK)) // hopefully keybinds will be controllable at some point
             .setAction {
                 val textToCopy = referenceOnCursor(gui) ?: return@setAction
-                Toolkit.getDefaultToolkit().systemClipboard.setContents(StringSelection(textToCopy), null)
+                copyText(textToCopy)
             }
         registrar.add(UnpickI18nService.COPY_CONSTANT_REFERENCE)
             .setEnabledWhen { eligibleConstantOnCursor(gui) != null }
             .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, KeyEvent.CTRL_DOWN_MASK or KeyEvent.SHIFT_DOWN_MASK))
             .setAction {
                 val field = eligibleConstantOnCursor(gui) ?: return@setAction
-                val textToCopy = field.parent.jvmClassName() + "." + field.name
-                Toolkit.getDefaultToolkit().systemClipboard.setContents(StringSelection(textToCopy), null)
+                copyText(field.parent.jvmClassName() + "." + field.name)
             }
+    }
+
+    private fun copyText(text: String) {
+        val toolkit = Toolkit.getDefaultToolkit()
+        val targetClipboard = toolkit.systemSelection ?: toolkit.systemClipboard
+        targetClipboard.setContents(StringSelection(text), null)
     }
 
     private fun referenceOnCursor(gui: GuiView): String? {
