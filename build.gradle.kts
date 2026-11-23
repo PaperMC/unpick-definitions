@@ -2,6 +2,7 @@ import io.papermc.unpick.task.*
 import io.papermc.unpick.util.ArtifactVersionProvider
 
 plugins {
+    base
     `maven-publish`
     id("mc-base")
 }
