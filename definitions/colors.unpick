@@ -180,7 +180,7 @@ target_method net.minecraft.client.gui.components.debugchart.AbstractDebugChart 
 	param 4 argb_color
 	param 6 argb_color
 
-target_method net.minecraft.client.gui.components.tabs.MenuTabBar$MenuTabButton renderFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
+target_method net.minecraft.client.gui.components.tabs.MenuTabBar$MenuTabButton extractFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
 	param 2 argb_color
 
 target_method net.minecraft.client.gui.components.toasts.SystemToast extractTextLines (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;Ljava/util/List;II)V

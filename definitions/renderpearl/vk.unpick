@@ -600,9 +600,7 @@ target_method com.mojang.renderpearl.backend.vulkan.VulkanDebug$Enabled onDebugM
 target_method org.lwjgl.vulkan.VkPhysicalDeviceDriverProperties driverID ()I
 	return vk_driver_id
 
-target_field com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline withDepthPipeline J vk_handle
-target_method com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline <init> (Lcom/mojang/renderpearl/backend/vulkan/VulkanDevice;JJJJLit/unimi/dsi/fastutil/longs/LongList;Ljava/util/List;)V
-	param 2 vk_handle
+target_field com.mojang.renderpearl.backend.vulkan.VulkanRenderPipeline pipeline J vk_handle
 
 target_method org.lwjgl.vulkan.VkCalibratedTimestampInfoKHR timeDomain (I)Lorg/lwjgl/vulkan/VkCalibratedTimestampInfoKHR;
 	param 0 vk_time_domain

@@ -127,7 +127,9 @@ target_method net.minecraft.world.inventory.AbstractContainerMenu doClick (IILne
 
 target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ContainerInput;)V
 	param 1 menu_slot_index
-target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;ILnet/minecraft/client/input/MouseButtonEvent;Lnet/minecraft/world/inventory/ContainerInput;)V
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen tryPickUpItem (Lnet/minecraft/world/inventory/Slot;IIZZ)V
+	param 1 menu_slot_index
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen handleDoublePress (Lnet/minecraft/world/inventory/Slot;IZZZI)Z
 	param 1 menu_slot_index
 
 target_field net.minecraft.world.item.component.BundleContents selectedItem I bundle_selected_item_index
