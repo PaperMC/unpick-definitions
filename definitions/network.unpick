@@ -120,6 +120,11 @@ group int mob_effect_flags
 	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_SHOW_ICON
 	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_BLEND
 
+group int connection_option_flags
+	@flags
+	net.minecraft.network.protocol.login.ConnectionOptionsPacket.FLAG_ENCRYPTION
+	net.minecraft.network.protocol.login.ConnectionOptionsPacket.FLAG_COMPRESSION
+
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket packFlags (ZZ)I
 	return move_player_flags
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackOnGround (I)Z
@@ -209,3 +214,5 @@ target_method net.minecraft.network.protocol.handshake.ClientIntent byId (I)Lnet
 	param 0 client_intent
 target_method net.minecraft.network.protocol.handshake.ClientIntent id ()I
 	return client_intent
+
+target_annotation net.minecraft.network.protocol.login.ConnectionOptionsPacket$Flags connection_option_flags

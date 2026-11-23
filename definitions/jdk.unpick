@@ -1,5 +1,23 @@
 unpick v4
 
+group int class_access_flags
+	@flags
+	java.lang.reflect.Modifier.PUBLIC
+	java.lang.reflect.Modifier.PRIVATE
+	java.lang.reflect.Modifier.PROTECTED
+	java.lang.reflect.Modifier.STATIC
+	java.lang.reflect.Modifier.FINAL
+	java.lang.reflect.Modifier.SYNCHRONIZED
+	java.lang.reflect.Modifier.VOLATILE
+	java.lang.reflect.Modifier.TRANSIENT
+	java.lang.reflect.Modifier.NATIVE
+	java.lang.reflect.Modifier.INTERFACE
+	java.lang.reflect.Modifier.ABSTRACT
+	java.lang.reflect.Modifier.STRICT
+
+target_method java.lang.Class getModifiers ()I
+	return class_access_flags
+
 group int spliterator_characteristics
 	@flags
 	java.util.Spliterator.ORDERED
