@@ -31,6 +31,7 @@ group int spv_decoration
 	org.lwjgl.util.spvc.Spv.SpvDecorationComponent
 	org.lwjgl.util.spvc.Spv.SpvDecorationBinding
 	org.lwjgl.util.spvc.Spv.SpvDecorationDescriptorSet
+	org.lwjgl.util.spvc.Spv.SpvDecorationInputAttachmentIndex
 
 group int spv_execution_model
 	org.lwjgl.util.spvc.Spv.SpvExecutionModelVertex

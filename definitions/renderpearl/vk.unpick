@@ -24,6 +24,7 @@ group int vk_image_usage_flags
 	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_SAMPLED_BIT
 	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT
 	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT
+	org.lwjgl.vulkan.VK10.VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT
 
 group int vk_buffer_usage_flags
 	@flags
@@ -182,6 +183,7 @@ group int vk_object_type
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_IMAGE_VIEW
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_SHADER_MODULE
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE_LAYOUT
+	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_RENDER_PASS
 	org.lwjgl.vulkan.VK10.VK_OBJECT_TYPE_PIPELINE
 
 # VulkanBackend
@@ -257,6 +259,27 @@ group long vk_access_mask
 	org.lwjgl.vulkan.KHRSynchronization2.VK_ACCESS_2_MEMORY_READ_BIT_KHR
 	org.lwjgl.vulkan.KHRSynchronization2.VK_ACCESS_2_MEMORY_WRITE_BIT_KHR
 
+group int vk_pipeline_stage_flags_legacy
+	@flags
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT
+	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT
+
+group int vk_access_mask_legacy
+	@flags
+	org.lwjgl.vulkan.VK10.VK_ACCESS_INPUT_ATTACHMENT_READ_BIT
+	org.lwjgl.vulkan.VK10.VK_ACCESS_COLOR_ATTACHMENT_READ_BIT
+	org.lwjgl.vulkan.VK10.VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT
+	org.lwjgl.vulkan.VK10.VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_READ_BIT
+	org.lwjgl.vulkan.VK10.VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT
+
+group int vk_dependency_flags
+	@flags
+	org.lwjgl.vulkan.VK10.VK_DEPENDENCY_BY_REGION_BIT
+
 group int vk_image_layout
 	org.lwjgl.vulkan.VK10.VK_IMAGE_LAYOUT_UNDEFINED
 	org.lwjgl.vulkan.VK10.VK_IMAGE_LAYOUT_GENERAL
@@ -282,7 +305,7 @@ group int vk_query_result_flags
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WAIT_BIT
 	org.lwjgl.vulkan.VK10.VK_QUERY_RESULT_WITH_AVAILABILITY_BIT
 
-group int vk_subpass_contents
+group int vk_subpass_contents_legacy
 	org.lwjgl.vulkan.VK10.VK_SUBPASS_CONTENTS_INLINE
 
 # VulkanCommandPool
@@ -381,11 +404,6 @@ group int vk_access_mask_legacy
 	org.lwjgl.vulkan.VK10.VK_ACCESS_MEMORY_READ_BIT
 	org.lwjgl.vulkan.VK10.VK_ACCESS_MEMORY_WRITE_BIT
 
-group int vk_pipeline_stage_flags_legacy
-	@flags
-	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT
-	org.lwjgl.vulkan.VK10.VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT
-
 group int vk_image_view_type
 	org.lwjgl.vulkan.VK10.VK_IMAGE_VIEW_TYPE_2D
 	org.lwjgl.vulkan.VK10.VK_IMAGE_VIEW_TYPE_CUBE
@@ -412,6 +430,7 @@ group int vk_descriptor_type
 	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER
 	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER
 	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER
+	org.lwjgl.vulkan.VK10.VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT
 
 # VulkanRenderPipeline
 group int vk_vertex_input_rate
@@ -559,6 +578,19 @@ target_method com.mojang.renderpearl.backend.vulkan.VulkanCommandEncoder signalS
 target_method org.lwjgl.vulkan.KHRSynchronization2 vkCmdWriteTimestamp2KHR (Lorg/lwjgl/vulkan/VkCommandBuffer;JJI)V
 	param 1 vk_pipeline_stage_flags
 
+target_method org.lwjgl.vulkan.VkSubpassDependency2 srcStageMask (I)Lorg/lwjgl/vulkan/VkSubpassDependency2;
+	param 0 vk_pipeline_stage_flags_legacy
+target_method org.lwjgl.vulkan.VkSubpassDependency2 dstStageMask (I)Lorg/lwjgl/vulkan/VkSubpassDependency2;
+	param 0 vk_pipeline_stage_flags_legacy
+
+target_method org.lwjgl.vulkan.VkSubpassDependency2 srcAccessMask (I)Lorg/lwjgl/vulkan/VkSubpassDependency2;
+	param 0 vk_access_mask_legacy
+target_method org.lwjgl.vulkan.VkSubpassDependency2 dstAccessMask (I)Lorg/lwjgl/vulkan/VkSubpassDependency2;
+	param 0 vk_access_mask_legacy
+
+target_method org.lwjgl.vulkan.VkSubpassDependency2 dependencyFlags (I)Lorg/lwjgl/vulkan/VkSubpassDependency2;
+	param 0 vk_dependency_flags
+
 target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer srcAccessMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
 	param 0 vk_access_mask
 target_method org.lwjgl.vulkan.VkMemoryBarrier2$Buffer dstAccessMask (J)Lorg/lwjgl/vulkan/VkMemoryBarrier2$Buffer;
@@ -599,7 +631,7 @@ target_method org.lwjgl.vulkan.VK10 vkGetQueryPoolResults (Lorg/lwjgl/vulkan/VkD
 	param 6 vk_query_result_flags
 
 target_method org.lwjgl.vulkan.VkSubpassBeginInfo contents (I)Lorg/lwjgl/vulkan/VkSubpassBeginInfo;
-	param 0 vk_subpass_contents
+	param 0 vk_subpass_contents_legacy
 
 target_method org.lwjgl.vulkan.VK10 vkResetCommandPool (Lorg/lwjgl/vulkan/VkDevice;JI)I
 	param 2 vk_command_pool_reset_flags
@@ -810,11 +842,13 @@ target_method org.lwjgl.vulkan.VkAttachmentReference2 layout (I)Lorg/lwjgl/vulka
 target_method org.lwjgl.vulkan.VkAttachmentReference2 aspectMask (I)Lorg/lwjgl/vulkan/VkAttachmentReference2;
 	param 0 vk_image_aspect_mask
 
-target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache getRenderPass (ILjava/util/List;)J
-	param 0 vk_image_format
-target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache$AttachmentDescription <init> (II)V
-	param 0 vk_image_format
-	param 1 vk_attachment_load_op
+target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache$PermutationKey loadOp (I)I
+	return vk_attachment_load_op
+target_method com.mojang.renderpearl.backend.vulkan.RenderPassCache$PermutationKey storeOp (I)I
+	return vk_attachment_store_op
+
+target_method org.lwjgl.vulkan.VK10 vkCmdNextSubpass (Lorg/lwjgl/vulkan/VkCommandBuffer;I)V
+	param 1 vk_subpass_contents_legacy
 
 target_method org.lwjgl.util.vma.Vma vmaDestroyAllocator (J)V
 	param 0 vk_handle
@@ -864,4 +898,7 @@ target_method org.lwjgl.vulkan.VkImportMemoryWin32HandleInfoKHR handleType (I)Lo
 target_field com.mojang.renderpearl.backend.vulkan.VulkanDebug$Enabled messenger J vk_handle
 
 target_method org.lwjgl.vulkan.VkRenderingAttachmentInfo$Buffer imageView (J)Lorg/lwjgl/vulkan/VkRenderingAttachmentInfo$Buffer;
+	param 0 vk_handle
+
+target_method org.lwjgl.vulkan.VkDescriptorImageInfo$Buffer sampler (J)Lorg/lwjgl/vulkan/VkDescriptorImageInfo$Buffer;
 	param 0 vk_handle

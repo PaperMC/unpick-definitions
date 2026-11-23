@@ -110,6 +110,7 @@ group int gl_pixel_store_pname
 group int gl_buffer_mask
 	@flags
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_DEPTH_BUFFER_BIT
+	org.lwjgl.opengl.GL11C.GL_STENCIL_BUFFER_BIT
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_COLOR_BUFFER_BIT
 
 group int gl_framebuffer_target
@@ -370,7 +371,6 @@ group int gl_get_string_name
 group int gl_get_number_pname
 	org.lwjgl.opengl.KHRDebug.GL_MAX_LABEL_LENGTH
 	com.mojang.renderpearl.backend.opengl.GlConst.GL_MAX_TEXTURE_SIZE
-	org.lwjgl.opengl.GL20C.GL_MAX_DRAW_BUFFERS
 	org.lwjgl.opengl.GL31C.GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
 	org.lwjgl.opengl.GL33C.GL_TIMESTAMP
 	org.lwjgl.opengl.ARBTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY
@@ -500,8 +500,10 @@ target_method com.mojang.renderpearl.backend.opengl.DirectStateAccess blitFrameB
 
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager _clear(I)V
 	param 0 gl_buffer_mask
+target_method org.lwjgl.opengl.GL11C glClear (I)V
+	param 0 gl_buffer_mask
 
-# GlCommandEncoder#createRenderPass no target available for clearMask, same for GL_COLOR_ATTACHMENT0 below
+# GlCommandEncoder#beginSubpass no target available for GL_COLOR_ATTACHMENT0
 
 target_method com.mojang.renderpearl.backend.opengl.GlStateManager _activeTexture (I)V
 	param 0 gl_texture
@@ -572,6 +574,8 @@ target_method org.lwjgl.opengl.GL32C glClientWaitSync (JIJ)I
 	return gl_client_wait_sync_result
 
 target_method org.lwjgl.opengl.GL11C glDrawBuffer (I)V
+	param 0 gl_framebuffer_pos
+target_method org.lwjgl.opengl.GL20C glDrawBuffers (I)V
 	param 0 gl_framebuffer_pos
 target_method org.lwjgl.opengl.GL11C glReadBuffer (I)V
 	param 0 gl_framebuffer_pos
