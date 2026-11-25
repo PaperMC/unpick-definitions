@@ -27,6 +27,6 @@ dependencies {
 
     implementation("cuchaz:enigma:4.0.2")
 
-    implementation("net.fabricmc.unpick:unpick:3.0.0-beta.13")
-    implementation("net.fabricmc.unpick:unpick-format-utils:3.0.0-beta.13")
+    implementation("net.fabricmc.unpick:unpick:3.0.0")
+    implementation("net.fabricmc.unpick:unpick-format-utils:3.0.0")
 }
