@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class MainManifest(
-    val versions: Set<VersionManifest>
+    val versions: Set<VersionManifest>,
 )

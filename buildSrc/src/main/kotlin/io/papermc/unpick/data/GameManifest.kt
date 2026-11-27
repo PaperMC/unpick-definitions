@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 data class GameManifest(
     val downloads: Downloads,
     val libraries: Set<GameLibrary>,
-    val id: String
+    val id: String,
 )

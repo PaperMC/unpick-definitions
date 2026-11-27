@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 data class VersionManifest(
     val id: String,
     val url: String,
-    val sha1: String
+    val sha1: String,
 )
